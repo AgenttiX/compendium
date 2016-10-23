@@ -1,0 +1,293 @@
+\part{Fysiikka}
+
+\newenvironment{kaavataulukko}[1]{
+\begin{table}[!ht]
+\centering
+\caption{#1}
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |} \hline
+}{
+\end{tabular}
+\end{table}
+}
+
+\chapter{Kaavoja}
+
+\section{Mekaniikka}
+
+
+
+\begin{kaavataulukko}{Etenemisiike}
+\textbf{Etenemisliike} &&& \\
+matka	&	x, s, r	& m		& x = vt \\
+nopeus	&	v	& m/s	& v = \frac{dx}{dt} \\
+kiihtyvyys	&	a	& m/s$^2$	& a = \frac{dv}{dt} = \frac{d^2x}{dt^2} \\
+liikemäärä	& p	& kgm/s	& p = mv \\
+Newton II	&&& \frac{d \bm{p}}{dt} = \bm{F} \Leftrightarrow \bm{a} = \frac{\bm{F}}{m} \\
+työ			& W	& J	& W = \int \bm{F} \cdot \bm{dx} \\
+kineettinen energia	& E_k, K	& J	& E_k = \frac{1}{2}mv^2 \\
+potentiaalienergia	& E_p, U	& J	& E_p = \frac{1}{2}kx^2 \\
+\hline
+\textbf{Tasaisesti muuttuva etenemisliike} &&& \\
+loppunopeus	& v	& m/s	& v = v_0 + at \\
+paikka		& x	& m		& x = x_0 + v_0 t + \frac{1}{2} at^2 \\
+\hline
+\end{kaavataulukko}
+
+\begin{kaavataulukko}{Pyörimisliike}
+\textbf{Pyörimisliike} &&& \\
+kaaren pituus	& s			& m		& s = r \theta \\
+%								&&& \Delta \bm{s} = \Delta \bm{\theta} \times \bm{r} \\
+kulmanopeus		& \omega	& rad/s	& \bm{\omega} = \frac{d \bm{\theta}}{dt} \\
+kulmakiihtyvyys	& \alpha	& rad/s		& \bm{\alpha} = \frac{d \bm{\omega}}{dt} = \frac{d^2 \bm{\theta}}{dt^2}\\
+ratanopeus		& v			& m/s	& v = \bm{\omega} \times \bm{r} \\
+kierrosaika		& T			& s		& T = \frac{2 \pi}{\omega} \\
+kierrostaajuus	& f, n		& 1/s, Hz	& f = \frac{1}{T} \\
+tangenttikiihtyvyys	& a_t	& m/s$^2$	& a_t = r \alpha \\
+normaalikiihtyvyys	& a_n	& m/s$^2$	& a_n = \frac{v^2}{r} \\
+kiihtyvyys			& a		& m/s$^2$	& a_r \hat{\bm{r}} + a_t \hat{\bm{t}} \\
+työ					& W	& J	& W = \int \bm{T} \cdot \bm{d\theta} \\
+kulmaliikemäärä	& L	& kgm$^2$/s	& \bm{L} = \bm{r} \times \bm{p} \\
+kineettinen energia	&E_k, K	& J	& E_k = \frac{1}{2} I \omega^2 \\
+potentiaalienergia	&E_p, U	& J	& E_p = \frac{1}{2} c \theta^2 \\
+\hline
+\textbf{Tasaisesti muuttuva pyörimisliike} &&& \\
+loppukulmanopeus	& \omega & rad/s	& \omega = \omega_0 + \alpha t \\
+kiertokulma			& \theta	& rad	& \theta = \theta_0 + \omega_0 t + \frac{1}{2} \alpha t^2 \\
+\hline
+\end{kaavataulukko}
+
+
+\begin{kaavataulukko}{Voima, energia}
+\textbf{Voima} & F	& N	& \\
+Newtonin gravitaatiolaki	&&& \bm{F} = -G \frac{m_1 m_2}{r^2} \hat{\bm{r}} \\
+homogeeninen gravitaatiokenttä	&&& \bm{g} = \frac{\bm{F}}{m} \\
+liikekitka	& F_\mu	&& F_\mu = \mu N \\
+harmoninen voima	&&& F = -kx \\
+\hline
+\hline
+impulssi	& I	& Ns	& \bm{I} = \int \bm{F} dt \\
+teho		& P	& W		& P = \frac{dW}{dt} \\
+\hline
+\textbf{Potentiaalienergia} & E_p	& J	& \\
+gravitaatiokenttä	&&& E_p = mgh \\
+					&&& E_p = -G \frac{m_1 m_2}{r} \\
+harmoninen voimakenttä	&&& E_p = \frac{1}{2} kx^2 \\
+\hline
+\textbf{Kineettinen energia}	& E_k, K	& J & \\
+etenevän liikkeen energia	&&& E_k = \frac{1}{2} mv^2 \\
+pyörimisenergia				&&& E_k = \frac{1}{2} J \omega^2 \\
+\hline
+mekaaninen hyötysuhde	& \eta	&& \eta = \frac{E_a}{E_o} = \frac{P_a}{P_o} \\
+\hline
+\textbf{Harmoninen värähtelijä} &&& \\
+poikkeama	&&& x(t) = A \sin(\omega t + \phi ) \\
+jaksonaika	&&& T = 2 \pi \sqrt{\frac{m}{k}} \\
+\hline
+\end{kaavataulukko}
+
+
+\begin{kaavataulukko}{Heilureita ja hitausmomentteja}
+\textbf{Heilahdusaika} &&& \\
+matemaattinen heiluri	&&& T = 2 \pi \sqrt{\frac{l}{g}} \\
+fysikaalinen heiluri	&&& T = 2 \pi \sqrt{\frac{I_A}{mgl}} \\
+kiertoheiluri			&&& T = 2 \pi \sqrt{\frac{J}{D}} \\
+\hline
+voiman momentti	& M	& Nm	& \bm{M} = \bm{r} \times \bm{F} = \frac{d\bm{L}}{dt} \\
+pyörimisen liikeyhtälö	&&& \sum M = I \alpha \\
+impulssimomentti	& I	& kgm$^2$/s	& I_M = \Delta L = M \Delta t \\ \hline
+\textbf{Hitausmomentteja}	& I, J	& kgm$^2$ & \\
+pistemäinen kappale		&&& I = mr^2 \\
+umpinainen sylinteri	&&& I = \frac{1}{2} mr^2 \\
+ohutseinäinen rengas	&&& I = mr^2 \\
+paksuseinäinen rengas	&&& I = \frac{1}{2}m(r^2_1+r^2_2) \\
+ohut sauva (pään ympäri) &&& I = \frac{1}{3}ml^2 \\
+ohut sauva (keskipisteen ympäri)	&&& I = {1}{12}ml^2 \\
+suorakulmainen levy	&&& I = \frac{1}{12}m(a^2+b^2) \\
+umpinainen pallo	&&& I = \frac{2}{5} mr^2 \\
+ohutseinäinen pallo	&&& I = \frac{2}{3}mr^2 \\ \hline
+Steinerin sääntö (akselin siirto)	&&& I_A = I_P + ma^2 \\ \hline
+\end{kaavataulukko}
+
+\begin{kaavataulukko}{Jatkumon mekaniikkaa \cite[TESTI]{MAOL}}
+tiheys	& \rho & kg/m$^3$	& \rho = \frac{m}{V} \\
+jännitys	& \sigma & N/$^2$ & \sigma = \frac{F}{A} \\
+Hooken laki, kimmoisuus		& E	& N/m$^2$	& \frac{F}{A} = E \frac{\Delta l}{l} \\
+paine	& p	& Pa	& p = \frac{F}{A} \\
+hydrostaattinen paine	& p	& Pa	& p = h \rho g \\
+noste		& F_N	& N	& F_N = \rho V g \\
+\hline
+\textbf{Pintajännitys} & \sigma	& N/m, J/m$^2$ & \\
+voima	& F	& N	& F = \sigma l \\
+energia	& E	& J	& E = \sigma A \\
+\hline
+\textbf{Viskositeetti} & \eta & Ns & \\
+voima	& F	& N	& F = \frac{\eta A v}{d} \\
+\hline
+Bernoullin yhtälö	&&& p_0 + \frac{1}{2} \rho v^2 + h \rho g = vakio \\
+\hline
+\end{kaavataulukko}
+
+
+\begin{kaavataulukko}{Aaltoliike ja valo-oppi \cite{MAOL}}
+Aaltoliikkeen nopeus					&&& v = f \lambda \\
+huojuntataajuus							&&& f = |f_1 - f_2 | \\
+intensiteetti			& I	& W/m$^2$	& I = \frac{P}{A} \\
+energiatiheys			& w	& J/m$^3$	& w = \frac{I}{v}, \quad w = kf^2A^2 \\
+\hline
+\textbf{Dopplerin ilmiö} &&& \\
+aaltolähde liikkuu		&&& f = f_0 \frac{v}{v \pm v_1} \\
+havaitsija liikkuu		&&& f = f_0 \frac{v \pm v_h}{v} \\
+\hline
+äänen nopeus kaasussa	& v	&& \frac{v_1}{v_2} = \sqrt{\frac{T_1}{T_2}} \\
+äänen intensiteettitaso	& L	& dB	& L = 10 \log_10 \frac{I}{I_0} dB, \quad I_0 = 1 \text{pW/m}^2 \\
+taittumislaki	&&& \frac{\sin \alpha_1}{\sin \alpha_2} = \frac{v_1}{v_2} = \frac{n_2}{n_1} = n_{12} \\
+Brewsterin laki	&&& \tan \alpha_B = \frac{n_2}{n_1} \\
+% hilayhtälö	&&& d \sin \alpha = k \lambda \\
+kuvausyhtälö	&&& \frac{1}{a} + \frac{1}{b} = \frac{1}{f} \\
+taittovoimakkuus	& D	& 1/m = d	& D = \frac{1}{f} \\
+viivasuurennus		& m	&& m = \big| \frac{b}{a} \big| \\
+kulmasuurennus		& M	&& M = \frac{\tan \alpha_2}{\tan \alpha_1} \\
+\hline
+\textbf{Suurennuksia} &&& \\
+suurennuslasi	&&& M = \frac{s}{f} \\
+mikroskooppi	&&& M = \frac{Ls}{f_{ob} f_{ok}} \\
+kaukoputki		&&& M = \frac{f_{ob}}{f_{ob}} \\
+\hline
+valovoima	& I	& cd	& I = \frac{\Phi}{\omega} \\
+luminanssi	& L	& cd/m$^2$	& L = \frac{I}{A} \\
+valovirta	& \Phi	& lm	& \Phi = I \omega \\
+valaistusvoimakkuus	& E	& lx	& E = \frac{\Phi}{A} \\ \hline
+\end{kaavataulukko}
+
+
+
+\section{Sähkömagnetismi}
+
+\begin{taulukko}{Sähkömagnetismi \cite{UPhysics}}
+\textbf{Maxwellin yhtälöt} & \\
+Gaussin laki sähkökentille		& \oiint_S \bm{D} \cdot d\bm{A} = \sum q \\
+Gaussin laki magneettikentille	& \oiint_S \bm{B} \cdot d\bm{A} = 0 \\
+Ampere-Maxwell					& \oint_C \bm{H} \cdot d\bm{l} = I + \frac{d}{dt} \iint_S \bm{D} \cdot d\bm{A} \\
+Faradayn laki					& \oint_C \bm{E} \cdot d\bm{l} = - \frac{d}{dt} \iint_S \bm{B} \cdot d\bm{A} \\
+\hline
+& E = vB \\
+Aaltoyhtälö	& \frac{\partial^2 H}{\partial z^2} = \mu \epsilon \frac{\partial^2 H}{\partial t^2} \\
+\hline
+\end{taulukko}
+
+
+
+\section{Suhteellisuus}
+
+\begin{table}[ht!]
+\centering
+\caption{Suhteellisuus \cite{UPhysics}}
+\begin{tabular}{| >{$\displaystyle} l <{$} | >{$\displaystyle} l <{$} |} \hline
+\textbf{Klassinen suhteellisuus} & \textbf{Suppea suhteellisuusteoria} \\ \hline
+x' = x + vt	& x' = \gamma (x+vt), \quad \gamma = \frac{1}{\sqrt{1 - (\frac{v}{c})^2}} \\ 
+t' = t		& t' = \gamma (t + \frac{v}{c^2} x) \\
+l = l'		& l = \frac{l'}{\gamma} \\
+t = t'		& t = \gamma t' \\
+u_x = u'_x + v, \quad u_y = u'_y	& u_x = \frac{u'_x+v}{1 + \frac{u'_x v}{c^2}}, \quad u_y = \frac{u'_y}{1+\frac{u'_xv}{c^2}} \\
+\bm{p} = m\bm{u}	& \bm{p} = \gamma m \bm{u} \\
+E = \frac{p^2}{2m_0} + m_ 0 c^2	& E = \gamma m_0 c^2 \Rightarrow E^2 = c^2p^2 + m^2c^4 \\
+H(\bm{r}, \bm{p}) = \frac{p^2}{2m} + U(\bm{r})	& H(\bm{r}, \bm{p}) = \sqrt{c^2p^2 + m^2c^4} + U(\bm{r}) \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\section{Varhainen kvanttimekaniikka}
+
+\begin{taulukko}{Mustan kappaleen säteily \cite{ModernPhysics}}
+Stefanin-Boltzmannin laki	& R = \sigma T^4 (=I=\frac{P}{A})\\ \hline
+Lämpötilan ja kin. energ. yhteys & E_{ave} = kT \\ \hline
+Wienin siirtymälaki			& \lambda_m T = 2,898 \cdot 10^{-3} m \cdot K \\ \hline
+Rayleigh-Jeans				& u( \lambda ) = kT n( \lambda ) = \frac{8 \pi kT}{\lambda^4} \\ \hline
+Maxwell-Boltzmann-jakauma	& \phi (E) = A e^{-\frac{E}{kT}} \\ \hline
+Planckin laki				& u(\lambda) = \frac{8 \pi hc \lambda^{-5}}{e^{\frac{hc}{\lambda kT}} - 1} \\ \hline
+\end{taulukko}
+
+
+\begin{taulukko}{Comptonin sironta \cite{ModernPhysics}}
+Comptonin yhtälö			& \Delta \lambda = \frac{h}{mc}(1 - \cos \theta ) \\ \hline
+Comptonin aallonpituus		& \lambda_c = \frac{h}{mc} \\ \hline
+\end{taulukko}
+
+
+\begin{taulukko}{Rutherfordin sironta \cite{ModernPhysics}}
+Törmäysparametri			& b = \frac{k q_\alpha Q}{m_\alpha v^2} \cot \frac{\theta}{2} \\ \hline
+Yli kulmaan $\theta$ siroavien osuus	& f = \pi b^2 nt \\ \hline
+Detektorilla havaittujen hiukkasten määrä	& \Delta N = ( \frac{I_0 A_{sc} nt}{r^2} ) ( \frac{kZe^2}{2 E_k} ) \frac{1}{\sin^4 \frac{\theta}{2}} \\ \hline
+Ydintä tilavuudessa	(yksiköt!) & n = \frac{\rho N_A}{M} \\ \hline
+\end{taulukko}
+
+
+\begin{table}[ht!]
+\centering
+\caption{Vedyn spektrisarjat \cite{ModernPhysics}}
+\begin{tabular}{| >{$\displaystyle} l <{$} | l |} \hline
+1 \rightarrow & Lyman \\
+2 \rightarrow & Balmer \\
+3 \rightarrow & Paschen \\
+4 \rightarrow & Brackett \\
+5 \rightarrow & Pfund \\
+6 \rightarrow & Humphreys \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{taulukko}{Bohrin atomimalli \cite{ModernPhysics}}
+Elektronin ratanopeus	& v = \sqrt{ \frac{kZe^2}{mr}} \\ \hline
+Kulmaliikemäärän kvantittuminen	& | \mathbf{L} | = n \hbar, n \in \mathbb{N} \\ \hline
+Atomin energiatilat			& E_n = -\frac{mk^2 z^2 e^4}{2 \hbar^2 n^2} = -\frac{z^2 E_0}{n^2} \\ \hline
+Spektriviivat (yleistetty Rydberg-Ritz)	& \frac{1}{\lambda} = Z^2 R ( \frac{1}{n_f^2} - \frac{1}{n_i^2}) \\ \hline
+Redusoitu massa					& \mu = \frac{mM}{m + M} \\ \hline
+\end{taulukko}
+
+
+\begin{taulukko}{Ytimellinen atomi \cite{ModernPhysics}}
+Moseleyn laki	& \sqrt{f} = A_n (Z - b) \\ \hline
+				& A_n^2 = c R_\infty (1 - \frac{1}{n^2}) \\ \hline
+K$_\alpha$:lle	& n=2, b=1 \\ \hline
+\end{taulukko}
+
+
+
+\begin{taulukko}{Sekalaista}
+Valosähköinen ilmiö			& eV_0 = E_{k max} = hf - \phi \\ \hline
+Braggin laki				& 2d \sin \theta = n \lambda \\ \hline
+Duane-Hund (jarrutussäteily)	& \lambda_{min} = \frac{1,24 \cdot 10^3 nm}{V (V)} \\
+Ytimen säde	& r_d = \frac{k q_\alpha Q}{\frac{1}{2}m_\alpha v^2} \\ \hline
+
+Kulmaliikemäärän kvantittuminen	& L = mvr = n \hbar \\ \hline
+
+Davisson-Germer ASDF		& n \lambda = D sin \phi \\ \hline
+\end{taulukko}
+
+
+\section{Kvanttimekaniikka}
+
+\begin{taulukko}{Aaltohiukkasdualismi \cite{ModernPhysics}}
+De Broglie -aallonpituus	& \lambda = \frac{h}{p} \\
+							& f = \frac{E}{h} \\ \hline
+Yleinen aaltoyhtälö (1D)	& \frac{d^2 y}{dx^2} = \frac{1}{v^2} \frac{d^2 y}{dt^2} \\
+Ratkaisut muotoa			& y(x,t) = f(kx - \omega t) \\ \hline
+Vaihenopeus					& v_p = f \lambda = \frac{\omega}{k} \\ \hline
+Ryhmänopeus					& v_g = \frac{d \omega}{d k} = v_p + k \frac{d v_p}{dk} \\ \hline
+Huom!						& k= \frac{2 \pi}{\lambda} \Rightarrow dk = - \frac{2 \pi}{\lambda} d \lambda \\
+Klassinen epätarkkuus		& \Delta k \Delta x \sim 1 \\
+							& \Delta \omega \Delta t \sim 1 \\
+Epätarkkuusperiaate         & \Delta x \Delta p \sim \hbar \\
+                           	& \Delta E \Delta t \sim \hbar \\
+							& \Delta x \Delta p \geq \frac{1}{2} \hbar \\
+							& \Delta E \Delta t \geq \frac{1}{2} \hbar \\ \hline
+Nollapiste-energia          & E \geq \frac{h^2}{2mL^2} \\ \hline
+Schrödingerin aaltoyhtälö	& - \frac{\hbar ^2}{2m} \frac{\partial^2 \Psi (x, t)}{\partial x^2} + V(x, t) \Psi (x, t) = i \hbar \frac{\partial \Psi (x, t)}{\partial t} \\ \hline
+Todennäköisyystulkinta (Kööpenhamina)	& P(x) dx = | \psi | ^2 dx \\ \hline
+Normalisointiehto			& \int_{-\infty}^{\infty} \Psi^* \Psi dx = 1 \\ \hline
+\end{taulukko}
+
+
