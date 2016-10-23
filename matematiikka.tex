@@ -5,36 +5,6 @@
 
 \chapter{Merkintöjä}
 
-%-----
-\iffalse
-\chapter{Alkulukuja}
-% https://www.cs.cmu.edu/~dst/DeCSS/Gallery/Stego/illegal-primes.html
-4856507896573978293098418946942861377074420873513579240196520736 \\
-6869851340104723744696879743992611751097377770102744752804905883 \\
-1384037549709987909653955227011712157025974666993240226834596619 \\
-6060348517424977358468518855674570257125474999648219418465571008 \\
-4119086259716947970799152004866709975923596061320725973797993618 \\
-8606316914473588300245336972781813914797955513399949394882899846 \\
-9178361001825978901031601961835034344895687053845208538045842415 \\
-6548248893338047475871128339598968522325446084089711197712769412 \\
-0795862440547161321005006459820176961771809478113622002723448272 \\
-2493232595472346880029277764979061481298404283457201463489685471 \\
-6908235473783566197218622496943162271666393905543024156473292485 \\
-5248991225739466548627140482117138124388217717602984125524464744 \\
-5055834628144883356319027253195904392838737640739168912579240550 \\
-1562088978716337599910788708490815909754801928576845198859630532 \\
-3823490558092032999603234471140776019847163531161713078576084862 \\
-2363702835701049612595681846785965333100770179916146744725492728 \\
-3348691600064758591746278121269007351830924153010630289329566584 \\
-3662000800476778967984382090797619859493646309380586336721469695 \\
-9750279687712057249966669805614533820741203159337703099491527469 \\
-1835659376210222006812679827344576093802030447912277498091795593 \\
-8387121000588766689258448700470772552497060444652127130404321182 \\
-610103591186476662963858495087448497373476861420880529443 \\
-Huomioithan, että tämän sivun hallussapito on laitonta Yhdysvalloissa.
-\fi
-%-----
-
 \chapter{Differentiaali- ja integraalilaskenta}
 
 \section{Derivointi}
@@ -42,11 +12,11 @@ Huomioithan, että tämän sivun hallussapito on laitonta Yhdysvalloissa.
 \section{Integrointi}
 
 
-\chapter{Vektorit ja matriisit \cite{MAT-60000}}
+\chapter{Vektorit ja matriisit}
 
 \section{Vektorit}
 
-\begin{taulukko}{Vektorien perusteet}
+\begin{taulukko}{Vektorien perusteet \cite[s. 2-6]{MAT-60000}}
 Vektori						& \bm{x} = \begin{matriisi} x_1 \\ x_2 \\ \vdots \\ x_n \end{matriisi} \\ \hline
 Luonnolliset kantavektorit	& \bm{e}_i = \begin{matriisi} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{matriisi}, \qquad i \in \mathbb{Z}^+ \\ \hline
 Nollavektori				& \bm{0} = \begin{matriisi} 0 \\ \vdots \\ 0 \end{matriisi} \\ \hline
@@ -57,7 +27,7 @@ Vektorien summa				& \bm{x} + \bm{y} = \begin{matriisi} x_1 \\ x_2 \\ \vdots \\ 
 Vektorien erotus			& \bm{x} - \bm{y} = \bm{x} + (-\bm{y}) \\ \hline
 \end{taulukko}
 
-Vektoriavaruuksien aksioomat
+Vektoriavaruuksien aksioomat \cite[s. 8]{MAT-60000}
 \begin{align*}
 (1)	\quad & \bm{x} + \bm{y} = \bm{y} + \bm{x} \\
 (2)	\quad & (\bm{x} + \bm{y}) + \bm{z} = \bm{x} + (\bm{y} + \bm{z}) \\
@@ -69,7 +39,7 @@ Vektoriavaruuksien aksioomat
 (8) \quad & 1 \bm{x} = \bm{x}
 \end{align*}
 
-\begin{taulukko}{Sisätulo ja normi}
+\begin{taulukko}{Sisätulo ja normi \cite[s. 9-16]{MAT-60000}}
 Sisätulo					& \sisatulo{x}{y} = \sum^n_{i=1} \overline{x_i} y_i = \bm{x}^* \bm{y} \\ \hline
 Sisätulon perusominaisuudet	& (1) \quad \sisatulo{x}{y} \geq 0 \land (\sisatulo{x}{y} = 0 \rightarrow \bm{x} = \bm{0}) \\
 							& (2) \quad \langle \bm{x} + \bm{y}, \bm{z} \rangle = \sisatulo{x}{z} + \sisatulo{y}{z} \\
@@ -92,7 +62,7 @@ Vektorien välinen kulma		& \cos(\phi) = \frac{\sisatulo{x}{y}}{|| \bm{x} || \cd
 
 \section{Matriisit}
 
-\begin{taulukko}{Matriisien perusteet}
+\begin{taulukko}{Matriisien perusteet \cite[s. 16-26]{MAT-60000}}
 Lineaarikuvaus				& L(a \bm{x} + b \bm{y}) = a L(\bm{x}) + b L({\bm{y})} \\ \hline
 Matriisin indeksointi		& A=[a_{ij}]^{m\times n} = 
                 			\begin{matriisi} a_{11}  & a_{12}  & \dots  & a_{1n} \\ 
@@ -122,7 +92,7 @@ Neliömatriisin potenssit	& A^k = AA \cdots A \\ \hline
 \end{taulukko}
 
 
-\begin{taulukko}{Matriisityyppejä}
+\begin{taulukko}{Matriisityyppejä \cite[s. 18-21, 34]{MAT-60000}}
 Identiteettimatriisi		& I = \begin{matriisi}
 							\bm{e}_1, \bm{e}_2, \ldots, \bm{e}_n
 							\end{matriisi} = 
@@ -193,7 +163,7 @@ Permutaatiomatriisi			& P = \begin{matriisi}
 \end{taulukko}
 
 
-\begin{taulukko}{Transpoosi ja konjugaattitranspoosi}
+\begin{taulukko}{Transpoosi ja konjugaattitranspoosi \cite[s. 21, 26]{MAT-60000}}
 Transpoosi					& A^T = (a_{ji})_{n \times m} =
 							\begin{matriisi}
                             a_{11} & a_{21} & \cdots & a_{m1} \\
@@ -220,7 +190,7 @@ Konjugaattitranspoosille	& (AB)^* = B^* A^* \\
 \end{taulukko}
 
 
-\begin{taulukko}{Matriisien ominaisuuksia}
+\begin{taulukko}{Matriisien ominaisuuksia \cite[s. 27-30]{MAT-60000}}
 Kommutoivuus				& AB = BA \\ \hline
 
 Symmetrisyys				& A = A^T \\
@@ -241,13 +211,13 @@ Inverssi					& A A^{-1} = I = A^{-1} A \\
 \end{taulukko}
 
 
-\begin{taulukko}{Lineaarinen yhtälöryhmä}
+\begin{taulukko}{Lineaarinen yhtälöryhmä \cite[s. 31]{MAT-60000}}
 Lineaarinen yhtälöryhmä		& A \bm{x} = \bm{b} \\
 							& \bm{x} = A^{-1} \bm{b} \\ \hline
 \end{taulukko}
 
 
-\begin{taulukko}{Hermiittisille matriiseille}
+\begin{taulukko}{Hermiittisille matriiseille \cite[s. 35]{MAT-60000}}
 Positiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle > 0, \forall \bm{x} \neq \bm{0} \\
 Positiivisesti semidefiniitti	& \langle \bm{x}, A \bm{x}\rangle \geq 0, \forall \bm{x} \\
 Negatiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle < 0, \forall \bm{x} \neq \bm{0} \\
@@ -256,7 +226,7 @@ Indefiniitti					& \text{Jos ei ole mitään näistä} \\ \hline
 \end{taulukko}
 
 
-\begin{taulukko}{LU-hajotelma}
+\begin{taulukko}{LU-hajotelma \cite[s. 45-56]{MAT-60000}}
 LU-hajotelma	& A = LU \\
 				& L_k = I - \bm{l}_k \bm{e}^T_k \\
                 & \bm{l}_k = \frac{1}{x_k} \begin{matriisi} 0 \\ \vdots \\ 0 \\ x_{k+1} \\ \vdots \\ x_n \end{matriisi}, x_k \neq 0 \\
@@ -271,7 +241,7 @@ Lineaarisen yhtälöryhmän ratkaiseminen	& A \bm{x} = P^T LU \bm{x} = \bm{b} \\
 \end{taulukko}
 
 
-\begin{taulukko}{Aliavaruus}
+\begin{taulukko}{Aliavaruus \cite[s. 59-83]{MAT-60000}}
 Aliavaruus					& \alpha \bm{x} + \beta \bm{y} \in S \quad \forall \bm{x}, \bm{y} \in \mathcal{S} \\
 Arvojoukko (kuva-avaruus)	& \mathcal{R} (A) = \{y | \exists \bm{x} \in \mathbb{F}^n s.e. \bm{y} = A \bm{x} \} \in \mathbb{F}^m \\
 Ydin (nolla-avaruus)		& \mathcal{N} (A) = \{ \bm{x} | A \bm{x} = \bm{0} \} \\ \hline
@@ -290,7 +260,7 @@ Projektorimatriisi			& P^2 = P \\
 \end{taulukko}
 
 
-\begin{taulukko}{Ominaisarvot ja -vektorit}
+\begin{taulukko}{Ominaisarvot ja -vektorit \cite[s. 90-100]{MAT-60000}}
 Ominaisarvot ja -vektorit	& A \bm{x} = \lambda \bm{x}, \bm{x} \neq \bm{0} \\
 Ominaisarvot				& \det (A - \lambda I) = 0 \\
 Karakteristinen polynomi	& \prod^n_{k=1} (\lambda - \lambda_k) \\
@@ -305,7 +275,7 @@ Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\ \hline
 \end{taulukko}
 
 
-\begin{taulukko}{Jordanin kanoninen muoto}
+\begin{taulukko}{Jordanin kanoninen muoto \cite[s. 101-107]{MAT-60000}}
 				& A = SJS^{-1} \\
 				& J = diag(J_1, J_2, \ldots, J_p) \\
 Defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
@@ -325,7 +295,7 @@ Käyttöohje		& \text{Etsi } \sigma (A) \\
 \end{taulukko}
 
 
-\begin{taulukko}{Singulaariarvohajotelma}
+\begin{taulukko}{Singulaariarvohajotelma \cite[s. 117-128]{MAT-60000}}
 Singulaariarvohajotelma		& U^*AV = \Lambda \\
 							& A = U \Lambda V^* \\
 							& \Lambda = diag(\sigma_1, \sigma_2, \ldots , \sigma_r, 0, \ldots, 0) \\
