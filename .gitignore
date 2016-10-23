@@ -1,0 +1,6 @@
+# The purpose of this file is to prevent accidental uploads of unnecessary files
+
+*.aux
+*.dvi
+*.toc
+
