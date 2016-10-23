@@ -17,7 +17,7 @@
 \usepackage{pslatex}	% Parantaa pdf:n ulkonäköä
 % \usepackage{xkeyval}	% Parametrit omille komennoille
 
-% Estetään unicode non-breaking space -merkin aiheuttamat ongelmat
+% Ehkäistään unicode non-breaking space -merkin aiheuttamat ongelmat
 \DeclareUnicodeCharacter{00A0}{UNICODEVIRHE}
 
 % Komentomäärittelyt
@@ -27,6 +27,17 @@
 \caption{#1}
 \setlength{\extrarowheight}{10pt}
 \begin{tabular}{| l | >{$\displaystyle} l <{$} |} \hline
+}{
+\end{tabular}
+\end{table}
+}
+
+\newenvironment{kaavataulukko}[1]{
+\begin{table}[!ht]
+\centering
+\caption{#1}
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |} \hline
 }{
 \end{tabular}
 \end{table}

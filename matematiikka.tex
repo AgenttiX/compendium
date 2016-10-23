@@ -5,6 +5,110 @@
 
 \chapter{Merkintöjä}
 
+\begin{table}[ht!]
+\centering
+\caption{Kreikkalaiset aakkoset \cite[s. 8]{MAOL}, \cite[sisäkansi]{ModernPhysics}}
+\begin{tabular}{  >{$} l <{$}  >{$} l <{$} l l} \hline
+\text{Iso}			& \text{Pieni}		& Nimi suomeksi	& Nimi englanniksi \\ \hline
+\text{A}	& \alpha	& alfa			& alpha \\
+\text{B}	& \beta		& beeta			& beta \\
+\Gamma		& \gamma	& gamma			& gamma \\
+\Delta		& \delta	& delta			& delta \\
+\text{E}	& \epsilon, \varepsilon	& epsilon		& epsilon \\
+\text{Z}	& \zeta		& zeeta			& zeta \\
+\text{H}	& \eta		& eeta			& eta \\
+\Theta		& \theta, \vartheta	& theeta		& theta \\
+\text{I}	& \iota		& ioota			& iota \\
+\text{K}	& \kappa	& kappa			& kappa \\
+\Lambda		& \lambda	& lambda		& lambda \\
+\text{M}	& \mu		& myy			& mu \\
+\text{N}	& \nu		& nyy			& nu \\
+\Xi			& \xi		& ksii			& xi \\
+\text{O}	& o	& omikron		& omicron \\
+\Pi			& \pi		& pii			& pi \\
+\text{P}	& \rho		& rhoo			& rho \\
+\text{T}	& \tau		& tau			& tau \\
+\Upsilon, \text{Y}	& \upsilon	& ypsilon	& upsilon \\
+\Phi	& \phi, \varphi	& fii			& phi \\
+\text{X}	& \chi		& khii			& chi \\
+\Psi		& \psi		& psii			& psi \\
+\Omega		& \omega	& oomega		& omega \\
+\end{tabular}
+\end{table}
+
+\chapter{Logiikka}
+
+\begin{table}[ht!]
+\centering
+\caption{Loogisia operaatioita \cite[s. 6, 9]{MAT-01160}}
+\begin{tabular}{
+>{$} l <{$}  >{$} l <{$} |
+>{$} l <{$}  >{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}
+}
+p & q & \neg p	& p \land q	& p \lor q	& p \rightarrow q	& p \leftrightarrow q	& \overline{p}	& pq	& p + q \\ \hline
+1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+\end{tabular}
+\end{table}
+
+
+\begin{taulukko}{Päättelysääntöjä \cite[s. 8]{MAT-01160}}
+kaksoisnegaation poisto	& \neg \neg p \Leftrightarrow p \\
+						\hline
+vaihdantalait			& p \lor q \Leftrightarrow q \lor p \\
+						& p \land q \Leftrightarrow q \land p \\
+						\hline
+liitäntälait			& p \lor (q \lor r) \Leftrightarrow (p \lor q) \lor r \\
+						& p \land (q \land r) \Leftrightarrow (p \land q) \land r \\
+						\hline
+osittelulait			& p \land (q \lor r) \Leftrightarrow (p \land q) \lor (p \land r) \\
+						& p \lor (q \land r) \Leftrightarrow (p \lor q) \land (p \lor r) \\
+						\hline
+de Morganin lait		& \neg (p \lor q) \Leftrightarrow \neg p \land \neg q \\
+						& \neg (p \land q) \Leftrightarrow \neg p \lor \neg q \\
+						\hline
+ekvivalenssilaki		& (p \leftrightarrow q) \Leftrightarrow (p \rightarrow q) \land (q \rightarrow p) \\
+						\hline
+suora todistus			& p \land (p \rightarrow q) \Rightarrow q \\
+						\hline
+epäsuora todistus		& (p \rightarrow q) \Leftrightarrow (\neg q \rightarrow \neg p) \\
+						& \big( p \land ((p \land \neg q) \rightarrow (r \land \neg r)) \big) \Rightarrow q \\ \hline
+\end{taulukko}
+
+
+\begin{taulukko}{Joukko-operaatioiden laskulakeja \cite[s. 15]{MAT-01160}}
+	& (A^c)^c = A \\
+vaihdantalait	& A \cup B = B \cup A \\
+				& A \cap B = B \cap A \\
+				\hline
+liitäntälait	& A \cup (B \cup C) = (A \cup B) \cup C \\
+				& A \cap (B \cap C) = (A \cap B) \cap C \\
+				\hline
+osittelulait	& A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
+				& A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \\
+				\hline
+de Morganin lait	& (A \cup B)^c = A^c \cap B^c \\
+					& (A \cap B^c = A^c \cup B^c \\ \hline
+\end{taulukko}
+
+Negaation ja kvanttorin vaihtosääntö \cite[s. 17]{MAT-01160}
+\begin{align}
+\neg (\forall x : p(x)) &\Leftrightarrow \exists x : \neg p(x) \\
+\neg (\exists x : p(x)) &\Leftrightarrow \forall x : \neg p(x)
+\end{align}
+
+\chapter{Funktiot}
+
+\begin{taulukko}{Funktiot \cite[s. 25-26]{MAT-01160}}
+käänteisfunktio	& y = f(x) \Leftrightarrow x = f^{-1}(y) \\
+				& f^{-1}(f(x)) = x \quad \land \quad f(f^{-1}(y)) = y \\ \hline
+kuvaaja eli graafi ($f: A \rightarrow \mathbb{R}$)
+				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \}
+				= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\ \hline
+\end{taulukko}
+
 \chapter{Differentiaali- ja integraalilaskenta}
 
 \section{Derivointi}
