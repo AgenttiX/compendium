@@ -18,54 +18,54 @@
 % \usepackage{xkeyval}	% Parametrit omille komennoille
 
 % Ehkäistään unicode non-breaking space -merkin aiheuttamat ongelmat
-\DeclareUnicodeCharacter{00A0}{UNICODEVIRHE}
+\DeclareUnicodeCharacter{00A0}{UNICODE_ERROR}
 
 % Komentomäärittelyt
 \newenvironment{taulukko}[1]{
-\begin{table}[!ht]
-\centering
-\caption{#1}
-\setlength{\extrarowheight}{10pt}
-\begin{tabular}{| l | >{$\displaystyle} l <{$} |} \hline
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{10pt}
+	\begin{tabular}{| l | >{$\displaystyle} l <{$} |} \hline
 }{
-\end{tabular}
-\end{table}
+	\end{tabular}
+	\end{table}
 }
 
 \newenvironment{kaavataulukko}[1]{
-\begin{table}[!ht]
-\centering
-\caption{#1}
-\setlength{\extrarowheight}{10pt}
-\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |} \hline
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{10pt}
+	\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |} \hline
 }{
-\end{tabular}
-\end{table}
+	\end{tabular}
+	\end{table}
 }
 
 \newenvironment{matriisi}{
-\setlength{\extrarowheight}{0pt}
-\begin{bmatrix}
+	\setlength{\extrarowheight}{0pt}
+	\begin{bmatrix}
 }{
-\end{bmatrix}
+	\end{bmatrix}
 }
 
 \newcommand{\sisatulo}[2]{
-\langle \bm{#1}, \bm{#2} \rangle
+	\langle \bm{#1}, \bm{#2} \rangle
 }
 
 \newenvironment{yhtaloryhma}{
-\setlength{\extrarowheight}{0pt}
-\begin{cases}
+	\setlength{\extrarowheight}{0pt}
+	\begin{cases}
 }{
-\end{cases}
+	\end{cases}
 }
 %-----
 
 % Metadata
 \title{Linnunradan käsikirja teekkareille}
 \author{Tampereen teekkarit}
-\date{15.3.2016 - \the\day.\the\month.\the\year}
+\date{\the\day.\the\month.\the\year}
 
 
 \begin{document}
@@ -75,19 +75,27 @@
 \centering
 {\huge Linnunradan käsikirja teekkareille \par}
 % {\large Tampereen teekkarit \par}
-{15.3.2016 - \the\day.\the\month.\the\year \par}
+{\the\day.\the\month.\the\year \par}
 \vfill
 \includegraphics{by-sa.eps}
 \end{titlepage}
 
 % Esipuhe
-Maailma on kaavoja ja taulukoita täynnä, mutta ne ovat olleet hajallaan useissa kirjoissa, joista tiedon etsiminen on hidasta - varsinkin paperiversioista, joissa Ctrl+F ei luonnollisesti toimi. Lisäksi monet niistä ovat tiukkojen tekijänoikeuksien ja kopiokieltojen alaisia, vaikka tieto itsessään on vapaata. Nyt niille on vaihtoehto. Ole hyvä.
+Maailma on kaavoja ja taulukoita täynnä, mutta ne ovat olleet hajallaan useissa kirjoissa,
+joista tiedon etsiminen on hidasta - varsinkin paperiversioista, joissa Ctrl+F ei luonnollisesti toimi.
+Lisäksi monet niistä ovat tiukkojen tekijänoikeuksien ja kopiokieltojen alaisia,
+vaikka tieto itsessään on vapaata. Nyt niille on vaihtoehto. Ole hyvä.
+
+% Disclaimer
+Tämä kirja on opiskelijaprojekti, joten emme voi ottaa vastuuta mahdollisista virheistä.
+Toivommekin, että ilmoitat niistä vaikkapa GitHubin kautta, jotta voimme korjata ne.
 
 % Tekijät
 \begin{table*}[h!]
 \centering
 \begin{tabular}{ll}
-Mika \textit{AgenttiX} Mäki	& Projektin perustaja \\
+Mika \textit{AgenttiX} Mäki		& Projektin perustaja \\
+Daniel \textit{Ohems} Saarimäki \\
 % Esimerkki					& Lisäykset
 \end{tabular}
 \end{table*}
