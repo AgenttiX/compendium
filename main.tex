@@ -1,5 +1,5 @@
 % Dokumentin määrittely
-\documentclass[a4paper,12pt,finnish]{book}
+\documentclass[a4paper, finnish, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[finnish]{babel}
@@ -15,7 +15,27 @@
 \usepackage{graphicx}	% Kuvat
 \usepackage{hyperref}	% Hyperlinkit
 \usepackage{pslatex}	% Parantaa pdf:n ulkonäköä
+\usepackage{titletoc,tocloft} % For styling Table of Contents
+\usepackage{titlesec}	% For styling \part headers
 % \usepackage{xkeyval}	% Parametrit omille komennoille
+
+% Define Table of Contents style
+\setcounter{tocdepth}{2}
+\setlength{\cftsubsecindent}{4.5em}
+\dottedcontents{section}[3em]{}{1.3em}{.6em}
+
+% Define \part header style
+\titleclass{\part}{top} % Make \part like a chapter
+\titleformat{\part}
+[display]
+{\centering\normalfont\huge\bfseries}
+{\titlerule[3pt]\vspace{3pt}\titlerule[1pt]\vspace{3pt}\MakeUppercase{\partname} \thepart}
+{0pt}
+{\huge\MakeUppercase}
+[\vspace{-0.5em}\rule{\textwidth}{2pt}]
+
+% Define the amount of whitespace to come after \part
+\titlespacing*{\part}{0pt}{0pt}{40pt}
 
 % Ehkäistään unicode non-breaking space -merkin aiheuttamat ongelmat
 \DeclareUnicodeCharacter{00A0}{UNICODE_ERROR}
@@ -102,9 +122,14 @@ Daniel \textit{Ohems} Saarimäki \\
 
 % Lisenssi
 \vfill
-\href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International}
+{
+	\centering
+	\href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International}
+	\par
+}
 
 % Sisällysluettelo
+\pagebreak
 \tableofcontents
 
 % Itse asia
