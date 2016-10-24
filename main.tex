@@ -1,5 +1,5 @@
 % Dokumentin määrittely
-\documentclass[a4paper, finnish, 12pt]{article}
+\documentclass[a4paper, finnish, 12pt, twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[finnish]{babel}
@@ -17,6 +17,8 @@
 \usepackage{pslatex}	% Parantaa pdf:n ulkonäköä
 \usepackage{titletoc,tocloft} % For styling Table of Contents
 \usepackage{titlesec}	% For styling \part headers
+\usepackage{fancyhdr} % For custom header style
+\usepackage{emptypage} % Clears unwanted artifacts from empty pages
 % \usepackage{xkeyval}	% Parametrit omille komennoille
 
 % Define Table of Contents style
@@ -36,6 +38,19 @@
 
 % Define the amount of whitespace to come after \part
 \titlespacing*{\part}{0pt}{0pt}{40pt}
+
+% Custom command for fetching the part name to the header
+\newcommand*\parttitle{}
+\let\origpart\part
+\renewcommand*{\part}[2][]{%
+	\ifx\\#1\\% optional argument not present?
+		\origpart{#2}%
+		\renewcommand*\parttitle{#2}%
+	\else
+		\origpart[#1]{#2}%
+		\renewcommand*\parttitle{#1}%
+	\fi
+}
 
 % Ehkäistään unicode non-breaking space -merkin aiheuttamat ongelmat
 \DeclareUnicodeCharacter{00A0}{UNICODE_ERROR}
@@ -100,6 +115,8 @@
 \includegraphics{by-sa.eps}
 \end{titlepage}
 
+\pagenumbering{roman} % Start with roman numbers
+
 % Esipuhe
 Maailma on kaavoja ja taulukoita täynnä, mutta ne ovat olleet hajallaan useissa kirjoissa,
 joista tiedon etsiminen on hidasta - varsinkin paperiversioista, joissa Ctrl+F ei luonnollisesti toimi.
@@ -128,19 +145,35 @@ Daniel \textit{Ohems} Saarimäki \\
 	\par
 }
 
-% Sisällysluettelo
+% Table of Contents
 \pagebreak
 \tableofcontents
+\vfill % Prevents TOC from expanding to full page height
 
-% Itse asia
+% Define header
+\pagestyle{fancy}
+\fancyhead{} 
+\fancyhead[LO,RE]{\MakeUppercase{\textit{\parttitle}}} 
+\fancyhead[RO,LE]{\nouppercase{\textit{\rightmark}}}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+% Main content
+\pagebreak
+\pagenumbering{arabic} % Switch back to arabic page numbers
 \include{matematiikka}
 \include{fysiikka}
 \include{kemia}
 \include{tietotekniikka}
 
-% Lähdeluettelo
-\bibliography{lahdeluettelo}	% Lähdeluettelotiedosto
-\bibliographystyle{IEEEtran}	% Tyyli
+% Citations
+\pagebreak
+\renewcommand{\headrulewidth}{0pt} % Clear header line
+\fancyhead{}									% Clear header
+\setcounter{secnumdepth}{-1}	% Don't add numbers to chapters
+\addcontentsline{toc}{part}{Viitteet}
+\bibliography{lahdeluettelo}	% Citation source
+\bibliographystyle{IEEEtran}	% Citation style
 
 
 \end{document}
