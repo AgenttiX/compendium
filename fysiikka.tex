@@ -6,7 +6,7 @@
 
 
 
-\begin{kaavataulukko}{Etenemisiike}
+\begin{eqtable-units}{Etenemisiike}
 \textbf{Etenemisliike} &&& \\
 matka	&	x, s, r	& m		& x = vt \\
 nopeus	&	v	& m/s	& v = \frac{dx}{dt} \\
@@ -21,9 +21,9 @@ potentiaalienergia	& E_p, U	& J	& E_p = \frac{1}{2}kx^2 \\
 loppunopeus	& v	& m/s	& v = v_0 + at \\
 paikka		& x	& m		& x = x_0 + v_0 t + \frac{1}{2} at^2 \\
 \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
-\begin{kaavataulukko}{Pyörimisliike}
+\begin{eqtable-units}{Pyörimisliike}
 \textbf{Pyörimisliike} &&& \\
 kaaren pituus	& s			& m		& s = r \theta \\
 %								&&& \Delta \bm{s} = \Delta \bm{\theta} \times \bm{r} \\
@@ -44,10 +44,10 @@ potentiaalienergia	&E_p, U	& J	& E_p = \frac{1}{2} c \theta^2 \\
 loppukulmanopeus	& \omega & rad/s	& \omega = \omega_0 + \alpha t \\
 kiertokulma			& \theta	& rad	& \theta = \theta_0 + \omega_0 t + \frac{1}{2} \alpha t^2 \\
 \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
 
-\begin{kaavataulukko}{Voima, energia}
+\begin{eqtable-units}{Voima, energia}
 \textbf{Voima} & F	& N	& \\
 Newtonin gravitaatiolaki	&&& \bm{F} = -G \frac{m_1 m_2}{r^2} \hat{\bm{r}} \\
 homogeeninen gravitaatiokenttä	&&& \bm{g} = \frac{\bm{F}}{m} \\
@@ -73,10 +73,10 @@ mekaaninen hyötysuhde	& \eta	&& \eta = \frac{E_a}{E_o} = \frac{P_a}{P_o} \\
 poikkeama	&&& x(t) = A \sin(\omega t + \phi ) \\
 jaksonaika	&&& T = 2 \pi \sqrt{\frac{m}{k}} \\
 \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
 
-\begin{kaavataulukko}{Heilureita ja hitausmomentteja}
+\begin{eqtable-units}{Heilureita ja hitausmomentteja}
 \textbf{Heilahdusaika} &&& \\
 matemaattinen heiluri	&&& T = 2 \pi \sqrt{\frac{l}{g}} \\
 fysikaalinen heiluri	&&& T = 2 \pi \sqrt{\frac{I_A}{mgl}} \\
@@ -96,9 +96,9 @@ suorakulmainen levy	&&& I = \frac{1}{12}m(a^2+b^2) \\
 umpinainen pallo	&&& I = \frac{2}{5} mr^2 \\
 ohutseinäinen pallo	&&& I = \frac{2}{3}mr^2 \\ \hline
 Steinerin sääntö (akselin siirto)	&&& I_A = I_P + ma^2 \\ \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
-\begin{kaavataulukko}{Jatkumon mekaniikkaa \cite[TESTI]{MAOL}}
+\begin{eqtable-units}{Jatkumon mekaniikkaa \cite[TESTI]{MAOL}}
 tiheys	& \rho & kg/m$^3$	& \rho = \frac{m}{V} \\
 jännitys	& \sigma & N/$^2$ & \sigma = \frac{F}{A} \\
 Hooken laki, kimmoisuus		& E	& N/m$^2$	& \frac{F}{A} = E \frac{\Delta l}{l} \\
@@ -115,10 +115,10 @@ voima	& F	& N	& F = \frac{\eta A v}{d} \\
 \hline
 Bernoullin yhtälö	&&& p_0 + \frac{1}{2} \rho v^2 + h \rho g = vakio \\
 \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
 
-\begin{kaavataulukko}{Aaltoliike ja valo-oppi \cite{MAOL}}
+\begin{eqtable-units}{Aaltoliike ja valo-oppi \cite{MAOL}}
 Aaltoliikkeen nopeus					&&& v = f \lambda \\
 huojuntataajuus							&&& f = |f_1 - f_2 | \\
 intensiteetti			& I	& W/m$^2$	& I = \frac{P}{A} \\
@@ -147,13 +147,13 @@ valovoima	& I	& cd	& I = \frac{\Phi}{\omega} \\
 luminanssi	& L	& cd/m$^2$	& L = \frac{I}{A} \\
 valovirta	& \Phi	& lm	& \Phi = I \omega \\
 valaistusvoimakkuus	& E	& lx	& E = \frac{\Phi}{A} \\ \hline
-\end{kaavataulukko}
+\end{eqtable-units}
 
 
 
 \subsection{Sähkömagnetismi}
 
-\begin{taulukko}{Sähkömagnetismi \cite{UPhysics}}
+\begin{eqtable}{Sähkömagnetismi \cite{UPhysics}}
 \textbf{Maxwellin yhtälöt} & \\
 Gaussin laki sähkökentille		& \oiint_S \bm{D} \cdot d\bm{A} = \sum q \\
 Gaussin laki magneettikentille	& \oiint_S \bm{B} \cdot d\bm{A} = 0 \\
@@ -163,7 +163,7 @@ Faradayn laki					& \oint_C \bm{E} \cdot d\bm{l} = - \frac{d}{dt} \iint_S \bm{B}
 & E = vB \\
 Aaltoyhtälö	& \frac{\partial^2 H}{\partial z^2} = \mu \epsilon \frac{\partial^2 H}{\partial t^2} \\
 \hline
-\end{taulukko}
+\end{eqtable}
 
 
 
@@ -190,33 +190,33 @@ H(\bm{r}, \bm{p}) = \frac{p^2}{2m} + U(\bm{r})	& H(\bm{r}, \bm{p}) = \sqrt{c^2p^
 
 \subsection{Varhainen kvanttimekaniikka}
 
-\begin{taulukko}{Mustan kappaleen säteily \cite[s. 124-128]{ModernPhysics}}
+\begin{eqtable}{Mustan kappaleen säteily \cite[s. 124-128]{ModernPhysics}}
 Stefanin-Boltzmannin laki	& R = \sigma T^4 (=I=\frac{P}{A})\\ \hline
 Lämpötilan ja kin. energ. yhteys & E_{ave} = kT \\ \hline
 Wienin siirtymälaki			& \lambda_m T = 2,898 \cdot 10^{-3} m \cdot K \\ \hline
 Rayleigh-Jeans				& u( \lambda ) = kT n( \lambda ) = \frac{8 \pi kT}{\lambda^4} \\ \hline
 Maxwell-Boltzmann-jakauma	& \phi (E) = A e^{-\frac{E}{kT}} \\ \hline
 Planckin laki				& u(\lambda) = \frac{8 \pi hc \lambda^{-5}}{e^{\frac{hc}{\lambda kT}} - 1} \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
-\begin{taulukko}{Comptonin sironta \cite[s. 142]{ModernPhysics}}
+\begin{eqtable}{Comptonin sironta \cite[s. 142]{ModernPhysics}}
 Comptonin yhtälö			& \Delta \lambda = \frac{h}{mc}(1 - \cos \theta ) \\ \hline
 Comptonin aallonpituus		& \lambda_c = \frac{h}{mc} \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
-\begin{taulukko}{Rutherfordin sironta \cite[s. 160-163]{ModernPhysics}}
+\begin{eqtable}{Rutherfordin sironta \cite[s. 160-163]{ModernPhysics}}
 Törmäysparametri			& b = \frac{k q_\alpha Q}{m_\alpha v^2} \cot \frac{\theta}{2} \\ \hline
 Yli kulmaan $\theta$ siroavien osuus	& f = \pi b^2 nt \\ \hline
 Detektorilla havaittujen hiukkasten määrä	& \Delta N = ( \frac{I_0 A_{sc} nt}{r^2} ) ( \frac{kZe^2}{2 E_k} ) \frac{1}{\sin^4 \frac{\theta}{2}} \\ \hline
 Ydintä tilavuudessa	(yksiköt!) & n = \frac{\rho N_A}{M} \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
-% Jos löydät jostakin tämän artikkelin:
+% If you somehow find this article:
 % Humphreys, C.J. (1953), "The Sixth Series in the Spectrum of Atomic Hydrogen", J. Research Natl. Bur. Standards
-% niin se kannattaisi kenties merkitä lähteeksi. Toistaiseksi tieto on Wikipediasta
+% then please add it as the source. So far the source of this information is Wikipedia:
 % https://en.wikipedia.org/wiki/Hydrogen_spectral_series
 \begin{table}[ht!]
 \centering
@@ -232,24 +232,24 @@ Ydintä tilavuudessa	(yksiköt!) & n = \frac{\rho N_A}{M} \\ \hline
 \end{table}
 
 
-\begin{taulukko}{Bohrin atomimalli \cite[s. 166-171]{ModernPhysics}}
+\begin{eqtable}{Bohrin atomimalli \cite[s. 166-171]{ModernPhysics}}
 Elektronin ratanopeus	& v = \sqrt{ \frac{kZe^2}{mr}} \\ \hline
 Kulmaliikemäärän kvantittuminen	& | \mathbf{L} | = n \hbar, n \in \mathbb{N} \\ \hline
 Atomin energiatilat			& E_n = -\frac{mk^2 z^2 e^4}{2 \hbar^2 n^2} = -\frac{z^2 E_0}{n^2} \\ \hline
 Spektriviivat (yleistetty Rydberg-Ritz)	& \frac{1}{\lambda} = Z^2 R ( \frac{1}{n_f^2} - \frac{1}{n_i^2}) \\ \hline
 Redusoitu massa					& \mu = \frac{mM}{m + M} \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
-\begin{taulukko}{Ytimellinen atomi \cite[s. 176-178]{ModernPhysics}}
+\begin{eqtable}{Ytimellinen atomi \cite[s. 176-178]{ModernPhysics}}
 Moseleyn laki	& \sqrt{f} = A_n (Z - b) \\ \hline
 				& A_n^2 = c R_\infty (1 - \frac{1}{n^2}) \\ \hline
 K$_\alpha$:lle	& n=2, b=1 \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
 
-\begin{taulukko}{Sekalaista}
+\begin{eqtable}{Sekalaista}
 Valosähköinen ilmiö			& eV_0 = E_{k max} = hf - \phi \\ \hline
 Braggin laki				& 2d \sin \theta = n \lambda \\ \hline
 Duane-Hund (jarrutussäteily)	& \lambda_{min} = \frac{1,24 \cdot 10^3 nm}{V (V)} \\
@@ -258,12 +258,12 @@ Ytimen säde	& r_d = \frac{k q_\alpha Q}{\frac{1}{2}m_\alpha v^2} \\ \hline
 Kulmaliikemäärän kvantittuminen	& L = mvr = n \hbar \\ \hline
 
 Davisson-Germer ASDF		& n \lambda = D sin \phi \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 
 \subsection{Kvanttimekaniikka}
 
-\begin{taulukko}{Aaltohiukkasdualismi \cite[s. 193-233]{ModernPhysics}}
+\begin{eqtable}{Aaltohiukkasdualismi \cite[s. 193-233]{ModernPhysics}}
 De Broglie -aallonpituus	& \lambda = \frac{h}{p} \\
 							& f = \frac{E}{h} \\ \hline
 Yleinen aaltoyhtälö (1D)	& \frac{d^2 y}{dx^2} = \frac{1}{v^2} \frac{d^2 y}{dt^2} \\
@@ -281,6 +281,6 @@ Nollapiste-energia          & E \geq \frac{h^2}{2mL^2} \\ \hline
 Schrödingerin aaltoyhtälö	& - \frac{\hbar ^2}{2m} \frac{\partial^2 \Psi (x, t)}{\partial x^2} + V(x, t) \Psi (x, t) = i \hbar \frac{\partial \Psi (x, t)}{\partial t} \\ \hline
 Todennäköisyystulkinta (Kööpenhamina)	& P(x) dx = | \psi | ^2 dx \\ \hline
 Normalisointiehto			& \int_{-\infty}^{\infty} \Psi^* \Psi dx = 1 \\ \hline
-\end{taulukko}
+\end{eqtable}
 
 

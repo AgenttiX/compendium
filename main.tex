@@ -1,25 +1,26 @@
-% Dokumentin määrittely
+% Document properties
 \documentclass[a4paper, finnish, 12pt, twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[finnish]{babel}
 
-% Käytettävät paketit
-\usepackage{amsmath}	% Yhtälöt
-\usepackage{amsfonts}	% ?
-\usepackage{amssymb}	% Symbolit, \mathbb{}
-\usepackage{array}		% Taulukot
-\usepackage{bm}			% Vektorien lihavointi
-\usepackage{cite}		% Lähdeviitteet
-\usepackage{esint}		% Kiertointegraalit \oint \oiint
-\usepackage{graphicx}	% Kuvat
-\usepackage{hyperref}	% Hyperlinkit
-\usepackage{pslatex}	% Parantaa pdf:n ulkonäköä
+% LaTeX Packages
+% Sorted by name
+\usepackage{amsmath}	% Equations
+\usepackage{amsfonts}	% Just in case to ensure better symbol fonts
+\usepackage{amssymb}	% Mathematical symbols, \mathbb{}
+\usepackage{array}		% Arrays
+\usepackage{bm}			% Bold vector symbols
+\usepackage{cite}		% Source citations
+\usepackage{emptypage} 	% Clears unwanted artifacts from empty pages
+\usepackage{esint}		% Symbols for integrals over closed lines (kiertointegraali) \oint \oiint
+\usepackage{fancyhdr} 	% For custom header style
+\usepackage{graphicx}	% For including pictures
+\usepackage{hyperref}	% Hyperlinks
+\usepackage{pslatex}	% Makes the PDF output look better
 \usepackage{titletoc,tocloft} % For styling Table of Contents
 \usepackage{titlesec}	% For styling \part headers
-\usepackage{fancyhdr} % For custom header style
-\usepackage{emptypage} % Clears unwanted artifacts from empty pages
-% \usepackage{xkeyval}	% Parametrit omille komennoille
+
 
 % Define Table of Contents style
 \setcounter{tocdepth}{2}
@@ -52,11 +53,18 @@
 	\fi
 }
 
-% Ehkäistään unicode non-breaking space -merkin aiheuttamat ongelmat
+% Preventing problems caused by the Unicode non-breaking space character
+% Without this declaration the compiler would crash if the user has inserted such character by mistake
+% Now it just generates an error text
 \DeclareUnicodeCharacter{00A0}{UNICODE_ERROR}
 
-% Komentomäärittelyt
-\newenvironment{taulukko}[1]{
+%-----
+% Environment and command definitions
+
+% It's highly recommended to use these whenever possible so that the style of the whole document can be changed from here
+
+% Basic table for label & equation
+\newenvironment{eqtable}[1]{
 	\begin{table}[!ht]
 	\centering
 	\caption{#1}
@@ -67,7 +75,8 @@
 	\end{table}
 }
 
-\newenvironment{kaavataulukko}[1]{
+% Basic table with columns for symbol and units
+\newenvironment{eqtable-units}[1]{
 	\begin{table}[!ht]
 	\centering
 	\caption{#1}
@@ -78,26 +87,30 @@
 	\end{table}
 }
 
-\newenvironment{matriisi}{
+% Matrix with style that can be changed from here
+\newenvironment{styledmatrix}{
 	\setlength{\extrarowheight}{0pt}
 	\begin{bmatrix}
 }{
 	\end{bmatrix}
 }
 
-\newcommand{\sisatulo}[2]{
-	\langle \bm{#1}, \bm{#2} \rangle
-}
-
-\newenvironment{yhtaloryhma}{
+% Systems of multiple equations (yhtälöryhmä)
+\newenvironment{eqgroup}{
 	\setlength{\extrarowheight}{0pt}
 	\begin{cases}
 }{
 	\end{cases}
 }
+
+% Inner product
+\newcommand{\innerp}[2]{
+	\langle \bm{#1}, \bm{#2} \rangle
+}
+
 %-----
 
-% Metadata
+% Document metadata
 \title{Linnunradan käsikirja teekkareille}
 \author{Tampereen teekkarit}
 \date{\the\day.\the\month.\the\year}
@@ -105,7 +118,7 @@
 
 \begin{document}
 
-% Otsikkosivu
+% Title page
 \begin{titlepage}
 \centering
 {\huge Linnunradan käsikirja teekkareille \par}
@@ -117,7 +130,7 @@
 
 \pagenumbering{roman} % Start with roman numbers
 
-% Esipuhe
+% Foreword
 Maailma on kaavoja ja taulukoita täynnä, mutta ne ovat olleet hajallaan useissa kirjoissa,
 joista tiedon etsiminen on hidasta - varsinkin paperiversioista, joissa Ctrl+F ei luonnollisesti toimi.
 Lisäksi monet niistä ovat tiukkojen tekijänoikeuksien ja kopiokieltojen alaisia,
@@ -127,17 +140,17 @@ vaikka tieto itsessään on vapaata. Nyt niille on vaihtoehto. Ole hyvä.
 Tämä kirja on opiskelijaprojekti, joten emme voi ottaa vastuuta mahdollisista virheistä.
 Toivommekin, että ilmoitat niistä vaikkapa GitHubin kautta, jotta voimme korjata ne.
 
-% Tekijät
+% Credits
 \begin{table*}[h!]
 \centering
 \begin{tabular}{ll}
 Mika \textit{AgenttiX} Mäki		& Projektin perustaja \\
 Daniel \textit{Ohems} Saarimäki \\
-% Esimerkki					& Lisäykset
+% Add name here					% Add title here
 \end{tabular}
 \end{table*}
 
-% Lisenssi
+% License
 \vfill
 {
 	\centering
@@ -168,12 +181,12 @@ Daniel \textit{Ohems} Saarimäki \\
 
 % Citations
 \pagebreak
-\renewcommand{\headrulewidth}{0pt} % Clear header line
-\fancyhead{}									% Clear header
-\setcounter{secnumdepth}{-1}	% Don't add numbers to chapters
+\renewcommand{\headrulewidth}{0pt} 		% Clear header line
+\fancyhead{}							% Clear header
+\setcounter{secnumdepth}{-1}			% Don't add numbers to chapters
 \addcontentsline{toc}{part}{Viitteet}
-\bibliography{lahdeluettelo}	% Citation source
-\bibliographystyle{IEEEtran}	% Citation style
+\bibliography{lahdeluettelo}			% Citation source
+\bibliographystyle{IEEEtran}			% Citation style
 
 
 \end{document}
