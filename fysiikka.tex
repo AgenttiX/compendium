@@ -1,5 +1,71 @@
 \part{Fysiikka}
 
+\section{Vakioita}
+
+\begin{table}[!ht]
+\centering
+\caption{Universaalit luonnonvakiot \cite[s. 70-71]{MAOL} }
+\setlength{\extrarowheight}{5pt}
+\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |} \hline
+valon nopeus tyhjiössä		& c, c_0		& 2,9979 2458 $\cdot 10^8$ m/s \\
+gravitaatiovakio			& \gamma, G		& 6,674 28 $\cdot 10^{-11}$ Nm$^2$/kg$^2$ \\
+Planckin vakio				& h				& 6,626 0693 $\cdot 10^{-34}$ Js \\
+							& 				& 4,135 6654 $\cdot 10^{-15}$ eVs \\
+redusoitu Planckin vakio (Diracin vakio)	& \hbar = \frac{h}{2 \pi}	& 1,054 5717 $\cdot 10^{-34}$ Js \\
+											&							& 6,582 1159 $\cdot 10^{-16}$ eVs \\ % calculated h (eVs) / 2 \pi
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\centering
+\caption{Sähkömagneettisia vakioita \cite[s. 70-71]{MAOL} }
+\setlength{\extrarowheight}{5pt}
+\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |} \hline
+tyhjiön permeabiliteetti (magneettivakio)	& \mu_0	& $4 \pi \cdot 10^{-7} \frac{\text{Vs}}{\text{Am}}$ \\
+											& 		& 1,256 637 061 $\cdot 10^{-6}$ H/m \\
+tyhjiön permittiivisyys (sähkövakio)		& \epsilon_0 = \frac{1}{\mu_0 c^2}	& 8,854 187 818 $\cdot 10^{-12}$ F/m \\
+Coulombin lain vakio						& k_e = \frac{1}{4 \pi \epsilon_0}	& 8,987 551 787 $\cdot 10^9$ Nm$^2$/C$^2$ \\
+alkeisvaraus								& e		& 1,602 176 487 $\cdot 10^{-19}$ C \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\centering
+\caption{Atomi- ja ydinfysiikan vakioita \cite[s. 70-71]{MAOL} }
+\setlength{\extrarowheight}{5pt}
+\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |} \hline
+elektronin lepomassa	& m_e	& 9,109 3822 $\cdot 10^{-31}$ kg \\
+						&		& 5,485 7991 $\cdot 10^{-4}$ u \\
+protonin lepomassa		& m_p	& 1,672 6216 $\cdot 10^{-27}$ kg \\
+						&		& 1,007 2765 u \\
+neutronin lepomassa		& m_n	& 1,674 9273 $\cdot 10^{-27}$ kg \\
+						&		& 1,008 6650 u \\
+deuteronin lepomassa	& m_d	& 3,343 5835 $\cdot 10^{-27}$ kg \\
+						&		& 2,013 5532 u \\
+alfahiukkasen lepomassa	& m_\alpha	& 6,644 656 $\cdot 10^{-27}$ kg \\
+						&		& 4,001 5062 u \\
+Rydbergin vakio	\cite[s. 171]{ModernPhysics}		& R_\infty	& 1,097 3732 $\cdot 10^7$ 1/m \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\centering
+\caption{Sekalaisia vakioita \cite[s. 70-71]{MAOL} }
+\setlength{\extrarowheight}{5pt}
+\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |} \hline
+Faradayn vakio				& F			& 96 485,338 C/mol \\
+Stefanin-Boltzmannin vakio	& \sigma	& 5,670 400 $\cdot 10^{-8} \frac{\text{W}}{\text{m}^2 \text{K}^4} $ \\
+Wienin siirtymislain vakio	& b			& 2,897 768 $\cdot 10^{-3}$ m$\cdot$K \\
+Boltzmannin vakio			& k_b		& 1,380 6505 $\cdot 10^{-23}$ J/K \\
+moolinen kaasuvakio			& R			& 8,314 510 $\frac{\text{Pa} \cdot \text{m}^3}{\text{mol} \cdot \text{K}} $ \\
+							&			& 0,083 145 10 $\frac{\text{bar} \cdot \text{dm}^3}{\text{mol} \cdot \text{K}} $ \\
+\hline
+\end{tabular}
+\end{table}
+
 \section{Kaavoja}
 
 \subsection{Mekaniikka}
@@ -278,9 +344,29 @@ Epätarkkuusperiaate         & \Delta x \Delta p \sim \hbar \\
 							& \Delta x \Delta p \geq \frac{1}{2} \hbar \\
 							& \Delta E \Delta t \geq \frac{1}{2} \hbar \\ \hline
 Nollapiste-energia          & E \geq \frac{h^2}{2mL^2} \\ \hline
-Schrödingerin aaltoyhtälö	& - \frac{\hbar ^2}{2m} \frac{\partial^2 \Psi (x, t)}{\partial x^2} + V(x, t) \Psi (x, t) = i \hbar \frac{\partial \Psi (x, t)}{\partial t} \\ \hline
+Yleinen Schrödingerin aaltoyhtälö	& \hat{H} \Psi = E \Psi \\ \hline
+Yksiulotteinen Schrödinger	& - \frac{\hbar ^2}{2m} \frac{\partial^2 \Psi (x, t)}{\partial x^2} + V(x, t) \Psi (x, t) = i \hbar \frac{\partial \Psi (x, t)}{\partial t} \\ \hline
+Kolmiulotteinen Schrödinger	\cite[s. 41]{SSED} & - \frac{\hbar}{2m} \nabla^2 \Psi + V \Psi = -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} \\
+							& \nabla^2 \Psi = \frac{\partial^2 \Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2} \\ \hline
 Todennäköisyystulkinta (Kööpenhamina)	& P(x) dx = | \psi | ^2 dx \\ \hline
 Normalisointiehto			& \int_{-\infty}^{\infty} \Psi^* \Psi dx = 1 \\ \hline
 \end{eqtable}
 
+\begin{table}
+\centering
+\caption{Kvanttimekaanisia operaattoreita \cite[s. 40]{SSED}}
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{ >{$\displaystyle} l <{$} | >{$\displaystyle} l <{$} } \hline
+\text{Klassinen muuttuja}	& \text{Kvanttimekaaninen operaattori} \\ \hline
+x		& x \\
+f(x)	& f(x) \\
+p(x)	& \frac{\hbar}{i} \frac{\partial}{\partial x} \\
+E		& -\frac{\hbar}{i} \frac{\partial}{\partial t} \\
+\end{tabular}
+\end{table}
 
+
+\begin{eqtable}{Puolijohteet}
+Efektiivinen massa \cite[s. 73]{SSED}	& m^* = \frac{\hbar^2}{d^2 E / d \bm{k}^2} \\
+\hline
+\end{eqtable}
