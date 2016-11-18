@@ -15,6 +15,7 @@
 \usepackage{emptypage} 	% Clears unwanted artifacts from empty pages
 \usepackage{esint}		% Symbols for integrals over closed lines (kiertointegraali) \oint \oiint
 \usepackage{fancyhdr} 	% For custom header style
+\usepackage{gensymb}	% For degree sign
 \usepackage{graphicx}	% For including pictures
 \usepackage{hyperref}	% Hyperlinks
 \usepackage{pslatex}	% Makes the PDF output look better
@@ -63,14 +64,30 @@
 
 % It's highly recommended to use these whenever possible so that the style of the whole document can be changed from here
 
+% Basic table for physical constants
+\newenvironment{consttable}[1]{
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{5pt}
+	\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |}
+	\hline
+}{
+	\hline
+	\end{tabular}
+	\end{table}
+}
+
 % Basic table for label & equation
 \newenvironment{eqtable}[1]{
 	\begin{table}[!ht]
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{10pt}
-	\begin{tabular}{| l | >{$\displaystyle} l <{$} |} \hline
+	\begin{tabular}{| l | >{$\displaystyle} l <{$} |}
+	\hline
 }{
+	\hline
 	\end{tabular}
 	\end{table}
 }
@@ -81,8 +98,10 @@
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{10pt}
-	\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |} \hline
+	\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |}
+	\hline
 }{
+	\hline
 	\end{tabular}
 	\end{table}
 }

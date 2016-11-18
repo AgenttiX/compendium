@@ -5,7 +5,7 @@
 \begin{table}[ht!]
 \centering
 \caption{Kreikkalaiset aakkoset \cite[s. 8]{MAOL}, \cite[sisäkansi]{ModernPhysics}}
-\begin{tabular}{  >{$} l <{$}  >{$} l <{$} l l} \hline
+\begin{tabular}{ >{$} l <{$}  >{$} l <{$} l l } \hline
 \text{Iso}			& \text{Pieni}		& Nimi suomeksi	& Nimi englanniksi \\ \hline
 \text{A}	& \alpha	& alfa			& alpha \\
 \text{B}	& \beta		& beeta			& beta \\
@@ -71,7 +71,7 @@ ekvivalenssilaki		& (p \leftrightarrow q) \Leftrightarrow (p \rightarrow q) \lan
 suora todistus			& p \land (p \rightarrow q) \Rightarrow q \\
 						\hline
 epäsuora todistus		& (p \rightarrow q) \Leftrightarrow (\neg q \rightarrow \neg p) \\
-						& \big( p \land ((p \land \neg q) \rightarrow (r \land \neg r)) \big) \Rightarrow q \\ \hline
+						& \big( p \land ((p \land \neg q) \rightarrow (r \land \neg r)) \big) \Rightarrow q \\
 \end{eqtable}
 
 
@@ -87,14 +87,14 @@ osittelulait	& A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
 				& A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \\
 				\hline
 de Morganin lait	& (A \cup B)^c = A^c \cap B^c \\
-					& (A \cap B)^c = A^c \cup B^c \\ \hline
+					& (A \cap B)^c = A^c \cup B^c \\
 \end{eqtable}
 
 Negaation ja kvanttorin vaihtosääntö \cite[s. 17]{MAT-01160}
-\begin{align}
+\begin{align*}
 \neg (\forall x : p(x)) &\Leftrightarrow \exists x : \neg p(x) \\
 \neg (\exists x : p(x)) &\Leftrightarrow \forall x : \neg p(x)
-\end{align}
+\end{align*}
 
 \section{Funktiot}
 
@@ -103,15 +103,132 @@ käänteisfunktio	& y = f(x) \Leftrightarrow x = f^{-1}(y) \\
 				& f^{-1}(f(x)) = x \quad \land \quad f(f^{-1}(y)) = y \\ \hline
 kuvaaja eli graafi ($f: A \rightarrow \mathbb{R}$)
 				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \}
-				= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\ \hline
+				= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\
 \end{eqtable}
 
 \section{Differentiaali- ja integraalilaskenta}
 
 \subsection{Derivointi}
 
-\subsection{Integrointi}
+\begin{eqtable}{Derivaatan määritelmä \cite[s. 41]{MAOL} }
+derivaattafunktio			& f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h} \\
+derivaatta kohdassa $x_0$	& f'(x_0 = \lim_{h \rightarrow 0} \frac{f(x_0 + h)-f(x_0)}{h} = \lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0} \\
+\end{eqtable}
 
+Derivoimissääntöjä \cite[s. 41]{MAOL}
+\begin{align*}
+& Dk					= 0 \\
+& Dkf(x)				= kf'(x) \\
+& D(f(x) + g(x))		= f'(x) + g'(x) \\
+& Df(x)g(x)			= f'(x)g(x)+f(x)g'(x) \\
+& D \frac{f(x)}{g(x)}	= \frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2} \\
+& D g(f(x))			= g'(f(x))f'(x) \\
+& (f^{-1})'(y_0)		= \frac{1}{f'(x_0)}, \quad \text{jossa } y_0 = f(x_0)
+\end{align*}
+
+Derivoimiskaavoja \cite[s. 41]{MAOL}
+\begin{align*}
+& Dx^n	= nx^{n-1} \\
+& D(f(x))^n	= n(f(x))^{n-1} f'(x) \\
+& D \sin x	= \cos x \\
+& D \cos x	= -\sin x \\
+& D \tan x	= \frac{1}{\cos^2 x} = 1 + \tan^2 x \\
+& D e^x		= e^x \\
+& D a^x		= a^x \ln a, \quad a>0 \\
+& D \ln |x|	= \frac{1}{x} \\
+& D \log_a |x|	= \frac{1}{x \ln a}, \quad a>0, a \neq 1 \\
+& D \arcsin x	= \frac{1}{\sqrt{1-x^2}} \\
+& D \arccos x	= - \frac{1}{\sqrt{1-x^2}} \\
+& D \arctan x	= \frac{1}{1+x^2} \\
+\end{align*}
+
+\subsection{Integrointi}
+Määritelmä \cite[(1.8)]{MAT-01360}
+\begin{equation*}
+\int f'(x) dx = f(x) + C
+\end{equation*}
+
+\begin{eqtable}{Integroinnin ominaisuuksia}
+integroinnin lineaarisuus \cite[(1.10)]{MAT-01360}		& \int c f(x) dx = c \int f(x) dx, \quad c \in \mathbb{R} \\
+														& \int (f(x)+g(x))dx = \int f(x)dx + \int g(x)dx \\
+osittaisintegrointi \cite[(1.13)]{MAT-01360}			& \int f'(x)g(x)dx = f(x)g(x) - \int f(x)g'(x)dx \\
+integrointi sijoituksen avulla \cite[(1.18)]{MAT-01360}	& \int f(g(x))g'(x)dx = F(g(x)) + C \\
+\end{eqtable}
+
+\iffalse
+Integroimiskaavoja \cite[s.42]{MAOL}
+\begin{align*}
+& \int 0 dx = C \\
+& \int kdx = kx + C \\
+& \int f'(x)(f(x))^n dx = \frac{(f(x))^{n+1}}{n+1} + C, \quad n \neq -1 \\
+& \int \frac{f'(x)}{f(x)} dx = \ln |f(x)| + C, \quad f(x) \neq 0 \\
+& \int \sin x dx = - \cos x + C \\
+& \int \cos x dx = sin x + C \\
+& \int \tan x dx = - \ln | \cos x | + C \\
+& \int e^x dx = e^x + C \\
+& \int f'(x)e^{f(x)} dx = e^{f(x)} + C \\
+& \int a^x dx = \frac{a^x}{\ln a} + C, \quad a>0, a \neq 1 \\
+& \log_a |x| dx = (log_a e)(x \ln |x| - x) + C, \quad a>0, a \neq 1 \\
+& \int \frac{dx}{1+x^2} = \arctan x + C \\
+& \int \frac{dx}{\sqrt{1-x^2}} = \arcsin x + C
+\end{align*}
+\fi
+
+\begin{table}
+\centering
+\caption{Integroimiskaavoja \cite[s.130]{MAT-01360} }
+\setlength{\extrarowheight}{5pt}
+\begin{tabular}{| >{$} l <{$} | >{$} l <{$} | >{$} l <{$} | }
+\hline
+f(x)	& \int f(x) dx	& I \\
+\hline
+x^n, n \in \mathbb{Z} \setminus \{-1\}	& \frac{1}{n+1}x^{n+1} + C			& (-\infty,0) \text{ tai } (0,\infty), \text{ kun } n<0 \\
+										& 									& \mathbb{R}, \text{ kun } n \geq 0 \\
+x^a, a \in \mathbb{R} \setminus \{-1\}	& \frac{1}{a+1}x^{a+1} + C			& (0,\infty) \\
+\frac{1}{x}								& \ln |x| + C						& (-\infty,0) \lor (0,\infty) \\
+e^x										& e^x + C							& \mathbb{R} \\
+a^x, \quad a>0 \land a \neq 1			& \frac{a^x}{\ln a} + C				& \mathbb{R} \\
+\sin x									& -\cos x + C						& \mathbb{R} \\
+\cos x									& \sin x + C						& \mathbb{R} \\
+\tan x									& - \ln |\cos x| + C				& (- \frac{\pi}{2}+n\pi, \frac{\pi}{2}+n\pi), n \in \mathbb{Z} \\
+\cot x = \frac{1}{\tan x}				& \ln |\sin x| + C					& (n\pi, (n+1)\pi), n \in \mathbb{Z} \\
+\frac{1}{\cos^2 x}						& \tan x + C						& (- \frac{\pi}{2}+n\pi, \frac{\pi}{2}+n\pi), n \in \mathbb{Z} \\
+\frac{1}{\sin^2 x}						& -\cot x + C						& (n\pi, (n+1)\pi), n \in \mathbb{Z} \\
+\frac{1}{\sqrt{1-x^2}}					& \arcsin x + C						& (-1,1) \\
+\frac{1}{1+x^2}							& \arctan x + C						& \mathbb{R} \\
+\frac{1}{\sqrt{x^2+1}}					& \text{ar} \sinh x + C				& \mathbb{R} \\
+										& = \ln ( x + \sqrt(x^2+1)+C		& \\
+\frac{1}{\sqrt{x^2-1}}					& \text{ar} \cosh x + C				& (-\infty,-1) \lor (1, \infty) \\
+										& = \ln | x + \sqrt{x^2-1}|+C		& \\
+\frac{1}{1-x^2}							& \text{ar} \tanh x + C				& (-1,1) \\
+										& = \frac{1}{2} \ln \frac{x+1}{x-1} + C	& \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{eqtable}{Määrätty integraali \cite[s. 17-23]{MAT-01360} }
+% \cite[s. 17]{MAT-01360}
+Riemannin summa		& R = \sum^n_{i=1} f(x_i^*) \Delta x_i \\
+% \cite[(1.33)]{MAT-01360}
+määrätty integraali	 & I = \lim_{|P| \rightarrow 0} \sum^n_{i=1} f(x_i^*) \Delta x_i = \int_a^b f(x) dx = \int_a^b f \\
+% \cite[(1.42)]{MAT-01360}
+integraalilaskennan väliarvolause 	& f: [a,b] \rightarrow \mathbb{R} \text{ on jatkuva} \Rightarrow \exists c \in [a,b] :\\
+											& \int_a^b f(x) dx = f(c)(b-a) \\
+% \cite[(1.43)]{MAT-01360}
+integroituvan funktion keskiarvo 	& \hat{f} = \frac{1}{b-a} \int_a^b f(x)dx \\
+% cite[(1.44)]{MAT-01360}
+analyysin peruslause				& f: [a,b] \rightarrow \mathbb{R} \text{ on jatkuva} \\
+									& \Rightarrow F(x) = \int_a^x f(t) dt \text{ on derivoituva } \land F'(x) = f(x) \forall x \in [a,b] \\
+\end{eqtable}
+
+Määrätyn integraalin ominaisuuksia \cite[(1.38)]{MAT-01360}
+\begin{align*}
+(1) \quad & \int_a^b cf(x) dx = c \int_a^b f(x)dx \\
+(2) \quad & \int_a^b (f(x)+g(x))dx = \int_a^b f(x) dx + \int_a^b g(x) dx \\
+(3) \quad & \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx \quad (a<c<b) \\
+(4) \quad & \forall x \in [a,b]: f(x) \leq g(x) \Rightarrow \int_a^b f(x) dx \leq \int_a^b g(x) dx \\
+(5)	\quad & \Big| \int_a^b f(x) dx \Big| \leq \int_a^b |f(x)| dx \\
+\end{align*}
 
 \section{Vektorit ja matriisit}
 
@@ -125,7 +242,7 @@ Vektorien summa				& \bm{x} + \bm{y} = \begin{styledmatrix} x_1 \\ x_2 \\ \vdots
 							\begin{styledmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{styledmatrix} =
                             \begin{styledmatrix} x_1 + y_1 \\ x_2 + y_2 \\ \vdots \\ x_n + y_n \end{styledmatrix}
                             \\ \hline
-Vektorien erotus			& \bm{x} - \bm{y} = \bm{x} + (-\bm{y}) \\ \hline
+Vektorien erotus			& \bm{x} - \bm{y} = \bm{x} + (-\bm{y}) \\
 \end{eqtable}
 
 Vektoriavaruuksien aksioomat \cite[s. 8]{MAT-60000}
@@ -141,31 +258,31 @@ Vektoriavaruuksien aksioomat \cite[s. 8]{MAT-60000}
 \end{align*}
 
 \begin{eqtable}{Sisätulo ja normi \cite[s. 9-16]{MAT-60000}}
-Sisätulo					& \innerp{x}{y} = \sum^n_{i=1} \overline{x_i} y_i = \bm{x}^* \bm{y} \\ \hline
-Sisätulon perusominaisuudet	& (1) \quad \innerp{x}{y} \geq 0 \land (\innerp{x}{y} = 0 \rightarrow \bm{x} = \bm{0}) \\
+sisätulo					& \innerp{x}{y} = \sum^n_{i=1} \overline{x_i} y_i = \bm{x}^* \bm{y} \\ \hline
+sisätulon perusominaisuudet	& (1) \quad \innerp{x}{y} \geq 0 \land (\innerp{x}{y} = 0 \rightarrow \bm{x} = \bm{0}) \\
 							& (2) \quad \langle \bm{x} + \bm{y}, \bm{z} \rangle = \innerp{x}{z} + \innerp{y}{z} \\
                            	& (3) \quad \langle \bm{x}, \alpha \bm{y} \rangle = \alpha \innerp{x}{y} \\
                             & (4) \quad \innerp{x}{y} = \overline{\innerp{y}{x}} \\
                             & \forall \bm{x}, \bm{y}, \bm{z} \in \mathbb{C}^n, \alpha \in \mathbb{C} \\ \hline
-Ortogonaalisuus				& \innerp{x}{y} = 0 \\ \hline
+ortogonaalisuus				& \innerp{x}{y} = 0 \\ \hline
 Kroneckerin symboli			& \delta_{ij} \begin{eqgroup} 0 \quad i \neq j \\ 1 \quad i=j \end{eqgroup} \\ \hline
-Vektorijoukon ortogonaalisuus	& \langle \bm{x}_i, \bm{x}_j \rangle \begin{eqgroup} 0 \quad i \neq j \\ \neq 0 \quad i=j \end{eqgroup} \\
-Vektorijoukon ortonormaalius	& \langle \bm{x}_i, \bm{x}_j \rangle = \delta_{ij} \\ \hline
-Normi						& ||\bm{x}|| = \sqrt{\innerp{x}{x}} \\ \hline
-Normin ominaisuudet			& (1) \quad || \bm{x} || \geq 0 \land (|| \bm{x} || = 0 \leftrightarrow \bm{x} = \bm{0}) \\
+vektorijoukon ortogonaalisuus	& \langle \bm{x}_i, \bm{x}_j \rangle \begin{eqgroup} 0 \quad i \neq j \\ \neq 0 \quad i=j \end{eqgroup} \\
+vektorijoukon ortonormaalius	& \langle \bm{x}_i, \bm{x}_j \rangle = \delta_{ij} \\ \hline
+normi						& ||\bm{x}|| = \sqrt{\innerp{x}{x}} \\ \hline
+normin ominaisuudet			& (1) \quad || \bm{x} || \geq 0 \land (|| \bm{x} || = 0 \leftrightarrow \bm{x} = \bm{0}) \\
 							& (2) \quad || \alpha \bm{x} || = | \alpha | || \bm{x} || \quad \forall \alpha \in \mathbb{C}^n \\
-Kolmioepäyhtälö				& (3) \quad || \bm{x} + \bm{y} || \leq || \bm{x} || + || \bm{y} || \\ \hline
-Kolmioepäyhtälö alaspäin	& || \bm{x} - \bm{y} || \geq \big| || \bm{x} || - || \bm{y} || \big| \\ \hline
+kolmioepäyhtälö				& (3) \quad || \bm{x} + \bm{y} || \leq || \bm{x} || + || \bm{y} || \\ \hline
+kolmioepäyhtälö alaspäin	& || \bm{x} - \bm{y} || \geq \big| || \bm{x} || - || \bm{y} || \big| \\ \hline
 Cauchy-Schwarzin epäyhtälö	& |\innerp{x}{y}| \leq || \bm{x} || \cdot || \bm{y} || \\ \hline
-Vektorien välinen kulma		& \cos(\phi) = \frac{\innerp{x}{y}}{|| \bm{x} || \cdot || \bm{y} ||} \\ \hline
+vektorien välinen kulma		& \cos(\phi) = \frac{\innerp{x}{y}}{|| \bm{x} || \cdot || \bm{y} ||} \\
 \end{eqtable}
 
 
 \subsection{Matriisit}
 
 \begin{eqtable}{Matriisien perusteet \cite[s. 16-26]{MAT-60000}}
-Lineaarikuvaus				& L(a \bm{x} + b \bm{y}) = a L(\bm{x}) + b L({\bm{y})} \\ \hline
-Matriisin indeksointi		& A=[a_{ij}]^{m\times n} = 
+lineaarikuvaus				& L(a \bm{x} + b \bm{y}) = a L(\bm{x}) + b L({\bm{y})} \\ \hline
+matriisin indeksointi		& A=[a_{ij}]^{m\times n} = 
                 			\begin{styledmatrix} a_{11}  & a_{12}  & \dots  & a_{1n} \\ 
 							a_{21}  & a_{22}  & \dots  & a_{2n} \\ 
 							\vdots  & \vdots & \ddots & \vdots \\ 
@@ -174,27 +291,27 @@ Matriisin indeksointi		& A=[a_{ij}]^{m\times n} =
 							& \text{m on korkeus (vaakarivien määrä)} \\
                            	& \text{n on leveys (pystyrivien määrä)} \\ \hline
 
-Neliömatriisi				& m=n \\
-Korkea matriisi				& m>n \\
-Leveä matriisi				& m<n \\ \hline
-Sarakevektorit				& A = \begin{styledmatrix} \bm{a}_1, \bm{a}_2, \ldots, \bm{a}_n\end{styledmatrix} \\
-Vaakarivivektorit			& A = \begin{styledmatrix} \bm{a}^T_1 \\ \bm{a}^T_2 \\ \vdots \\ \bm{a}^T_m \end{styledmatrix} \\ \hline
-Neliömatriisin jälki		& \text{tr}(A) = \sum^n_{i=1} a_{ii} \text{ eli diagonaalialkioiden summa} \\ \hline
-Matriisien summa			& A + B = (a_{ij}) + (b_{ij}) = (a_{ij} + b_{ij}) \\
-Skalaarilla kertominen		& \alpha A = (\alpha a_{ij}) \\
-Matriisien erotus			& A - B = A + (-1)B = (a_{ij}) + (-b_{ij}) = (a_{ij} - b_{ij}) \\ \hline
-Matriisien tulo				& C = (c_{ij})_{m \times n} = \big( \sum^p_{k=1} a_{ik} b_{kj} \big)_{m \times n} \\ \hline
-Matriisien laskusäännöt		& (A+B)+C = A+(B+C) \\
+neliömatriisi				& m=n \\
+korkea matriisi				& m>n \\
+leveä matriisi				& m<n \\ \hline
+sarakevektorit				& A = \begin{styledmatrix} \bm{a}_1, \bm{a}_2, \ldots, \bm{a}_n\end{styledmatrix} \\
+vaakarivivektorit			& A = \begin{styledmatrix} \bm{a}^T_1 \\ \bm{a}^T_2 \\ \vdots \\ \bm{a}^T_m \end{styledmatrix} \\ \hline
+neliömatriisin jälki		& \text{tr}(A) = \sum^n_{i=1} a_{ii} \text{ eli diagonaalialkioiden summa} \\ \hline
+matriisien summa			& A + B = (a_{ij}) + (b_{ij}) = (a_{ij} + b_{ij}) \\
+skalaarilla kertominen		& \alpha A = (\alpha a_{ij}) \\
+matriisien erotus			& A - B = A + (-1)B = (a_{ij}) + (-b_{ij}) = (a_{ij} - b_{ij}) \\ \hline
+matriisien tulo				& C = (c_{ij})_{m \times n} = \big( \sum^p_{k=1} a_{ik} b_{kj} \big)_{m \times n} \\ \hline
+matriisien laskusäännöt		& (A+B)+C = A+(B+C) \\
 							& (AB)C = A(BC) \\
                             & A(B+C) = AB + AC \\
                             & (A+B)C = AC + BC \\
                             & A + B = B + A \\ \hline
-Neliömatriisin potenssit	& A^k = AA \cdots A \\ \hline
+neliömatriisin potenssit	& A^k = AA \cdots A \\
 \end{eqtable}
 
 
 \begin{eqtable}{Matriisityyppejä \cite[s. 18-21, 34]{MAT-60000}}
-Identiteettimatriisi		& I = \begin{styledmatrix}
+identiteettimatriisi		& I = \begin{styledmatrix}
 							\bm{e}_1, \bm{e}_2, \ldots, \bm{e}_n
 							\end{styledmatrix} = 
 							\begin{styledmatrix}
@@ -203,14 +320,14 @@ Identiteettimatriisi		& I = \begin{styledmatrix}
                             \vdots & \vdots & \ddots & \vdots \\
                             0 & 0 & \cdots & 1 \\
 							\end{styledmatrix} \\ \hline
-Lohkomatriisi				& A =
+lohkomatriisi				& A =
 							\begin{styledmatrix}
                             A_{11} & A_{12} & \cdots & A_{1q} \\
                             \vdots & & & \vdots \\
                             A_{p1} & A_{p2} & \cdots & A_{pq} \\
                             \end{styledmatrix} \\ \hline
                             
-Diagonaalimatriisi			& A = \text{diag}(a_{11}, a_{22}, \ldots, a_{nn}) = 
+diagonaalimatriisi			& A = \text{diag}(a_{11}, a_{22}, \ldots, a_{nn}) = 
 							\begin{styledmatrix}
                             a_{11} & 0 & \cdots & 0 \\
                             0 & a_{22} & \cdots & 0 \\
@@ -218,7 +335,7 @@ Diagonaalimatriisi			& A = \text{diag}(a_{11}, a_{22}, \ldots, a_{nn}) =
                             0 & 0 & \cdots & a_{nn}
                             \end{styledmatrix} \\ \hline
 
-Yläkolmiomatriisi			& (i>j \rightarrow a_{ij} = 0) \Leftrightarrow A =
+yläkolmiomatriisi			& (i>j \rightarrow a_{ij} = 0) \Leftrightarrow A =
 							\begin{styledmatrix}
                             a_{11} & a_{12} & \cdots & a_{1n} \\
                             0 & a_{22} & \cdots & a_{2n} \\
@@ -226,7 +343,7 @@ Yläkolmiomatriisi			& (i>j \rightarrow a_{ij} = 0) \Leftrightarrow A =
                             0 & 0 & \cdots & a_{mn}
                             \end{styledmatrix}
 							\\
-Alakolmiomatriisi			& (i<j \rightarrow a_{ij} = 0) \Leftrightarrow A = 
+alakolmiomatriisi			& (i<j \rightarrow a_{ij} = 0) \Leftrightarrow A = 
 							\begin{styledmatrix}
                             a_{11} & 0 & \cdots & 0 \\
                             a_{21} & a_{22} & \cdots & 0 \\
@@ -234,14 +351,14 @@ Alakolmiomatriisi			& (i<j \rightarrow a_{ij} = 0) \Leftrightarrow A =
                             a_{m1} & a_{m2} & \cdots & a_{mn}
                             \end{styledmatrix}
                             \\ \hline
-Lohkodiagonaalinen matriisi	& A = diag(A_{11}, A_{22}, \ldots, A_{pp})
+lohkodiagonaalinen matriisi	& A = diag(A_{11}, A_{22}, \ldots, A_{pp})
 							\begin{styledmatrix}
                             A_{11} & O & \cdots & O \\
                             O & A_{22} & \cdots & O \\
                             \vdots & \vdots & \ddots & \vdots \\
                             O & O & \cdots & A_{pp}
                             \end{styledmatrix} \\ \hline
-Lohkoalakolmiomatriisi		& A = 
+lohkoalakolmiomatriisi		& A = 
 							\begin{styledmatrix}
                             A_{11} & A_{12} & \cdots & A_{1q} \\
                             O & A_{22} & \cdots & A_{2q} \\
@@ -249,7 +366,7 @@ Lohkoalakolmiomatriisi		& A =
                             O & O & \cdots & A_{pq}
                             \end{styledmatrix}
 							\\
-Lohkoyläkolmiomatriisi		& A =
+lohkoyläkolmiomatriisi		& A =
 							\begin{styledmatrix}
                             A_{11} & O & \cdots & O \\
                             A_{21} & A_{22} & \cdots & O \\
@@ -257,15 +374,15 @@ Lohkoyläkolmiomatriisi		& A =
                             A_{p1} & A_{p2} & \cdots & A_{pq}
                             \end{styledmatrix}
 							\\ \hline
-Permutaatiomatriisi			& P = \begin{styledmatrix}
+permutaatiomatriisi			& P = \begin{styledmatrix}
 							\bm{e}^T_{r_1} \\ \bm{e}^T_{r_1} \\ \vdots \\ \bm{e}^T_{r_n}
                             \end{styledmatrix}
-							= \text{esim.} \begin{styledmatrix} 0&0&1 \\ 0&1&0 \\ 1&0&0 									\end{styledmatrix} \\ \hline
+							= \text{esim.} \begin{styledmatrix} 0&0&1 \\ 0&1&0 \\ 1&0&0 									\end{styledmatrix} \\
 \end{eqtable}
 
 
 \begin{eqtable}{Transpoosi ja konjugaattitranspoosi \cite[s. 21, 26]{MAT-60000}}
-Transpoosi					& A^T = (a_{ji})_{n \times m} =
+transpoosi					& A^T = (a_{ji})_{n \times m} =
 							\begin{styledmatrix}
                             a_{11} & a_{21} & \cdots & a_{m1} \\
                             a_{12} & a_{22} & \cdots & a_{m2} \\
@@ -273,7 +390,7 @@ Transpoosi					& A^T = (a_{ji})_{n \times m} =
                             a_{1n} & a_{2n} & \cdots & a_{nm} \\
                             \end{styledmatrix} \\
 
-Konjugaattitranspoosi       & A^* = (\overline{a}_{ji})_{m \times n} =
+konjugaattitranspoosi       & A^* = (\overline{a}_{ji})_{m \times n} =
 							\begin{styledmatrix}
                             \overline{a}_{11} & \overline{a}_{21} & \cdots & \overline{a}_{m1} \\
                             \overline{a}_{12} & \overline{a}_{22} & \cdots & \overline{a}_{m2} \\
@@ -281,49 +398,49 @@ Konjugaattitranspoosi       & A^* = (\overline{a}_{ji})_{m \times n} =
                             \overline{a}_{1n} & \overline{a}_{2n} & \cdots & \overline{a}_{nm} \\
                             \end{styledmatrix}\\ \hline
 
-Transpoosille				& (AB)^T = B^T A^T \\
+transpoosille				& (AB)^T = B^T A^T \\
 							& (A+B)^T = A^T + B^T \\
                             & (\alpha A)^T = \alpha A^T \\ \hline
 
-Konjugaattitranspoosille	& (AB)^* = B^* A^* \\
+konjugaattitranspoosille	& (AB)^* = B^* A^* \\
 							& (A+B)^* = A^* + B^* \\
-							& (\alpha A)^* = \overline{\alpha} A^* \\ \hline
+							& (\alpha A)^* = \overline{\alpha} A^* \\
 \end{eqtable}
 
 
 \begin{eqtable}{Matriisien ominaisuuksia \cite[s. 27-30]{MAT-60000}}
-Kommutoivuus				& AB = BA \\ \hline
+kommutoivuus				& AB = BA \\ \hline
 
-Symmetrisyys				& A = A^T \\
-Hermiittisyys				& A = A^* \\
-Vinosymmetrisyys			& A = -A^T \\
-Vinohermiittisyys			& A = -A^* \\ \hline
+symmetrisyys				& A = A^T \\
+hermiittisyys				& A = A^* \\
+vinosymmetrisyys			& A = -A^T \\
+vinohermiittisyys			& A = -A^* \\ \hline
 
-Singulaarisuus				& det(A) = 0 \\
-Ei-singulaarisuus			& det(A) \neq 0 \\
+singulaarisuus				& det(A) = 0 \\
+ei-singulaarisuus			& det(A) \neq 0 \\
 							& \exists A^{-1} \\ \hline
 
-Ortogonaalisuus				& A^T A = I = AA^T \\
-Unitaarisuus				& U^* U = U U^* = I \\ \hline
+ortogonaalisuus				& A^T A = I = AA^T \\
+unitaarisuus				& U^* U = U U^* = I \\ \hline
 
-Inverssi					& A A^{-1} = I = A^{-1} A \\
+inverssi					& A A^{-1} = I = A^{-1} A \\
 							& (AB)^{-1} = B^{-1} A^{-1} \\
-                           	& (A^{-1})^{-1} = A \\ \hline
+                           	& (A^{-1})^{-1} = A \\
 \end{eqtable}
 
 
 \begin{eqtable}{Lineaarinen yhtälöryhmä \cite[s. 31]{MAT-60000}}
-Lineaarinen yhtälöryhmä		& A \bm{x} = \bm{b} \\
-							& \bm{x} = A^{-1} \bm{b} \\ \hline
+lineaarinen yhtälöryhmä		& A \bm{x} = \bm{b} \\
+							& \bm{x} = A^{-1} \bm{b} \\
 \end{eqtable}
 
 
 \begin{eqtable}{Hermiittisille matriiseille \cite[s. 35]{MAT-60000}}
-Positiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle > 0, \forall \bm{x} \neq \bm{0} \\
-Positiivisesti semidefiniitti	& \langle \bm{x}, A \bm{x}\rangle \geq 0, \forall \bm{x} \\
-Negatiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle < 0, \forall \bm{x} \neq \bm{0} \\
-Negatiivisesti semidefiniitti	& \langle \bm{x}, A \bm{x}\rangle \leq 0, \forall \bm{x} \\
-Indefiniitti					& \text{Jos ei ole mitään näistä} \\ \hline
+positiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle > 0, \forall \bm{x} \neq \bm{0} \\
+positiivisesti semidefiniitti	& \langle \bm{x}, A \bm{x}\rangle \geq 0, \forall \bm{x} \\
+negatiivisesti definiitti		& \langle \bm{x}, A \bm{x}\rangle < 0, \forall \bm{x} \neq \bm{0} \\
+negatiivisesti semidefiniitti	& \langle \bm{x}, A \bm{x}\rangle \leq 0, \forall \bm{x} \\
+indefiniitti					& \text{Jos ei ole mitään näistä} \\
 \end{eqtable}
 
 
@@ -335,69 +452,69 @@ LU-hajotelma	& A = LU \\
                 & \hat{L} = L_{n-1} L_{n-2} \cdots L_1 \\
                 & A = \hat{L}^{-1} U = LU \\ \hline
 Jos ei onnistu suoraan, niin viimeistään	& PA = LU, \text{ jossa P on permutaatiomatriisi} \\ \hline
-Lineaarisen yhtälöryhmän ratkaiseminen	& A \bm{x} = P^T LU \bm{x} = \bm{b} \\
+lineaarisen yhtälöryhmän ratkaiseminen	& A \bm{x} = P^T LU \bm{x} = \bm{b} \\
 											& LU \bm{x} = P \bm{b} \\
                                             & L \bm{y} = P \bm{b} \land U \bm{x} = \bm{y} \\
-                                            & x = U^{-1} \bm{y} \land \bm{y} = L^{-1} P \bm{b} \\ \hline
+                                            & x = U^{-1} \bm{y} \land \bm{y} = L^{-1} P \bm{b} \\
 \end{eqtable}
 
 
 \begin{eqtable}{Aliavaruus \cite[s. 59-83]{MAT-60000}}
-Aliavaruus					& \alpha \bm{x} + \beta \bm{y} \in S \quad \forall \bm{x}, \bm{y} \in \mathcal{S} \\
-Arvojoukko (kuva-avaruus)	& \mathcal{R} (A) = \{y | \exists \bm{x} \in \mathbb{F}^n s.e. \bm{y} = A \bm{x} \} \in \mathbb{F}^m \\
-Ydin (nolla-avaruus)		& \mathcal{N} (A) = \{ \bm{x} | A \bm{x} = \bm{0} \} \\ \hline
+aliavaruus					& \alpha \bm{x} + \beta \bm{y} \in S \quad \forall \bm{x}, \bm{y} \in \mathcal{S} \\
+arvojoukko (kuva-avaruus)	& \mathcal{R} (A) = \{y | \exists \bm{x} \in \mathbb{F}^n s.e. \bm{y} = A \bm{x} \} \in \mathbb{F}^m \\
+ydin (nolla-avaruus)		& \mathcal{N} (A) = \{ \bm{x} | A \bm{x} = \bm{0} \} \\ \hline
 
-Ortogonaalikomplementti		& \mathcal{S}^\perp = \{ \bm{y} | \langle \bm{y}, \bm{x} \rangle = 0, \forall \bm{x} \in \mathcal{S} \} \\ \hline
+ortogonaalikomplementti		& \mathcal{S}^\perp = \{ \bm{y} | \langle \bm{y}, \bm{x} \rangle = 0, \forall \bm{x} \in \mathcal{S} \} \\ \hline
 
 							& \mathcal{N} (A) = \mathcal{R} (A^*)^\perp \\
                             & \mathcal{N} (A^*) = \mathcal{R} (A)^\perp \\ \hline
 
-Dimensio eli kantavektorien lukumäärä	& \dim (S) \\
-Matriisin aste							& rank (A) = \dim \mathcal{R} (A) \\
+dimensio eli kantavektorien lukumäärä	& \dim (S) \\
+matriisin aste							& rank (A) = \dim \mathcal{R} (A) \\
 										& rank (A) + \dim \mathcal{N} (A) = n = \text{ sarakkeiden määrä} \\ \hline
 
-Projektorimatriisi			& P^2 = P \\
-							& \text{Projisoi vektorit } \mathcal{R} (P) \text{:lle pitkin } \mathcal{N} (P) \text{:tä} \\ \hline
+projektorimatriisi			& P^2 = P \\
+							& \text{Projisoi vektorit } \mathcal{R} (P) \text{:lle pitkin } \mathcal{N} (P) \text{:tä} \\
 \end{eqtable}
 
 
 \begin{eqtable}{Ominaisarvot ja -vektorit \cite[s. 90-100]{MAT-60000}}
-Ominaisarvot ja -vektorit	& A \bm{x} = \lambda \bm{x}, \bm{x} \neq \bm{0} \\
-Ominaisarvot				& \det (A - \lambda I) = 0 \\
-Karakteristinen polynomi	& \prod^n_{k=1} (\lambda - \lambda_k) \\
-Spektri						& \sigma (A) = \{ \lambda_ 1, \lambda_2, \ldots , \lambda_n \} \\
-Similaarisuus				& B = S^{-1} A S \text{ jossa S ei-singulaarinen}\\
-Unitaarinen similaarisuus	& B = U^* AU \\
+ominaisarvot ja -vektorit	& A \bm{x} = \lambda \bm{x}, \bm{x} \neq \bm{0} \\
+ominaisarvot				& \det (A - \lambda I) = 0 \\
+karakteristinen polynomi	& \prod^n_{k=1} (\lambda - \lambda_k) \\
+spektri						& \sigma (A) = \{ \lambda_ 1, \lambda_2, \ldots , \lambda_n \} \\
+similaarisuus				& B = S^{-1} A S \text{ jossa S ei-singulaarinen}\\
+unitaarinen similaarisuus	& B = U^* AU \\
 
 Hermiten matriisille		& diag(\sigma(A)) = U^* A U \\
 							& \forall \lambda \in \mathbb{R} \land n \text{ ortonormaalia ominaisvektoria} \Rightarrow \text{Hermiten matriisi} \\ \hline
 
-Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\ \hline
+Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\
 \end{eqtable}
 
 
 \begin{eqtable}{Jordanin kanoninen muoto \cite[s. 101-107]{MAT-60000}}
 				& A = SJS^{-1} \\
 				& J = diag(J_1, J_2, \ldots, J_p) \\
-Defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
+defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
 				& A \bm{s}^j_1 = \lambda_j \bm{s}^j_1 \\
                 & A \bm{s}^j_2 = \lambda_j \bm{s}^j_2 \bm{s}^j_1 \\
                 & A \bm{s}^j_i = \lambda_j \bm{s}^j_i \bm{s}^j_{i-1} \\
 Jordanin ketju	& \{ \bm{s}^j_1, \bm{s}^j_2, \ldots \bm{s}^j_{r_j} \} \\
-Ominaisvektori	& \bm{s}^j_1 \\
-Yleistetyt ominaisvektorit	& \bm{s}^j_2, \ldots \bm{s}^j_{r_j} \\
-Kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
-Käyttöohje		& \text{Etsi } \sigma (A) \\
+ominaisvektori	& \bm{s}^j_1 \\
+yleistetyt ominaisvektorit	& \bm{s}^j_2, \ldots \bm{s}^j_{r_j} \\
+kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
+käyttöohje		& \text{Etsi } \sigma (A) \\
 				& \text{Valitse mielivaltainen } \lambda \\
                 & alg(\lambda) = 1 \Rightarrow \bm{s}^1_1 = \bm{x}_1 \land J_1 = \lambda_1 \\
                 & alg(\lambda) = geom(\lambda) = l \Rightarrow \text{Otetaan ominaisvektorit} \land \forall J = \lambda_1 \\
                 & alg(\lambda) > geom(\lambda) \Rightarrow \text{Muodostetaan ketjut erikseen} \\
-               	& \lambda \text{ kompleksinen} \Rightarrow (\bm{s}^1_1 = \text{Re } \bm{x}, \bm{s}^1_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\ \hline
+               	& \lambda \text{ kompleksinen} \Rightarrow (\bm{s}^1_1 = \text{Re } \bm{x}, \bm{s}^1_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\
 \end{eqtable}
 
 
 \begin{eqtable}{Singulaariarvohajotelma \cite[s. 117-128]{MAT-60000}}
-Singulaariarvohajotelma		& U^*AV = \Lambda \\
+singulaariarvohajotelma		& U^*AV = \Lambda \\
 							& A = U \Lambda V^* \\
 							& \Lambda = diag(\sigma_1, \sigma_2, \ldots , \sigma_r, 0, \ldots, 0) \\
                             & \sigma(A^*A) = \{ \sigma^2_1, \sigma^2_2, \ldots, \sigma^2_{r}, \sigma^2_{r+1}, \sigma^2_n \} \\
@@ -412,15 +529,13 @@ Singulaariarvohajotelma		& U^*AV = \Lambda \\
 Jos A on ei-singulaarinen	& \sigma_n || \bm{x} || \leq || A \bm{x} || \leq \sigma_1 || \bm{x} ||, \forall \bm{x} \in \mathbb{F}^n \\
 							& || A^{-1} || = \frac{1}{\sigma_n} \\ \hline
 
-Approksimointi				& B = U diag(\sigma_1, \sigma_2, \ldots, \sigma_{r-1}, 0, \ldots, 0) V^* \\
+approksimointi				& B = U diag(\sigma_1, \sigma_2, \ldots, \sigma_{r-1}, 0, \ldots, 0) V^* \\
 							& ||A - B|| = \sigma_r \\ \hline
 
-Pseudoinverssi				& A^\dagger = V \Lambda^\dagger U^*\\
+pseudoinverssi				& A^\dagger = V \Lambda^\dagger U^*\\
 							& \Lambda^\dagger \text{ on } \Lambda^T, \text{jossa } \sigma_i \Rightarrow \frac{1}{\sigma_i} \\
                             & AA^\dagger A = A \\
                             & A^\dagger A A^\dagger = A^\dagger \\
-Lin. yhtälöryhmän 			& A\bm{x} = \bm{b} \\
-yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\ \hline
+lin. yhtälöryhmän 			& A\bm{x} = \bm{b} \\
+yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\
 \end{eqtable}
-
-
