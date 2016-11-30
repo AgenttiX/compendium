@@ -539,3 +539,75 @@ pseudoinverssi				& A^\dagger = V \Lambda^\dagger U^*\\
 lin. yhtälöryhmän 			& A\bm{x} = \bm{b} \\
 yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\
 \end{eqtable}
+
+
+\section{Differentiaaliyhtälöt}
+
+\begin{eqtable}{Differentiaaliyhtälöiden termejä ja kaavoja}
+homogeeninen alkuarvo-ongelma \cite[s. 34]{MAT-60150}	& \bm{x}' = A\bm{x}, \quad \bm{x}(0) = \bm{c} \\
+alkuarvo-ongelma \cite[s. 33]{MAT-60150}										& \bm{x}' = A\bm{x} + \bm{f}, \quad \bm{x}(0) = \bm{c} \\
+vakioinvariointikaava \cite[2.4.5]{MAT-60150}			& \bm{x}(t) = e^{tA} \bm{c} + \int_0^t e^{(t-s)A} \bm{f}(s) ds \\
+eksponenttimatriisi	\cite[s. 39]{MAT-60150}				& e^A = \sum_{k=0}^\infty \frac{A^k}{k!} \\
+nilpotentti matriisi									& N: e^N = \sum_{k=0}^{m-1} \frac{N^k}{k!} = I_n + N + \cdots + \frac{N^{m-1}}{(m-1)!} \\
+nilpotentin matriisin käyttö \cite[2.3.7]{MAT-60150}	& A = S + N \land N \text{ on nilpotentti} \Rightarrow e^A = e^S e^N \\
+\end{eqtable}
+
+\begin{table}
+\centering
+\caption{Eksponenttimatriiseja}
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{| >{$} l <{$} | >{$} l <{$} | l |}
+\hline
+
+A = \begin{styledmatrix}
+\lambda_1 \\
+& \lambda_2 \\
+&& \ddots \\
+&&& \lambda_n
+\end{styledmatrix}
+&
+e^A = \begin{styledmatrix}
+e^{\lambda_1} \\
+& e^{\lambda_2} \\
+&& \ddots \\
+&&& e^{\lambda_n}
+\end{styledmatrix}
+&
+\cite[2.3.2]{MAT-60150} \\
+
+A =
+\begin{styledmatrix}
+\alpha & \beta \\
+-\beta & \alpha
+\end{styledmatrix}
+&
+e^A = e^\alpha \begin{styledmatrix}
+\cos \beta	& \sin \beta \\
+-\sin \beta	& \cos \beta
+\end{styledmatrix}
+&
+\cite[2.3.5]{MAT-60150}
+% Proposition 2.3.4 is merely a special case where \alpha = 0
+\\
+
+A = \begin{styledmatrix}
+\alpha	& \gamma \\
+0		& \alpha
+\end{styledmatrix}
+&
+e^A = e^\alpha \begin{styledmatrix}
+1	& \gamma \\
+0	& 1
+\end{styledmatrix}
+&
+\cite[2.3.8]{MAT-60150} \\
+
+A = PJP^{-1} (\text{Jordanin kanoninen muoto})
+&
+e^{tA} = Pe^{tJ} P^{-1}
+&
+\cite[3.1.4]{MAT-60150} \\
+
+\hline
+\end{tabular}
+\end{table}
