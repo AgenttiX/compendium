@@ -224,7 +224,7 @@ H(\bm{r}, \bm{p}) = \frac{p^2}{2m} + U(\bm{r})	& H(\bm{r}, \bm{p}) = \sqrt{c^2p^
 \end{table}
 
 
-
+\clearpage
 \subsection{Varhainen kvanttimekaniikka}
 
 \begin{eqtable}{Mustan kappaleen säteily \cite[s. 124-128]{ModernPhysics}}
@@ -298,7 +298,7 @@ kulmaliikemäärän kvantittuminen	& L = mvr = n \hbar \\ \hline
 Davisson-Germer ASDF		& n \lambda = D sin \phi \\
 \end{eqtable}
 
-
+\clearpage
 \subsection{Kvanttimekaniikka}
 
 \begin{eqtable}{Aaltohiukkasdualismi \cite[s. 193-233]{ModernPhysics}}
@@ -324,27 +324,84 @@ normalisointiehto			& \int_{-\infty}^{\infty} \Psi^* \Psi dx = 1 \\
 
 \begin{table}
 \centering
-\caption{Kvanttimekaanisia operaattoreita \cite[s. 40]{SSED}}
+\caption{Kvanttimekaanisia operaattoreita \cite[s. 252]{ModernPhysics}, \cite[s. 40]{SSED}}
 \setlength{\extrarowheight}{10pt}
-\begin{tabular}{ >{$\displaystyle} l <{$} | >{$\displaystyle} l <{$} } \hline
-\text{Klassinen muuttuja}	& \text{Kvanttimekaaninen operaattori} \\ \hline
-x		& x \\
-f(x)	& f(x) \\
-p(x)	& \frac{\hbar}{i} \frac{\partial}{\partial x} \\
-E		& -\frac{\hbar}{i} \frac{\partial}{\partial t} \\
+\begin{tabular}{ >{$\displaystyle} l <{$} | l | >{$\displaystyle} l <{$} } \hline
+\text{Symboli}	& Suure & \text{Kvanttimekaaninen operaattori} \\ \hline
+x		& paikka	& x \\
+f(x)	& mielivaltainen x:n funktio	& f(x) \\
+p_x	& liikemäärän x-komponentti	& \frac{\hbar}{i} \frac{\partial}{\partial x} \\
+E		& aikariippumaton Hamiltonin operaattori	& \frac{p_{op}^2}{2m} + V(x) \\
+E		& aikariippuva Hamiltonin operaattori & -\frac{\hbar}{i} \frac{\partial}{\partial t} \\
+E_k		& kineettinen energia	& -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \\
+L_z		& kulmaliikemäärän z-komponentti	& -i \hbar \frac{\partial}{\partial \phi} \\
+		& odotusarvon laskeminen \cite[6-46]{ModernPhysics}	& \langle f(x) \rangle = \int_{-\infty}^\infty \psi^* f(x) \psi dx \\
 \end{tabular}
 \end{table}
+
+\begin{eqtable}{Kvanttimekaanisia esimerkkitilanteita}
+Ääretön potentiaalilaatikko	\cite[6-2]{ModernPhysics} & n \frac{\lambda}{2} = L, \quad n \in \mathbb{Z}^+ \\
+							& E = n^2 \frac{\pi^2 \hbar^2}{2mL^2} = n^2 E_1, \quad n \in \mathbb{Z}^+ \\
+							& \psi_n (x) = \sqrt{\frac{2}{L}} \sin \frac{n \pi x}{L} \\ \hline
+Rajallinen potentiaalilaatikko \cite[6-3]{ModernPhysics}	& \\
+laatikossa						& \psi''(x) = -k^2 \psi(x), \quad k^2 = \frac{2mE}{\hbar^2} \\
+
+laatikon ulkopuolella			& \psi'' (x) = \alpha^2 \psi (x) \\
+								& \alpha^2 = \frac{2m}{\hbar^2}(V_0-E) \\ \hline
+\end{eqtable}
+
+\begin{eqtable}{Harmoninen oskillaattori \cite[6-5]{ModernPhysics}}
+energia 		& E_n = (n + \frac{1}{2}) \hbar \omega, \quad n \in \mathbb{N} \\
+aaltofunktiot	& \psi_n (x) = C_n e^{\frac{m \omega x^2}{2 \hbar}} H_n (x) \\
+				& \text{jossa } H_n \text{ on Hermiten polynomi} \\
+				& \psi_0 (x) = A_0 e^{\frac{-m \omega x^2}{2 \hbar}} \\
+				& \psi_1 (x) = A_1 \sqrt{\frac{m \omega}{\hbar}} e^{\frac{-m \omega x^2}{2 \hbar}} \\
+				& \psi_2 (x) = A_2 (1- \frac{2m \omega x^2)}{\hbar}) e^{\frac{-m \omega x^2}{2 \hbar}} \\
+valintasäännön alkuperä	& \int_{-\infty}^{\infty} \psi^*_n x \psi_m dx = 0, \quad \text{ellei } n=m \pm 1 \\
+\end{eqtable}
+
+\begin{eqtable}{Potentiaaliaskel \cite[6-6]{ModernPhysics}}
+aaltofunktiot	& x<0: \quad \frac{d^2 \psi (x)}{dx^2} = -k_1^2 \psi (x), \quad k_1 = \frac{\sqrt{2mE}}{\hbar} \\
+				& x>0: \quad \frac{d^2 \psi (x)}{dx^2} = -k_2^2 \psi (x), \quad k_2 = \frac{\sqrt{2m(E-V_0)}}{\hbar} \\
+yleiset ratkaisut	& x<0: \psi_1 (x) = Ae^{ik_1 x} + Be^{-ik_1 x} \\
+					& x>0: \psi_2 (x) = Ce^{ik_1 x} + De^{-ik_1 x}, \quad \text{vasemmalta} \rightarrow D=0 \\
+$\Rightarrow$	& B = \frac{k_1 - k_2}{k_1 + k_2} A = \frac{\sqrt{E} - \sqrt{E-V_0}}{\sqrt{E} + \sqrt{E-V_0}} A \\
+				& C = \frac{2k_1}{k_1 + k_2} A = \frac{2 \sqrt{E}}{\sqrt{E} + \sqrt{E-V_0}} A \\
+heijastus		& R = \frac{|B|^2}{|A|^2} = \Big( \frac{k_1-k_2}{k_1+k_2} \Big)^2 \\
+transmissio		& T = \frac{k_2}{k_1} \frac{|C|^2}{|A|^2} = \frac{4k_1 k_2}{(k_1 + k_2)^2} \\
+\end{eqtable}
+
+\begin{eqtable}{Potentiaalieste \cite[6-6]{ModernPhysics}}
+transmissio		& T = \frac{|F|^2}{|A|^2} = \Big(1 + \frac{\sinh^2 (\alpha a)}{4 \frac{E}{V_0} \big(1- \frac{E}{V_0} \big) } \Big)^{-1} \\
+				& \approx 16 \frac{E}{V_0} \Big( 1- \frac{E}{V_0} \Big) e^{-2 \alpha a} \\
+\end{eqtable}
+
 
 \begin{eqtable}{Atomifysiikka \cite[s. 277->]{ModernPhysics} }
 kolmiulotteinen Schrödinger	\cite[s. 41]{SSED} & - \frac{\hbar}{2m} \nabla^2 \Psi + V \Psi = -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} \\
 							& \nabla^2 \Psi = \frac{\partial^2 \Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2} \\
 \end{eqtable}
 
-\begin{eqtable}{Atomifysiikan matematiikkaa \cite[r26-27, s. 337-342]{Physics227} }
+\begin{eqtable}{Kolmiulotteinen potentiaalilatikko \cite[7-1]{ModernPhysics}}
+esimerkkiratkaisu	& \psi(x, y, z) = A \sin (k_1 x) \sin (k_2 y) \sin (k_3 z) \\
+energiatilat	& E_{n_1 n_2 n_3} = \frac{\hbar^2 \pi^2}{2m} (\frac{n_1^2}{L_1^2} + \frac{n_2^2}{L_2^2} + \frac{n_3^2}{L_3^2}), \quad \forall n \in \mathbb{Z}^+ \\
+\end{eqtable}
+
+Atomifysiikan symbolikäytänteet polaarisessa koordinaatistossa \cite[7-8]{ModernPhysics}
+% A picture of this (as in the page 280 of Modern Physics) is needed!
+\begin{align*}
+x &= r \sin \theta \cos \phi \\
+y &= r \sin \theta \sin \phi \\
+z &= r \cos \theta
+\end{align*}
+
+\begin{eqtable}{Palloharmonisten funktioiden matematiikkaa \cite[r26-27, s. 337-342]{Physics227} \cite[s. 127-129]{JohdatusTaivaanmekaniikkaan}}
 % \cite[r26-27, s. 336]{Physics227}
 Legendren polynomit				& P_l (x) = \frac{(-1)^l}{2^l l!} \frac{d^l}{dx^l} (1-x^2)^l \\
+% Symbols |_ and _| would be needed in the following line in the l/2 part: It should be |_l/2_|
+%								& = \sum_{k=0}^{l/2} \frac{(-1)^k (2l-2k)!}{2^{2l}k!(l-k)!(l-2k)!} x^{l-2k} \\
 % \cite[r26-27, s. 336]{Physics227}
-assosioidut Legendren polynomit	& P_{l,m} (x) = (-1)^m \sqrt{ (1-x^2)^m } \frac{d^m}{dx^m} P_l(x) \\
+Legendren liittofunktiot	& P_{l,m} (x) = (-1)^m \sqrt{ (1-x^2)^m } \frac{d^m}{dx^m} P_l(x) \\
 % \cite[r26-27, s. 338]{Physics227}
 Laguerren polynomit				& L_j (x) = e^x \frac{d^j}{d x^j} e^-x x^j \\
 % \cite[r26-27, s. 339]{Physics227}
@@ -353,7 +410,23 @@ radiaalisen aaltoyhtälön ratkaiseminen	& y_j^k (x) = e^{-\frac{x}{2}} x^{\frac
 										& R(r) = \frac{y(r)}{r} \\
 \end{eqtable}
 
-\clearpage
+\begin{table}
+\centering
+\caption{Palloharmonisia funktioita \cite[s.282]{ModernPhysics}}
+\setlength{\extrarowheight}{15pt}
+\begin{tabular}{ | >{$\displaystyle} l <{$} | >{$\displaystyle} l <{$} | >{$\displaystyle} l <{$} | } \hline
+l=0	& m=0	& Y_{00} = \sqrt{\frac{1}{4 \pi}} \\
+l=1	& m=1	& Y_{11} = -\sqrt{\frac{3}{8 \pi}} \sin \theta e^{i \phi} \\
+	& m=0	& Y_{10} = \sqrt{\frac{3}{4 \pi}} \cos \theta \\
+	& m=-1	& Y_{1-1} = \sqrt{\frac{3}{8 \pi}} \sin \theta e^{-i \phi} \\
+l=2	& m=2	& Y_{22} = \sqrt{\frac{15}{32 \pi}} \sin^2 \theta e^{2i \phi} \\
+	& m=1	& Y_{21} = -\sqrt{\frac{15}{8 \pi}} \sin \theta \cos \theta e^{i \phi} \\
+	& m=0	& Y_{20} = \sqrt{\frac{5}{16 \pi}} (3 \cos^2 \theta - 1) \\
+	& m=-1	& Y_{2-1} = \sqrt{\frac{15}{8 \pi}} \sin \theta \cos \theta e^{-i \phi} \\
+	& m=-2	& Y_{2-2} = \sqrt{\frac{15}{32 \pi}} \sin^2 \theta e^{-2i \phi} \\
+\hline
+\end{tabular}
+\end{table}
 
 Schrödingerin aaltoyhtälö pallokoordinaatistossa
 \begin{equation*}
@@ -366,7 +439,7 @@ Schrödingerin aaltoyhtälö pallokoordinaatistossa
 + V(r) \psi = E \psi
 \end{equation*}
 
-Palloharmonisten funktioiden generointi \cite[r26-27, (10-10)]{Physics227}
+Palloharmonisten funktioiden generointi \cite[r26-27, (10-10)]{Physics227} \cite[(10.10)]{JohdatusTaivaanmekaniikkaan}
 \begin{equation*}
 Y_{l,m} (\theta, \phi) = (-1)^m \sqrt{ \frac{(2l+1)(l-m)!}{4 \pi (l+m)!} } P_{l,m}(\cos \theta ) e^{im \phi}, \quad m \geq 0
 \end{equation*}
