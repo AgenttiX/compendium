@@ -381,6 +381,57 @@ permutaatiomatriisi			& P = \begin{styledmatrix}
 \end{eqtable}
 
 
+\begin{eqtable}{Determinantti \cite[1.4.5]{MAT-60150}}
+& \text{Määritelty, kun } A=[a_{ij}] \text{ on } n \times n \text{-matriisi} \\
+\hline
+
+n=2 & \det(A) =
+\begin{vmatrix}
+\setlength{\extrarowheight}{0pt}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix}
+= a_{11}a_{22}-a_{21}a_{12} \\
+
+n=3	&
+\det(A) = 
+\begin{vmatrix}
+\setlength{\extrarowheight}{0pt}
+a_{11}	& a_{12}	& a_{13} \\
+a_{21}	& a_{22}	& a_{23} \\
+a_{31}	& a_{32}	& a_{33}
+\end{vmatrix} \\
+& =
+a_{11}
+\begin{vmatrix}
+\setlength{\extrarowheight}{0pt}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{vmatrix}
+-
+a_{21}
+\begin{vmatrix}
+\setlength{\extrarowheight}{0pt}
+a_{12} & a_{13} \\
+a_{32} & a_{33}
+\end{vmatrix}
++
+a_{11}
+\begin{vmatrix}
+\setlength{\extrarowheight}{0pt}
+a_{12} & a_{13} \\
+a_{22} & a_{23}
+\end{vmatrix}
+\\
+
+\hline
+i:nnen rivin suhteen		& \det(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} \det(A_{ij}) \\
+j:nnen sarakkeen suhteen	& \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} \det(A_{ij}) \\
+							& \text{joissa } A_{ij} \text{ on } A \text{, josta on poistettu rivi i ja sarake j} \\
+
+\end{eqtable}
+
+
 \begin{eqtable}{Transpoosi ja konjugaattitranspoosi \cite[s. 21, 26]{MAT-60000}}
 transpoosi					& A^T = (a_{ji})_{n \times m} =
 							\begin{styledmatrix}
@@ -493,10 +544,13 @@ Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\
 \end{eqtable}
 
 
-\begin{eqtable}{Jordanin kanoninen muoto \cite[s. 101-107]{MAT-60000}}
+\begin{eqtable}{Jordanin kanoninen muoto \cite[s. 101-107]{MAT-60000}, \cite[5]{MAT-60150}}
 				& A = SJS^{-1} \\
 				& J = diag(J_1, J_2, \ldots, J_p) \\
 defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
+
+% Old version ---
+\iffalse
 				& A \bm{s}^j_1 = \lambda_j \bm{s}^j_1 \\
                 & A \bm{s}^j_2 = \lambda_j \bm{s}^j_2 \bm{s}^j_1 \\
                 & A \bm{s}^j_i = \lambda_j \bm{s}^j_i \bm{s}^j_{i-1} \\
@@ -504,12 +558,30 @@ Jordanin ketju	& \{ \bm{s}^j_1, \bm{s}^j_2, \ldots \bm{s}^j_{r_j} \} \\
 ominaisvektori	& \bm{s}^j_1 \\
 yleistetyt ominaisvektorit	& \bm{s}^j_2, \ldots \bm{s}^j_{r_j} \\
 kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
-käyttöohje		& \text{Etsi } \sigma (A) \\
+käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldots \lambda_k \} \\
 				& \text{Valitse mielivaltainen } \lambda \\
                 & alg(\lambda) = 1 \Rightarrow \bm{s}^1_1 = \bm{x}_1 \land J_1 = \lambda_1 \\
                 & alg(\lambda) = geom(\lambda) = l \Rightarrow \text{Otetaan ominaisvektorit} \land \forall J = \lambda_1 \\
                 & alg(\lambda) > geom(\lambda) \Rightarrow \text{Muodostetaan ketjut erikseen} \\
                	& \lambda \text{ kompleksinen} \Rightarrow (\bm{s}^1_1 = \text{Re } \bm{x}, \bm{s}^1_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\
+\fi
+%---
+
+				& A \bm{u}_1 = \lambda_j \bm{u}_1 \\
+                & A \bm{u}_2 = \lambda_j \bm{u}_2 \bm{u}_1 \\
+                & A \bm{u}_i = \lambda_j \bm{u}_i \bm{u}_{i-1} \\
+
+Jordanin ketju	& \{ \bm{u}_1, \bm{u}_2, \ldots \bm{u}_{m_j} \} \\
+ominaisvektori	& \bm{u}_1 \\
+yleistetyt ominaisvektorit	& \bm{u}_2, \ldots \bm{u}_{m_j} \\
+
+kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
+käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldots \lambda_k \} \\
+				& \text{Valitse mielivaltainen } \lambda \\
+                & alg(\lambda) = 1 \Rightarrow \bm{u}_1 = \bm{x}_1 \land J_1 = \lambda_1 \\
+                & alg(\lambda) = geom(\lambda) = l \Rightarrow \text{Otetaan ominaisvektorit} \land \forall J = \lambda_1 \\
+                & alg(\lambda) > geom(\lambda) \Rightarrow \text{Muodostetaan ketjut erikseen} \\
+               	& \lambda \text{ kompleksinen} \Rightarrow (\bm{u}_1 = \text{Re } \bm{x}, \bm{u}_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\
 \end{eqtable}
 
 
@@ -541,16 +613,78 @@ yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\
 \end{eqtable}
 
 
+
+\clearpage
+
 \section{Differentiaaliyhtälöt}
 
-\begin{eqtable}{Differentiaaliyhtälöiden termejä ja kaavoja}
-homogeeninen alkuarvo-ongelma \cite[s. 34]{MAT-60150}	& \bm{x}' = A\bm{x}, \quad \bm{x}(0) = \bm{c} \\
-alkuarvo-ongelma \cite[s. 33]{MAT-60150}										& \bm{x}' = A\bm{x} + \bm{f}, \quad \bm{x}(0) = \bm{c} \\
-vakioinvariointikaava \cite[2.4.5]{MAT-60150}			& \bm{x}(t) = e^{tA} \bm{c} + \int_0^t e^{(t-s)A} \bm{f}(s) ds \\
-eksponenttimatriisi	\cite[s. 39]{MAT-60150}				& e^A = \sum_{k=0}^\infty \frac{A^k}{k!} \\
-nilpotentti matriisi									& N: e^N = \sum_{k=0}^{m-1} \frac{N^k}{k!} = I_n + N + \cdots + \frac{N^{m-1}}{(m-1)!} \\
-nilpotentin matriisin käyttö \cite[2.3.7]{MAT-60150}	& A = S + N \land N \text{ on nilpotentti} \Rightarrow e^A = e^S e^N \\
+\begin{eqtable}{Differentiaaliyhtälöiden termejä ja kaavoja \cite{MAT-60150}}
+% \cite[s. 34]{MAT-60150}
+homogeeninen alkuarvo-ongelma 	& \bm{x}' = A\bm{x}, \quad \bm{x}(0) = \bm{c} \\
+
+% \cite[s. 33]{MAT-60150}
+alkuarvo-ongelma 				& \bm{x}' = A\bm{x} + \bm{f}, \quad \bm{x}(0) = \bm{c} \\
+
+% \cite[2.4.5]{MAT-60150}
+vakioinvariointikaava 			& \bm{x}(t) = e^{tA} \bm{c} + \int_0^t e^{(t-s)A} \bm{f}(s) ds \\
+
+% \cite[1.5.3]{MAT-60150}
+Wronskin determinantti			& W(t) = \det([ \bm{x}_1(t), \bm{x}_2(t), \ldots , \bm{x}_n(t)]) \\
+lineaarinen riippumattomuus		& \forall t \in I: W(t) \neq 0 \\
+
+% \cite[1.4.2]{MAT-60150}
+matriisin derivaatta			& \frac{d^n}{dt^n} A = \Big[ \frac{d^n a_{ij}}{dt^n} \Big] \\
+matriisin integraali			& \int_a^b A(t)dt = \Big[ \int_a^b a_{ij}(t)dt \Big] \\
+
+% \cite[2]{MAT-60150}
+eksponenttimatriisi				& e^A = \sum_{k=0}^\infty \frac{A^k}{k!} \\
+								& \forall A \in \mathbb{R}^{n \times n}: \quad \exists e^A \in \mathbb{R}^{n \times n} \\
+								& ||e^A|| \leq e^{||A||} \\
+								& AB=BA \Rightarrow e^{A+B} = e^A e^B \\
+								& (e^A)^{-1} = e^{-A} \\
+
+nilpotentti matriisi			& \exists m \in \mathbb{N}: N^m = O \\
+
+% \cite[s. 39]{MAT-60150}
+								& e^N = \sum_{k=0}^{m-1} \frac{N^k}{k!} = I_n + N + \cdots + \frac{N^{m-1}}{(m-1)!} \\
+
+% \cite[2.3.7]{MAT-60150}
+nilpotentin matriisin käyttö 	& A = S + N \land N \text{ on nilpotentti} \Rightarrow e^A = e^S e^N \\
 \end{eqtable}
+
+
+\begin{table}
+\centering
+\caption{Reaalisen derivoinnin ja integroinnin laskusääntöjä \cite[1.4.3, 1.4.4, 1.4.5]{MAT-60150}}
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{| >{$} l <{$} |}
+\hline
+A'=O \Leftrightarrow A \text{ on vakio} \\
+(AB)' = A'B + AB' (\text{tulon derivointisääntö}) \\
+\int_a^b (A(t) + B(t))dt = \int_a^b A(t) dt + \int_a^b B(t) dt \\
+\int_a^b C A(t)dt = C \int_a^b A(t)dt \\
+\int_a^b A(t) D dt = \int_a^b A(t) dt D \\
+t \in (a,b) \Rightarrow \frac{d}{dt} \int_a^t A(s)ds = A(t) \quad (\text{integraalin derivointilause}) \\
+\int_a^b A'(t)dt = A(b) - A(a) \quad (\text{analyysin peruslause}) \\
+\int_a^b A'(t)B(t)dt = A(b)B(b) - A(a)B(a) - \int_a^b A(t)B'(t)dt \quad (\text{osittaisintegrointikaava}) \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{eqtable}{Matriisinormi \cite[2.1]{MAT-60150}}
+oletukset				& A, B \in \mathbb{R}^{n \times n}, \quad \alpha \in \mathbb{R}, \quad \bm{x} \in \mathbb{R}^n \\ \hline
+matriisinormi			& ||A|| = \max_{|\bm{x}| \leq 1} | A \bm{x} | \\
+suljettu yksikköpallo	& \overline{B}^n = \{\bm{x} \in \mathbb{R}^n: |\bm{x}| \leq 1 \} \\
+ominaisuuksia			& ||A|| \geq 0 \land (||A|| = 0 \Leftrightarrow A=O) \\
+						& ||A+B|| \leq ||A||+||B|| \quad (\text{kolmioepäyhtälö}) \\
+						& ||\alpha A|| = |\alpha| ||A|| \\
+						& |A \bm{x}| \leq ||A|| |\bm{x}| \quad \forall \bm{x} \in \mathbb{R}^n \\
+						& ||AB|| \leq ||A|| ||B|| \\
+						& k \in \mathbb{N}: ||A^k|| \leq ||A||^k \\
+						& \text{Jos } \sigma^2 \text{ on matriisin } A^T A \text{ suurin ominaisarvo, niin } ||A||=|\sigma | \\
+\end{eqtable}
+
 
 \begin{table}
 \centering
@@ -575,13 +709,14 @@ e^{\lambda_1} \\
 &
 \cite[2.3.2]{MAT-60150} \\
 
-A =
+T_\mu =
 \begin{styledmatrix}
 \alpha & \beta \\
 -\beta & \alpha
 \end{styledmatrix}
 &
-e^A = e^\alpha \begin{styledmatrix}
+e^{tT_\mu} = e^{t\alpha}
+\begin{styledmatrix}
 \cos \beta	& \sin \beta \\
 -\sin \beta	& \cos \beta
 \end{styledmatrix}
@@ -608,6 +743,228 @@ e^{tA} = Pe^{tJ} P^{-1}
 &
 \cite[3.1.4]{MAT-60150} \\
 
+J_\lambda =
+\begin{styledmatrix}
+\lambda & 1 \\
+& \lambda & 1 \\
+& & \ddots & \ddots \\
+& & & \lambda & 1 \\
+& & & & \lambda
+\end{styledmatrix}
+&
+e^{tJ_\lambda} = e^{t\lambda}
+\begin{styledmatrix}
+1		& t			& \frac{t^2}{2}	& \cdots	& \frac{t^{k-1}}{(k-1)!} \\
+		& 1			& t				& \cdots	& \frac{t^{k-2}}{(k-2)!} \\
+		& 			& \ddots		&			& \vdots \\
+		& 			&				& 1			& t \\
+		& 			&				&			& 1
+\end{styledmatrix}
+&
+\cite[5.5.1]{MAT-60150} \\
+
+T_\mu =
+\begin{styledmatrix}
+D_{\mu} & I_2 \\
+& D_{\mu} & I_2 \\
+& & \ddots & \ddots \\
+& & & D_{\mu} & I_2 \\
+& & & & D_{\mu}
+\end{styledmatrix}
+&
+e^{tT_\mu} =
+\begin{styledmatrix}
+e^{tD_\mu}	& te^{tD_\mu}	& \frac{t^2}{2!} e^{tD_\mu}	& \cdots		& \frac{t^{k-1}}{(k-1)!} e^{tD_\mu} \\
+			& e^{tD_\mu}	& te^{tD_\mu}				& \cdots		& \frac{t^{k-2}}{(k-2)!} e^{tD_\mu} \\
+			&				& \ddots					&				& \vdots \\
+			&				&							& e^{tD_\mu}	& te^{tD_\mu} \\
+			&				&							&				& e^{tD_\mu}
+\end{styledmatrix}
+& \cite[5.5.2]{MAT-60150} \\
+
 \hline
 \end{tabular}
 \end{table}
+
+
+\begin{eqtable}{Ominaisavaruudet \cite[5]{MAT-60150}}
+ominaisavaruus				& E_\lambda = \{ \bm{x}: A \bm{x} = \lambda \bm{x} \} \\ % This is not from the pruju(source)
+realisoitu ominaisavaruus	& F_\mu = \text{Re}(E_\mu) \cup \text{Im}(E_\mu) = \text{span}_\mathbb{R} \{ \text{Re}(\bm{v}), \text{Im}(\bm{v}) \} \\ % Would it be more logical to use \lambda instead of \mu ?
+yleistetty ominaisavaruus	& K_\lambda = \{ \bm{x} \in \mathbb{C}^n: \bm{x} \text{ on yleistetty ominaisvektori} \} \\
+							& E_\lambda \subset K_\lambda \\
+							& K_{\lambda_i} \cap K_{\lambda_j} = \{0 \} \\
+							& K_\lambda = N \big( (A- \lambda I_n)^{alg(\lambda)} \big) \\
+\end{eqtable}
+
+\begin{eqtable}{Jordanin kanoninen muoto yleisessä tilanteessa \cite[5.4.1]{MAT-60150}}
+spektri			& \sigma(A) = \{ \lambda_1, \ldots, \lambda_k, \mu_1, \overline{\mu}_1, \ldots, \mu_q, \overline{\mu}_q \} \\
+$\lambda_j$:tä vastaava Jordanin ketju	& j^(\lambda_j) = \{ \bm{v}^{(\lambda_j)}_1, \ldots, \bm{v}^{(\lambda_j)}_{m_j} \} \\
+$\mu_r$:ää vastaava Jordanin ketju		& \{ \bm{u}^{(\mu_r)}_1, \ldots, \bm{u}^{(\mu_r)}_{n_r} \} \\
+										& t^{(\mu_j)} = \{ \text{Re}( \bm{u}^{(\mu_r)}_1 ), \text{Im}( \bm{u}^{(\mu_r)}_1 ), \ldots, \text{Re}( \bm{u}^{(\mu_r)}_{n_r} ), \text{Im}( \bm{u}^{(\mu_r)}_{n_r} ) \} \\
+										& P = [j^{(\lambda_1)} \cdots j^{(\lambda_k)} t^{(\mu_1)} \cdots t^{(\mu_q)} ] \\
+
+lohkodiagonaalimatriisi	& J = P^{-1}AP =
+\begin{styledmatrix}
+J_{\lambda_1} \\
+& \ddots \\
+& & J_{\lambda_k} \\
+& & & T_{\mu_1} \\
+& & & & \ddots \\
+& & & & & T_{\mu_q} \\
+\end{styledmatrix}
+\\
+
+Jordanin lohkot	& J_{\lambda_j} = 
+\begin{styledmatrix}
+\lambda & 1 \\
+& \lambda & 1 \\
+& & \ddots & \ddots \\
+& & & \lambda & 1 \\
+& & & & \lambda
+\end{styledmatrix}
+\\
+
+& T_{\mu_r} =
+\begin{styledmatrix}
+D_{\mu_r} & I_2 \\
+& D_{\mu_r} & I_2 \\
+& & \ddots & \ddots \\
+& & & D_{\mu_r} & I_2 \\
+& & & & D_{\mu_r}
+\end{styledmatrix}
+\\
+
+& D_{\mu_r} =
+\begin{styledmatrix}
+\alpha_r	& \beta_r \\
+-\beta_r	& \alpha_r
+\end{styledmatrix}
+\text{, kun } \mu_r = \alpha_r + i \beta_r
+\\
+
+\end{eqtable}
+
+
+\begin{eqtable}{Usean värähtelijän systeemi \cite[6.1]{MAT-60150}}
+usean värähtelijän systeemi	& M \bm{x}'' + C \bm{x}' + K \bm{x} = \bm{f}, \quad \bm{x}(0)=\bm{c}_1, \quad \bm{x}'(0)=\bm{c}_2 \\
+ratkaistavassa muodossa	& \bm{z}' =
+\begin{styledmatrix}
+O	& I_n \\
+-M^{-1}K	& -M^{-1}C
+\end{styledmatrix}
+\bm{z}
++
+\begin{styledmatrix}
+\bm{0} \\
+M^{-1} \bm{f}
+\end{styledmatrix}
+, \quad
+\bm{z}(0) =
+\begin{styledmatrix}
+\bm{c}_1 \\
+\bm{c}_2
+\end{styledmatrix}
+\\
+
+\end{eqtable}
+
+
+\begin{eqtable}{Stabiilius \cite[6.2]{MAT-60150}}
+matriisifunktio on stabiili, kun	& \lim_{t \rightarrow \infty} ||e^{tA} || = 0 \\
+jos $t \mapsto e^{tA}$ on stabiili, niin	& \lim_{t \rightarrow \infty} |e^{tA} \bm{c} = 0 \quad \forall \bm{c} \in \mathbb{R}^n \\
+Lyapunovin lause	& \text{matriisifunktio } t \mapsto e^{tA} (A \in \mathbb{R}^{n \times n}) \text{ on stabiili}  \Leftrightarrow \forall \lambda: \text{Re} \lambda < 0 \\
+\end{eqtable}
+
+
+\begin{eqtable}{Lineaariset järjestelmät \cite[6.3]{MAT-60150}}
+Lineaarinen järjestelmä
+&
+\begin{eqgroup}
+\bm{x}' = A\bm{x} + B\bm{u} \\
+\bm{y} = C\bm{x} + D\bm{u}
+\end{eqgroup}
+\\
+
+oletukset	& \bm{x}: [0, \infty) \rightarrow \mathbb{R}^n,
+	\quad \bm{y}: [0, \infty) \rightarrow \mathbb{R}^m,
+	\quad \bm{u}: [0, \infty) \rightarrow \mathbb{R}^k,
+	\quad \bm{x}(0) = \bm{c} \\
+
+vakionvariointikaavasta & \bm{x}(t) = e^{tA} \bm{c} + \int_0^t e^{(t-s)A} B\bm{u}(s)ds \\
+						& \bm{y}(t) = Ce^{tA} \bm{c} + \int_0^t e^{(t-s)A} B\bm{u}(s)ds + D\bm{u} \\
+
+tavoite				& \lim_{t \rightarrow \infty} | \bm{y}(t) - \bm{y}_r(t)| = 0 \\
+systeemin ohjaus	& \bm{u} = K \bm{x} + L \\
+					& \Rightarrow \bm{x}' = (A+BK)\bm{x} + BL \\
+\end{eqtable}
+
+
+\begin{eqtable}{Laplace-muunnos \cite[6.4]{MAT-60150}}
+\multicolumn{2}{|l|}{Matriisifunktio $A: [0,\infty) \rightarrow \mathbb{R}^{n \times m}$ on eksponentiaalista kertalukua vakiolla $k$, jos} \\
+\multicolumn{2}{|l|}{ $\exists M>0, K \in \mathbb{R}$ s.e. $\forall i,j: \big| [A]_{ij}| \leq Me^{kt}, $ kun $ t \geq 0$} \\
+\hline
+Laplace-muunnos & \laplace{A} (s) = \int_0^\infty A(t) dt \\
+määritelty joukossa	& D = \{ s \in \mathbb{C} : \text{Re}(s)>k \} \\
+\hline
+injektiivisyys	& \laplace{A} = \laplace{B} \Rightarrow A=B \\
+				& \Rightarrow \exists \laplace{}^{-1} \\
+\hline
+ominaisuuksia	& (\text{oletukset: } A,B: [0, \infty) \rightarrow \mathbb{R}^{n \times n} \text{eksponentiaalista kertalukua olevia} \\
+				& \text{matriisifunktioita ja } U,V \in \mathbb{R}^{n \times n}) \\
+				& \text{funktio } U A(t)+B(t)V \text{ on eksponentiaalista kertalukua } \\
+				& \land \laplace{UA+BV} = U\laplace{A}+\laplace{B}V \\
+				& \laplace{e^{tA} A(t)}(s) = \laplace{A}(s-a) \\
+				& \laplace{A(t+a)}(s) = e^{sa} \laplace{A}(s) \\
+				& \laplace{A}(s) = [l_{ij}(s;A)] \rightarrow \text{komplementtifunktiot } l_{ij}(s;A) \text{ ovat} \\
+				& \text{määrittelyjoukossaan kompleksitason analyyttisia funktioita} \\
+				& \text{Re}(s)>||A|| \rightarrow \laplace{e^{tA}}(s) = (sI_n-A)^{-1} \\	% Lause 6.4.7
+\hline
+konvoluutio		& (\text{oletukset: } A: [0, \infty) \rightarrow \mathbb{R}^{n \times m}, B: [0, \infty) \rightarrow \mathbb{R}^{m \times k}) \\
+				& A*B: [0, \infty) \rightarrow \mathbb{R}^{n \times k} \\
+				& A*B(t) = \int_0^t A(u)B(t-u)du = \int_0^t A(t-u)B(u)du \\
+				& \laplace{A*B} = \laplace{A}\laplace{B} \\
+\hline
+	& (\text{oletus: } \bm{x}: [0, \infty) \rightarrow \mathbb{R}^n kahdesti derivoituva \\
+	& \laplace{\bm{x}'}(s) = s \laplace{\bm{x}}(s)-\bm{x}(0) \\
+	& \laplace{\bm{x}''}(s) = s^2 \laplace{\bm{x}}(s) - s\bm{x}(0) - \bm{x}'(0) \\
+\hline
+Neumannin sarja	& \text{Olkoon } B \in \mathbb{R}^{n \times n} \text{ matriisi, jolle } ||B||<1 \Rightarrow I_n-B \text{ on kääntyvä } \land \\
+				& (I_n - B)^{-1} = \sum_{k=0}^\infty B^k = I_n + B + B^2 + B^3 + \ldots \\
+
+\end{eqtable}
+
+
+\begin{eqtable}{Vektorikentät \cite[7.1]{MAT-60150}}
+vektorikenttä	& \vec{V}: \Omega \rightarrow \mathbb{R}^n; \bm{x} \mapsto \vec{V}(\bm{x}) \\
+käyrä			& \gamma: I \rightarrow \mathbb{R}^n \\
+tangenttivektorikenttä	& \vec{V}(\gamma(t)) := \gamma'(t) \\
+\hline
+liikkuva massapiste	& \text{avaruudessa } \mathbb{R}^3 \text{pitkin käyrää} \bm{r}(t), t \in [0,\infty) \\
+nopeus		& \vec{V}(\bm{r}(t)) = \bm{r}'(t) \\
+kiihtyvyys	& \vec{A}(\bm{r}(t)) = \bm{r} \\
+\hline
+lineaarinen vektorikenttä	& \vec{V}(\bm{x}) = A\bm{x} \\
+integraalikäyrä lin. vektorikentässä	& \bm{x}(t) = e^{tA} \bm{c} \\
+virtaus	& \phi: I \times \Omega \rightarrow \mathbb{R}^n \\
+virtaukselle	& \text{Määrittelyjoukko } I \text{ on laajin mahdollinen} \\
+				& \phi(t, \bm{c}) \text{ on pisteen } \bm{c} \in \Omega \text{ kautta kulkeva} \\
+				& \text{vektorikentän } \vec{V} \text{ integraalikäyrä} \\
+				& \Big( (t, \bm{c}) \in I \times \Omega \quad \land \quad (s, \phi(t, \bm{c})) \in I \times \Omega \Big) \\
+				& \Rightarrow \Big( (t+s, \bm{c} \in I \times \Omega \quad \land \quad \phi(t+s, \bm{c}) = \phi(s, \phi(t, \bm{c})) \Big) \\
+lineaarisen vektorikentän virtaus	& \phi: \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{R} \\
+									& \phi(t, \bm{c}) = e^{tA} \bm{c} \\
+tasapainopiste	& \vec{V}(\overline{\bm{x}}) = \bm{0} \\
+tpp.:n integraalikäyrä				& \gamma_{\bm{x}}: I \rightarrow \mathbb{R}^n \\
+stabiili tasapainopiste	& \forall \epsilon > 0 \exists \delta > 0: \Big( | \gamma_{\bm{x}} (t)-\overline{\bm{x}}| < \epsilon \quad \forall t \in I, \text{ kun } | \bm{x} - \overline{\bm{x}} | < \delta \Big) \\
+\hline
+origo nieluna	& \forall \lambda: \text{Re}(\lambda) < 0 \\
+				& \Rightarrow \text{kontraktio} \\
+origo lähteenä	& \forall \lambda: \text{Re}(\lambda) > 0 \\
+				& \Rightarrow \text{ekspansio} \\
+\hline
+jos origo on nielu	& \exists K, b > 0: \quad |e^{tA} \bm{c} | \leq Ke^{-tb} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
+jos origo on lähde	& \exists L, c > 0: \quad |e^{tA} \bm{c} | \geq Le^{tc} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
+
+\end{eqtable}
+
+% MISSING hyperbolic flow, generic properties

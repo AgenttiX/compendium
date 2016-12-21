@@ -21,6 +21,7 @@
 \usepackage{pslatex}	% Makes the PDF output look better
 \usepackage{titletoc,tocloft} % For styling Table of Contents
 \usepackage{titlesec}	% For styling \part headers
+\usepackage{xifthen}	% Expanded if-else-logic for functions, \ifthenelse for example
 
 
 % Define Table of Contents style
@@ -106,6 +107,20 @@
 	\end{table}
 }
 
+% Basic table for math without labels
+\newenvironment{mathtable}[1]{
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{10pt}
+	\begin{tabular}{| >{$\displaystyle} l <{$} |}
+	\hline
+}{
+	\hline
+	\end{tabular}
+	\end{table}
+}
+
 % Matrix with style that can be changed from here
 \newenvironment{styledmatrix}{
 	\setlength{\extrarowheight}{0pt}
@@ -125,6 +140,15 @@
 % Inner product
 \newcommand{\innerp}[2]{
 	\langle \bm{#1}, \bm{#2} \rangle
+}
+
+% Laplace transform
+\newcommand{\laplace}[1]{
+	\ifthenelse{\isempty{#1}}{
+		\mathcal{L}
+	}{
+		\mathcal{L} \{ #1 \}
+	}
 }
 
 %-----
