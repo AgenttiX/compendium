@@ -956,15 +956,35 @@ lineaarisen vektorikentän virtaus	& \phi: \mathbb{R} \times \mathbb{R}^n \right
 tasapainopiste	& \vec{V}(\overline{\bm{x}}) = \bm{0} \\
 tpp.:n integraalikäyrä				& \gamma_{\bm{x}}: I \rightarrow \mathbb{R}^n \\
 stabiili tasapainopiste	& \forall \epsilon > 0 \exists \delta > 0: \Big( | \gamma_{\bm{x}} (t)-\overline{\bm{x}}| < \epsilon \quad \forall t \in I, \text{ kun } | \bm{x} - \overline{\bm{x}} | < \delta \Big) \\
-\hline
-origo nieluna	& \forall \lambda: \text{Re}(\lambda) < 0 \\
+\end{eqtable}
+
+\begin{eqtable}{Nielut, lähteet ja hyperboliset virtaukset \cite[7.2, 7.3]{MAT-60150}}
+origo nieluna	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) < 0 \\
 				& \Rightarrow \text{kontraktio} \\
-origo lähteenä	& \forall \lambda: \text{Re}(\lambda) > 0 \\
+origo lähteenä	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) > 0 \\
 				& \Rightarrow \text{ekspansio} \\
 \hline
 jos origo on nielu	& \exists K, b > 0: \quad |e^{tA} \bm{c} | \leq Ke^{-tb} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
 jos origo on lähde	& \exists L, c > 0: \quad |e^{tA} \bm{c} | \geq Le^{tc} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
-
+\hline
+hyperbolinen virtaus	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) \neq 0 \\
+						& \forall A \in \mathbb{R}^{n \times n} \text{, jolle } \phi_t=e^{tA} \text{on hyperbolinen}: \\
+						\hline
+						& \exists \text{ yksikäsitteiset aliavaruudet } E^s, E^u \subset \mathbb{R}^n: \mathbb{R}^n = E^s \oplus E^u \\
+						& \text{ja näitä vastaava similaarimuunnnos } P^{-1}AP= \begin{styledmatrix} A_k \\ & A_e \end{styledmatrix},\\
+						& \text{jossa virtaus } e^{tA_k} \text{ on kontraktio ja } e^{tA_c} \text{ ekspansio} \\
+						\hline
+$E^s$, $E^u$ ovat A ja $e^{tA}$-invariantteja	& AE^s \subset E^s, AE^u \subset E^u, \quad e^{tA}E^s \subset E^s, e^{tA}E^u \subset E^u, \quad t \in \mathbb{R} \\
 \end{eqtable}
 
-% MISSING hyperbolic flow, generic properties
+\begin{eqtable}{Geneeriset ominaisuudet \cite[7.4]{MAT-60150}}
+(oletukset)		& X \subset \mathbb{R}^{n \times n}, \quad A \in \mathbb{R}^{n \times n},\quad  U \in \mathbb{R}^{n \times n}, \quad X \in \mathbb{R}^{n \times n} \\
+\hline
+tiheä joukko	& \forall \epsilon > 0 \land A \in \mathbb{R}^{n \times n} \exists B \in X: ||A-B|| \leq \epsilon \\
+A-keskipisteinen r-säteinen pallo	& B_r(A) = \{ C \in \mathbb{R}^{n \times n}: ||A-C|| \leq r \} \\
+avoin joukkko	& U: \Big( \forall A \in U \exists r > 0: B_r (A) \subset U \Big) \\
+\hline
+				& \forall X_i \text{ avoimia ja tiheitä } \Rightarrow X=X_1 \cap \cdots \cap X_m \text{ on avoin ja tiheä} \\
+				\hline
+geneerinen ominaisuus	& \exists \text{tiheä ja avoin osajoukko, jossa se on voimassa} \\
+\end{eqtable}
