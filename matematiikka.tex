@@ -4,7 +4,7 @@
 
 \begin{table}[ht!]
 \centering
-\caption{Kreikkalaiset aakkoset \cite[s. 8]{MAOL}, \cite[sisäkansi]{ModernPhysics}}
+\caption{\href{https://en.wikipedia.org/wiki/Greek_alphabet}{Kreikkalaiset aakkoset} \cite[s. 8]{MAOL}, \cite[sisäkansi]{ModernPhysics}}
 \begin{tabular}{ >{$} l <{$}  >{$} l <{$} l l } \hline
 \text{Iso}			& \text{Pieni}		& Nimi suomeksi	& Nimi englanniksi \\ \hline
 \text{A}	& \alpha	& alfa			& alpha \\
@@ -105,6 +105,95 @@ kuvaaja eli graafi ($f: A \rightarrow \mathbb{R}$)
 				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \}
 				= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\
 \end{eqtable}
+
+\section{Aritmetiikka ja algebra}
+
+Raja-arvoja \cite[s. 20]{MAOL}
+\begin{align*}
+& \lim_{n \rightarrow \infty} \sqrt[n]{n} = 1 \\
+& \lim_{n \rightarrow \infty} \Big( 1 + \frac{1}{n} \Big)^n = e \approx 2,718 282 \text{ (Neperin luku)} \\
+& \lim_{n \rightarrow \infty} \Big( \big( \sum_{k=1}^n \frac{1}{k} \big) - \ln n \Big) \approx 0,577 216 \text{ (Eulerin vakio)} \\
+& \lim_{n \rightarrow \infty} \frac{a^n}{n!} = 0 \\
+& \lim_{x \rightarrow 0+} \big( x^a \cdot \log x \big) = 0 \\
+& \lim_{x \rightarrow \infty} \frac{\log x}{x^a} = 0 \\
+& \lim_{x \rightarrow \infty} \frac{x^a}{e^x} = 0 \\
+& \lim_{n \rightarrow \infty} \Big( n \cdot \sin \frac{x}{n} \Big) = x \\
+& \lim_{x \rightarrow 0} \frac{\sin x}{x} = 1
+\end{align*}
+
+\begin{eqtable}{Aritmeettinen ja geometrinen lukujono \cite[s. 20]{MAOL} }
+aritmeettinen jono	& a_1, a_1 + d, a_1 + 2d \ldots \\
+yleinen termi		& a_n = a_1 + (n-1)d \\
+aritmeettinen summa	& S_n = \sum_{i=1}^n a_i = n \frac{a_1+a_n}{2} \\
+\hline
+geometrinen jono	& a_1, a_1 q, a_1 q^2 \ldots \\
+yleinen termi		& a_1 q^{n-1} \\
+geometrinen summa	& S_n = \sum_{i=1}{n} a_i = \frac{a_1 (1-q^n)}{1-q}, \text{ jos } q \neq 1 \\
+					& S_n = n a_1, \text{ jos } q = 1 \\
+suppeneva geometrinen sarja	& S = \sum_{i=1}^\infty a_i = a_1 + a_1 q + a_1 q^2 0 \ldots = \frac{a_1}{1-q}, \text{ jos } |q| \leq 1 \\
+\end{eqtable}
+
+\clearpage
+
+\section{Trigonometria}
+
+Trigonometristen funktioiden väliset yhteydet \cite[s. 31]{MAOL}
+\begin{align*}
+& \sin x = \pm \sqrt{1- \cos^2 x} = \pm \frac{\tan x}{\sqrt{1 + \tan^2 x}} \\
+& \cos x = \pm \sqrt{1 - \sin^2 x} = \pm \frac{1}{\sqrt{1 + \tan^2 x}} \\
+& \tan x = \pm \frac{ \sin x}{\sqrt{1 - \sin^2 x}} = \pm \frac{\sqrt{1 - \cos^2 x}}{\cos x}
+\end{align*}
+
+Palautuskaavat \cite[s. 31]{MAOL}
+\begin{align*}
+& \sin x = - \sin(-x) = \cos \Big( \frac{\pi}{2} - x \Big) = \sin(\pi -x) = \sin(x + n2\pi) \\
+& \cos x = \cos(-x) = \sin \Big( \frac{\pi}{2} - x \Big) = -\cos(\pi-x) = \cos(x + n2\pi) \\
+& \tan x = - \tan(-x) = -\tan(\pi - x) = \tan(x + n\pi)
+\end{align*}
+
+Kaksinkertaiset kulmat \cite[s. 32]{MAOL}
+\begin{align*}
+& \sin 2x = 2 \sin x \cos x \\
+& \cos 2x = \cos^2 x - \sin^2 x = 2 \cos^2 x - 1 = 1 - 2 \sin^2 x \\
+& \tan 2x = \frac{2 \tan x}{1 - \tan^2 x}
+\end{align*}
+
+Kolminkertaiset kulmat \cite[s. 32]{MAOL}
+\begin{align*}
+& \sin 3x = 3 \sin x - 3 \sin^3 x = \sin x (4 \cos^2 x - 1) \\
+& \cos 3x = 4 \cos^3 x - 3 \cos x = \cos x (1 - 4 \sin^2 x ) \\
+& \tan 3x = \frac{3 \tan x - \tan^3 x}{1 - 3 \tan^2 x}
+\end{align*}
+
+Puolikkaat kulmat \cite[s. 32]{MAOL}
+\begin{align*}
+& \sin \frac{x}{2} = \pm \sqrt{\frac{1 - \cos x}{2}} \\
+& \cos \frac{x}{2} = \pm \sqrt{\frac{1 + \cos x}{2}} \\
+& \tan \frac{x}{2} = \pm \sqrt{\frac{1 - \cos x}{1 + \cos x}} = \frac{\sin x}{1 + \cos x} = \frac{1 - \cos x}{\sin x}
+\end{align*}
+
+Trigonometristen funktioiden potensseja \cite[s. 33]{MAOL}
+\begin{align*}
+& \sin^2 x = \frac{1}{2} (1- \cos 2x) \\
+& \cos^2 x = \frac{1}{2} (1+ \cos 2x) \\
+& \sin^3 x = \frac{1}{4} (3 \sin x - \sin 3x) \\
+& \cos^3 x = \frac{1}{4} (\cos 3x + 3 \cos x) \\
+& \sin^3 x = \frac{1}{8} (\cos 4x - 4 \cos 2x + 3) \\
+& \cos^4 x = \frac{1}{8} (\cos 4x + 4 \cos 2x + 3)
+\end{align*}
+
+Summakaavoja \cite[s. 33]{MAOL}
+\begin{align*}
+& \sin ( x \pm y ) = \sin x \cos y \pm \cos x \sin y \\
+& \cos (x \pm y ) = \cos x \cos y \mp \sin x \sin y \\
+& \tan (x \pm y ) = \frac{\tan x \pm \tan y}{1 \mp \tan x \tan y} \\
+& \sin x + \sin y = 2 \sin \frac{x+y}{2} \cos \frac{x-y}{2} \\
+& \sin x - \sin y = 2 \cos \frac{x+y}{2} \sin \frac{x-y}{2} \\
+& \cos x + \cos y = 2 \cos \frac{x+y}{2} \cos \frac{x-y}{2} \\
+& \cos x - \cos y = -2 \sin \frac{x+y}{2} \sin \frac{x-y}{2} \\
+& \tan x \pm \tan y = \frac{\sin(x \pm y)}{\cos x \cos y} \\
+& \cos x \pm \sin x = \sqrt{2} \sin \Big( \frac{\pi}{4} \pm x \Big) = \sqrt{2} \cos \Big( \frac{\pi}{4} \mp x \Big) 
+\end{align*}
 
 \section{Differentiaali- ja integraalilaskenta}
 
@@ -381,7 +470,7 @@ permutaatiomatriisi			& P = \begin{styledmatrix}
 \end{eqtable}
 
 
-\begin{eqtable}{Determinantti \cite[1.4.5]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Determinant}{Determinantti} \cite[1.4.5]{MAT-60150}}
 & \text{Määritelty, kun } A=[a_{ij}] \text{ on } n \times n \text{-matriisi} \\
 \hline
 
@@ -510,7 +599,7 @@ lineaarisen yhtälöryhmän ratkaiseminen	& A \bm{x} = P^T LU \bm{x} = \bm{b} \\
 \end{eqtable}
 
 
-\begin{eqtable}{Aliavaruus \cite[s. 59-83]{MAT-60000}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Linear_subspace}{Aliavaruus} \cite[s. 59-83]{MAT-60000}}
 aliavaruus					& \alpha \bm{x} + \beta \bm{y} \in S \quad \forall \bm{x}, \bm{y} \in \mathcal{S} \\
 arvojoukko (kuva-avaruus)	& \mathcal{R} (A) = \{y | \exists \bm{x} \in \mathbb{F}^n s.e. \bm{y} = A \bm{x} \} \in \mathbb{F}^m \\
 ydin (nolla-avaruus)		& \mathcal{N} (A) = \{ \bm{x} | A \bm{x} = \bm{0} \} \\ \hline
@@ -529,7 +618,7 @@ projektorimatriisi			& P^2 = P \\
 \end{eqtable}
 
 
-\begin{eqtable}{Ominaisarvot ja -vektorit \cite[s. 90-100]{MAT-60000}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors}{Ominaisarvot ja -vektorit} \cite[s. 90-100]{MAT-60000}}
 ominaisarvot ja -vektorit	& A \bm{x} = \lambda \bm{x}, \bm{x} \neq \bm{0} \\
 ominaisarvot				& \det (A - \lambda I) = 0 \\
 karakteristinen polynomi	& \prod^n_{k=1} (\lambda - \lambda_k) \\
@@ -544,7 +633,7 @@ Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\
 \end{eqtable}
 
 
-\begin{eqtable}{Jordanin kanoninen muoto \cite[s. 101-107]{MAT-60000}, \cite[5]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Jordan_normal_form}{Jordanin kanoninen muoto} \cite[s. 101-107]{MAT-60000}, \cite[5]{MAT-60150}}
 				& A = SJS^{-1} \\
 				& J = diag(J_1, J_2, \ldots, J_p) \\
 defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
@@ -585,7 +674,7 @@ käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldot
 \end{eqtable}
 
 
-\begin{eqtable}{Singulaariarvohajotelma \cite[s. 117-128]{MAT-60000}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Singular_value_decomposition}{Singulaariarvohajotelma} \cite[s. 117-128]{MAT-60000}}
 singulaariarvohajotelma		& U^*AV = \Lambda \\
 							& A = U \Lambda V^* \\
 							& \Lambda = diag(\sigma_1, \sigma_2, \ldots , \sigma_r, 0, \ldots, 0) \\
@@ -672,7 +761,7 @@ t \in (a,b) \Rightarrow \frac{d}{dt} \int_a^t A(s)ds = A(t) \quad (\text{integra
 \end{table}
 
 
-\begin{eqtable}{Matriisinormi \cite[2.1]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Matrix_norm}{Matriisinormi} \cite[2.1]{MAT-60150}}
 oletukset				& A, B \in \mathbb{R}^{n \times n}, \quad \alpha \in \mathbb{R}, \quad \bm{x} \in \mathbb{R}^n \\ \hline
 matriisinormi			& ||A|| = \max_{|\bm{x}| \leq 1} | A \bm{x} | \\
 suljettu yksikköpallo	& \overline{B}^n = \{\bm{x} \in \mathbb{R}^n: |\bm{x}| \leq 1 \} \\
@@ -899,7 +988,7 @@ systeemin ohjaus	& \bm{u} = K \bm{x} + L \\
 \end{eqtable}
 
 
-\begin{eqtable}{Laplace-muunnos \cite[6.4]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Laplace_transform}{Laplace-muunnos} \cite[6.4]{MAT-60150}}
 \multicolumn{2}{|l|}{Matriisifunktio $A: [0,\infty) \rightarrow \mathbb{R}^{n \times m}$ on eksponentiaalista kertalukua vakiolla $k$, jos} \\
 \multicolumn{2}{|l|}{ $\exists M>0, K \in \mathbb{R}$ s.e. $\forall i,j: \big| [A]_{ij}| \leq Me^{kt}, $ kun $ t \geq 0$} \\
 \hline
@@ -934,7 +1023,7 @@ Neumannin sarja	& \text{Olkoon } B \in \mathbb{R}^{n \times n} \text{ matriisi, 
 \end{eqtable}
 
 
-\begin{eqtable}{Vektorikentät \cite[7.1]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Vector_field}{Vektorikentät} \cite[7.1]{MAT-60150}}
 vektorikenttä	& \vec{V}: \Omega \rightarrow \mathbb{R}^n; \bm{x} \mapsto \vec{V}(\bm{x}) \\
 käyrä			& \gamma: I \rightarrow \mathbb{R}^n \\
 tangenttivektorikenttä	& \vec{V}(\gamma(t)) := \gamma'(t) \\
@@ -977,7 +1066,7 @@ hyperbolinen virtaus	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) \neq 0 
 $E^s$, $E^u$ ovat A ja $e^{tA}$-invariantteja	& AE^s \subset E^s, AE^u \subset E^u, \quad e^{tA}E^s \subset E^s, e^{tA}E^u \subset E^u, \quad t \in \mathbb{R} \\
 \end{eqtable}
 
-\begin{eqtable}{Geneeriset ominaisuudet \cite[7.4]{MAT-60150}}
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Generic_property}{Geneeriset ominaisuudet} \cite[7.4]{MAT-60150}}
 (oletukset)		& X \subset \mathbb{R}^{n \times n}, \quad A \in \mathbb{R}^{n \times n},\quad  U \in \mathbb{R}^{n \times n}, \quad X \in \mathbb{R}^{n \times n} \\
 \hline
 tiheä joukko	& \forall \epsilon > 0 \land A \in \mathbb{R}^{n \times n} \exists B \in X: ||A-B|| \leq \epsilon \\
@@ -988,3 +1077,62 @@ avoin joukkko	& U: \Big( \forall A \in U \exists r > 0: B_r (A) \subset U \Big) 
 				\hline
 geneerinen ominaisuus	& \exists \text{tiheä ja avoin osajoukko, jossa se on voimassa} \\
 \end{eqtable}
+
+\clearpage
+
+\section{Numeerisia taulukoita}
+
+\begin{table}[ht!]
+\centering
+\caption{\href{https://en.wikipedia.org/wiki/Trigonometric_constants_expressed_in_real_radicals}{Trigonometristen funktioiden tarkkoja arvoja} \cite[s. 54-55]{MAOL}}
+\end{table}
+
+{
+\tabulinesep=1mm
+\begin{longtabu} to \linewidth {l | >{$ \displaystyle} l <{$} | >{$ \displaystyle} X <{$} | >{$ \displaystyle} X <{$} | >{$ \displaystyle} X <{$} }
+
+asteet	& \text{radiaanit}	& \sin	& \cos	& \tan \\
+\hline
+\endhead
+
+% First and second columns have been generated using SymPy http://docs.sympy.org/latest/tutorial/printing.html
+0		& 0					& 0									& 1									& 0 \\
+15		& \frac{\pi}{12}	& \frac{1}{4} (\sqrt{6}-\sqrt{2})	& \frac{1}{4}(\sqrt{6}+\sqrt{2})	& 2-\sqrt{3} \\
+18		& \frac{\pi}{10}	& \frac{1}{4} (\sqrt{5}-1)			& \frac{1}{4}\sqrt{10+2\sqrt{5}})	& \frac{1}{5}\sqrt{25-10\sqrt{5}} \\
+22,5	& \frac{\pi}{8}		& \frac{1}{2} \sqrt{2-\sqrt{2}}		& \frac{1}{2}\sqrt{2+\sqrt{2}}		& \sqrt{2}-1 \\
+30		& \frac{\pi}{6}		& \frac{1}{2}						& \frac{\sqrt{3}}{2}				& \frac{1}{\sqrt{3}} \\
+36		& \frac{\pi}{5}		& \frac{1}{4} \sqrt{10-2\sqrt{5}}	& \frac{1}{4}(\sqrt{5}+1)			& \sqrt{5-2\sqrt{5}} \\
+45		& \frac{\pi}{4}		& \frac{1}{\sqrt{2}}				& \frac{1}{\sqrt{2}}				& 1 \\
+54		& \frac{3 \pi}{10}	& \frac{1}{4}(\sqrt{5}+1)			& \frac{1}{4}\sqrt{10-2\sqrt{5}}	& \frac{1}{5}\sqrt{25+10\sqrt{5}}\\
+60		& \frac{\pi}{3}		& \frac{\sqrt{3}}{2}				& \frac{1}{2}						& \sqrt{3} \\
+67,5	& \frac{3\pi}{8}	& \frac{1}{2} \sqrt{2+\sqrt{2}}		& \frac{1}{2}\sqrt{2-\sqrt{2}}		& \sqrt{2}+1 \\
+72		& \frac{2 \pi}{5}	& \frac{1}{4} \sqrt{10+2\sqrt{5}}	& \frac{1}{4}(\sqrt{5}-1)			& \sqrt{5+2\sqrt{5}} \\
+75		& \frac{5 \pi}{12}	& \frac{1}{4}(\sqrt{6}+\sqrt{2})	& \frac{1}{4}(\sqrt{6}-\sqrt{2})	& 2+\sqrt{3} \\
+90		& \frac{\pi}{2}		& 1									& 0									& \text{ei määritelty} \\
+105		& \frac{7 \pi}{12}	& \frac{1}{4}(\sqrt{6}+\sqrt{2})	& -\frac{1}{4}(\sqrt{6}-\sqrt{2})	& -(2+\sqrt{3}) \\
+108		& \frac{3 \pi}{5}	& \frac{1}{4}\sqrt{10+2\sqrt{5}})	& -\frac{1}{4}(\sqrt{5}-1)			& -\sqrt{5+2\sqrt{5}} \\
+112,5	& \frac{5\pi}{8}	& \frac{1}{2}\sqrt{2+\sqrt{2}}		& -\frac{1}{2}\sqrt{2-\sqrt{2}}		& -\sqrt{3+2\sqrt{2}} \\
+120		& \frac{2 \pi}{3}	& \frac{\sqrt{3}}{2}				& -\frac{1}{2}						& -\sqrt{3} \\
+126		& \frac{7 \pi}{10}	& \frac{1}{4}(\sqrt{5}+1)			& -\frac{1}{4}\sqrt{10-2\sqrt{5}}	& -\frac{1}{5}\sqrt{25+10\sqrt{5}}\\
+135		& \frac{3 \pi}{4}	& \frac{1}{\sqrt{2}}				& -\frac{1}{\sqrt{2}}				& -1 \\
+% MAOL page changes here
+144		& \frac{4 \pi}{5}	&\frac{1}{4}\sqrt{10-2\sqrt{5}}		& -\frac{1}{4}(\sqrt{5}+1)			& -\sqrt{5-2\sqrt{5}} \\
+150		& \frac{5 \pi}{6}	& \frac{1}{2}						& -\frac{\sqrt{3}}{2}				& -\frac{1}{\sqrt{3}} \\
+157,5	& \frac{7\pi}{8}	& \frac{1}{2}\sqrt{2-\sqrt{2}}		& -\frac{1}{2}\sqrt{2+\sqrt{2}}		& 1-\sqrt{2} \\
+162		& \frac{9 \pi}{10}	& \frac{1}{4}(\sqrt{5}-1)			& -\frac{1}{4}\sqrt{10+2\sqrt{5}}	& -\frac{1}{5}\sqrt{25-10\sqrt{5}} \\
+165		& \frac{11 \pi}{12}	& \frac{1}{4}(\sqrt{6}-\sqrt{2})	& -\frac{1}{4}(\sqrt{6}+\sqrt{2})	& \sqrt{3}-2 \\
+180		& \pi				& 0									& -1								& 0 \\
+195		& \frac{13 \pi}{12}	& -\frac{1}{4}(\sqrt{6}-\sqrt{2})	& -\frac{1}{4}(\sqrt{6}+\sqrt{2})	& 2-\sqrt{3} \\
+210		& \frac{7 \pi}{6}	& -\frac{1}{2}						& -\frac{\sqrt{3}}{2}				& \frac{1}{\sqrt{3}} \\
+225		& \frac{5 \pi}{4}	& -\frac{1}{\sqrt{2}}				& -\frac{1}{\sqrt{2}}				& 1 \\
+240		& \frac{4 \pi}{3}	& -\frac{\sqrt{3}}{2}				& -\frac{1}{2}						& \sqrt{3} \\
+255		& \frac{17 \pi}{12}	& -\frac{1}{4}(\sqrt{6}+\sqrt{2})	& -\frac{1}{4}(\sqrt{6}-\sqrt{2})	& 2+\sqrt{3} \\
+270		& \frac{3 \pi}{2}	& -1								& 0									& \text{ei määritelty} \\
+285		& \frac{19 \pi}{12}	& -\frac{1}{4}(\sqrt{6}+\sqrt{2})	& \frac{1}{4}(\sqrt{6}-\sqrt{2})	& -(2+\sqrt{3}) \\
+300		& \frac{5 \pi}{3}	& -\frac{\sqrt{3}}{2}				& \frac{1}{2}						& -\sqrt{3} \\
+315		& \frac{7 \pi}{4}	& -\frac{1}{\sqrt{2}}				& \frac{1}{\sqrt{2}}				& -1 \\
+330		& \frac{11 \pi}{6}	& -\frac{1}{2}						& \frac{\sqrt{3}}{2}				& -\frac{1}{\sqrt{3}} \\
+345		& \frac{23 \pi}{12}	& -\frac{1}{4}(\sqrt{6}-\sqrt{2}	& \frac{1}{4}(\sqrt{6}+\sqrt{2})	& \sqrt{3}-2 \\
+360		& 2 \pi				& 0									& 1									& 0 \\
+\end{longtabu}
+}
