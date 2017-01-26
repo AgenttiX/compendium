@@ -1,5 +1,86 @@
 \part{Kemia}
 
+\section{Fysikaalinen kemia}
+
+
+\begin{eqtable-full}{ASDF}
+STP-olosuhteet ("NTP")			& T = 0 \degree \text{C}, \ P = 1 \text{ atm} \\
+SATP-olosuhteet					& T = 25 \degree \text{C}, \ P = 1 \text{ bar} \\
+termodynamiikan 1. pääsääntö	& \Delta U = q + w\\
+suljettu reitti					& \oint dU = 0 \\
+työ								& w = - \int_{V_i}^{V_f} P_{ext} dV \\
+reversiibeli työ				& w = -nRT \ln \frac{V_2}{V_1} \\
+lämpökapasiteetti				& C = \lim_{\Delta T \rightarrow 0} \frac{q}{T_f - T_i} = \frac{\dbar q}{dT} \\
+lämpökapasiteetti vakiotilavuudessa	& C_V = \Big( \frac{\partial U}{\partial T} \Big)_V \\
+entalpia						& H = U + PV \newline = q_P = C_P \Delta T \\
+tilavuuden terminen laajenemiskerroin	& \beta = \frac{1}{V} \Big( \frac{\partial V}{\partial T} \Big)_P \\
+isoterminen puristuvuus			& \kappa = - \frac{1}{V} \Big( \frac{\partial V}{\partial P} \Big)_T \\
+ASDF							& C_P = C_V + TV \frac{\beta^2}{\kappa} \newline C_{P,m} = C_{V,m} + TV_m \frac{\beta^2}{\kappa} \\
+	& \Delta P = \int_{T_i}^{T_f} \frac{\beta}{\kappa} dT - \int_{V_i}^{V_f} \frac{1}{\kappa V} dV \\
+Joule-Thompson-kerroin			& \mu_{J-T} = \lim_{\Delta P \rightarrow 0} \Big( \frac{\Delta T}{\Delta P} \Big)_H = \Big( \frac{\partial T}{\partial P} \Big)_H \\
+								& \Big( \frac{\partial H}{\partial P} \Big)_T = -C_P \mu_{J-T} \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Ideaalikaasu}
+ideaalikaasun tilanyhtälö		& pV = N k_B T = nRT \\
+ideaalikaasujen seos			& pV = \sigma n_i RT \\
+								& P = \sigma \frac{n_i RT}{V} = \sigma p_i \\
+lämpökapasiteettien yhteys		& C_P - C_V = nR \newline C_{P,m} - C_{V,m} = R \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Isobaarinen}
+lämpövirta	& q_P = \int_{T_{sys,i}}^{T_{sys,f}} C_P^{sys} dT = - \int_{T_{surr,i}}^{T_{surr,f}} C_P^{surr} dT \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Isokoorinen}
+sisäenergian muutos	& \Delta U = q_V = C_V \Delta T \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Reversiibeli ja adiabaattinen prosessi}
+	& \gamma = \frac{C_{P,m}}{C_{V,m}} \\
+	& \ln \frac{T_f}{T_i} = (1 - \gamma) \ln \frac{V_f}{V_i} \\
+	& \frac{T_f}{T_i} = \Big( \frac{V_f}{V_i} \Big)^{(1-\gamma)} \\
+	& P_i V_i^\gamma = P_f V_f^\gamma \\
+\end{eqtable-full}
+
+
+\begin{table}[!ht]
+\centering
+\caption{Termokemia}
+\setlength{\extrarowheight}{10pt}
+\begin{tabu} to \textwidth { X | >{$\displaystyle} X <{$} }
+\hline
+reaktioentalpia & \Delta H \degree_R = \sigma \nu_i \Delta H \degree_{f,i} \\
+Kirchhoffin laki \newline (reaktioentalpian lämpötilariippuvuus)	& \Delta H \degree_{R,T_2} = \Delta H \degree_{R,T_1} + \int_{T_1}^{T_2} \Delta C_P dT \\
+lämpökapasiteetin muutos reaktiossa	& \Delta C_{P,R}(T') = \sigma \nu_i C_{P,i}(T') \\
+reaktioiden sisäenergioiden ja entalpioiden kokeellinen määrittäminen	& \Delta U_R = q_{sys} = -q_{surr} = -C_{calorimeter} \Delta T \\
+reaktiossa vain kiinteitä aineita ja nesteitä	& \Delta U >> \Delta (PV) \Rightarrow \Delta H \approx \Delta U \\
+reaktiossa myös kaasuja						& \Delta H_R = \Delta U_R + \Delta n_g RT \\
+\end{tabu}
+\end{table}
+
+\begin{eqtable-full}{Entropia sekä termodynamiikan 2. ja 3. pääsääntö}
+Carnot'n lämpökoneen tehokkuus	& \epsilon = \frac{| w_{cycle} |}{q_{ab}} = \frac{T_{hot} - T_{cold}}{T_{hot}} = 1 - \frac{T_{cold}}{T_{hot}} < 1 \\
+irreversiibeli hyötysuhde	& \epsilon_{irreversiibeli} < \epsilon_{reversiibeli} < 1 \\
+entropia	& dS = \frac{\dbar q_{reversible}}{T} \\
+
+% reversiibeli vakiotilavuudessa	& \Delta S = \int \frac{\dbar q_{reversible}{T} = \int \frac{n C_{V,m} dT}{T} \approx n C_{V,m} \ln \frac{T_f}{T_i} \\
+% reversiibeli vakiopaineessa	& \Delta S = \int \frac{\dbar q_{reversible}{T} = \int \frac{n C_{P,m} dT}{T} \approx n C_{P,m} \ln \frac{T_f}{T_i} \\
+V ja T muuttuvat	& \Delta S = nR \ln \frac{V_f}{V_i} + n C_{V,m} \ln \frac{T_f}{T_i} \\
+					& \Delta S = \int_{T_i}^{T_f} \frac{C_V}{T} dT + \int_{V_i}^{V_f} \frac{\beta}{\kappa} dV = C_V \ln \frac{T_f}{T_i} + \frac{\beta}{\kappa} (V_f - V_i) \\
+P ja T muuttuvat	& \Delta S = -nR \ln \frac{P_f}{P_i} + n C_{P,m} \ln \frac{T_f}{T_i} \\
+faasimuutos	& \Delta S_{trans} = \frac{\Delta H_{trans}}{T_{trans}} \\
+\end{eqtable-full}
+
+
+\clearpage
+
+\section{Taulukoita}
+
 \begin{table}
 \centering
 \caption{Termodynaamisia arvoja \cite[A19-A22]{Zumdahl} }
