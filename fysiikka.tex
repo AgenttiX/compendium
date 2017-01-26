@@ -23,7 +23,7 @@ valovoima	& I		& kandela		& cd \\
 \centering
 \setlength{\extrarowheight}{2pt}
 \caption{\href{https://en.wikipedia.org/wiki/Metric_prefix}{Kerrannaisyksiköiden etuliitteet} \cite[s. 65]{MAOL} }
-\begin{tabularx}{\textwidth}{X|X| >{$} X <{$} |X|X| >{$} X <{$} }
+\begin{tabu} to \textwidth {X|X| >{$} X <{$} |X|X| >{$} X <{$} }
 Nimi	& Tunnus	& \text{Kerroin}	& Nimi	& Tunnus	& \text{Kerroin} \\
 \hline
 deka	& da	& 10^1		& desi		& d		& 10^{-1} \\
@@ -36,8 +36,7 @@ peta	& P		& 10^{15}	& femto		& f		& 10^{-15} \\
 eksa	& E		& 10^{18}	& atto		& a		& 10^{-18} \\
 tsetta	& Z		& 10^{21}	& tsepto	& z		& 10^{-21} \\
 jotta	& Y 	& 10^{24}	& jokto		& y		& 10^{-24} \\
-\hline
-\end{tabularx}
+\end{tabu}
 \end{table}
 
 
@@ -45,7 +44,7 @@ jotta	& Y 	& 10^{24}	& jokto		& y		& 10^{-24} \\
 \centering
 \setlength{\extrarowheight}{5pt}
 \caption{\href{https://en.wikipedia.org/wiki/SI_base_unit}{Perusyksiköiden määritelmät} \cite[s. 64-65]{MAOL} }
-\begin{tabularx}{\textwidth}{lX}
+\begin{tabu} to \textwidth {lX}
 \hline
 metri (m)		& Metri on sellaisen matkan pituus, jonka valo kulkee tyhjiössä aikavälissä 1/299 792 458 sekuntia. \newline (1983, 17. CGPM) \\
 
@@ -60,7 +59,7 @@ kelvin (K)		& Kelvin, termodynaamisen lämpötilan yksikkö, on 1/273,16 veden k
 mooli (mol)		& Mooli on sellaisen systeemin ainemäärä, joka sisältää yhtä monta keskenään samanlaista perusosasta kuin on atomeja 0,012 kilogrammassa hiili-12:ta. Perusosaset voivat olla atomeja, molekyylejä, ioneja, elektroneja, muita hiukkasia tai sellaisten hiukkasten määriteltyjä ryhmiä. \newline (1971, 14. CGPM) \\
 
 kandela (cd)	& Kandela on sellaisen säteilijän valovoima, joka lähettää tiettyyn suuntaan monokromaattista $540 \cdot 10^{12}$ hertsin taajuista säteilyä ja jonka säteilyintensiteetti tähän suuntaan on 1/683 wattia steradiaania kohti. \newline (1979, 16. CGPM) \\
-\end{tabularx}
+\end{tabu}
 
 \end{table}
 
@@ -72,31 +71,31 @@ kandela (cd)	& Kandela on sellaisen säteilijän valovoima, joka lähettää tie
 \begin{consttable}{Universaalit luonnonvakiot \cite[s. 70-71]{MAOL} }
 valon nopeus tyhjiössä		& c, c_0		& 2,9979 2458 $\cdot 10^8$ m/s \\
 gravitaatiovakio			& \gamma, G		& 6,674 28 $\cdot 10^{-11}$ Nm$^2$/kg$^2$ \\
-Planckin vakio				& h				& 6,626 0693 $\cdot 10^{-34}$ Js \\
-							& 				& 4,135 6654 $\cdot 10^{-15}$ eVs \\
-redusoitu Planckin vakio (Diracin vakio)	& \hbar = \frac{h}{2 \pi}	& 1,054 5717 $\cdot 10^{-34}$ Js \\
-											&							& 6,582 1159 $\cdot 10^{-16}$ eVs \\ % calculated h (eVs) / 2 \pi
+Planckin vakio				& h				& 6,626 0693 $\cdot 10^{-34}$ Js \newline
+							 					4,135 6654 $\cdot 10^{-15}$ eVs \\
+redusoitu Planckin vakio \newline (Diracin vakio)	& \hbar = \frac{h}{2 \pi}	& 1,054 5717 $\cdot 10^{-34}$ Js \newline
+														6,582 1159 $\cdot 10^{-16}$ eVs \\ % calculated h (eVs) / 2 \pi
 \end{consttable}
 
 \begin{consttable}{Sähkömagneettisia vakioita \cite[s. 70-71]{MAOL} }
-tyhjiön permeabiliteetti (magneettivakio)	& \mu_0	& $4 \pi \cdot 10^{-7} \frac{\text{Vs}}{\text{Am}}$ \\
-											& 		& 1,256 637 061 $\cdot 10^{-6}$ H/m \\
-tyhjiön permittiivisyys (sähkövakio)		& \epsilon_0 = \frac{1}{\mu_0 c^2}	& 8,854 187 818 $\cdot 10^{-12}$ F/m \\
+tyhjiön permeabiliteetti \newline (magneettivakio)	& \mu_0	& $4 \pi \cdot 10^{-7} \frac{\text{Vs}}{\text{Am}}$ \newline
+											 			1,256 637 061 $\cdot 10^{-6}$ H/m \\
+tyhjiön permittiivisyys \newline (sähkövakio)		& \epsilon_0 = \frac{1}{\mu_0 c^2}	& 8,854 187 818 $\cdot 10^{-12}$ F/m \\
 Coulombin lain vakio						& k_e = \frac{1}{4 \pi \epsilon_0}	& 8,987 551 787 $\cdot 10^9$ Nm$^2$/C$^2$ \\
 alkeisvaraus								& e		& 1,602 176 487 $\cdot 10^{-19}$ C \\
 \end{consttable}
 
 \begin{consttable}{Atomi- ja ydinfysiikan vakioita \cite[s. 70-71]{MAOL} }
-elektronin lepomassa	& m_e	& 9,109 3822 $\cdot 10^{-31}$ kg \\
-						&		& 5,485 7991 $\cdot 10^{-4}$ u \\
-protonin lepomassa		& m_p	& 1,672 6216 $\cdot 10^{-27}$ kg \\
-						&		& 1,007 2765 u \\
-neutronin lepomassa		& m_n	& 1,674 9273 $\cdot 10^{-27}$ kg \\
-						&		& 1,008 6650 u \\
-deuteronin lepomassa	& m_d	& 3,343 5835 $\cdot 10^{-27}$ kg \\
-						&		& 2,013 5532 u \\
-alfahiukkasen lepomassa	& m_\alpha	& 6,644 656 $\cdot 10^{-27}$ kg \\
-						&		& 4,001 5062 u \\
+elektronin lepomassa	& m_e	& 9,109 3822 $\cdot 10^{-31}$ kg \newline
+									5,485 7991 $\cdot 10^{-4}$ u \\
+protonin lepomassa		& m_p	& 1,672 6216 $\cdot 10^{-27}$ kg \newline
+									1,007 2765 u \\
+neutronin lepomassa		& m_n	& 1,674 9273 $\cdot 10^{-27}$ kg \newline
+									1,008 6650 u \\
+deuteronin lepomassa	& m_d	& 3,343 5835 $\cdot 10^{-27}$ kg \newline
+									2,013 5532 u \\
+alfahiukkasen lepomassa	& m_\alpha	& 6,644 656 $\cdot 10^{-27}$ kg \newline
+									4,001 5062 u \\
 Rydbergin vakio	\cite[s. 171]{ModernPhysics}		& R_\infty	& 1,097 3732 $\cdot 10^7$ 1/m \\
 \end{consttable}
 
@@ -109,12 +108,15 @@ moolinen kaasuvakio			& R			& 8,314 510 $\frac{\text{Pa} \cdot \text{m}^3}{\text
 							&			& 0,083 145 10 $\frac{\text{bar} \cdot \text{dm}^3}{\text{mol} \cdot \text{K}} $ \\
 \end{consttable}
 
+\clearpage
 
-\begin{table}
+\subsection{Muuntokertoimia}
+
+\begin{table}[ht!]
 \centering
 \setlength{\extrarowheight}{2pt}
-\caption{Muuntokertoimia, osa 1 \cite{MAOL}}
-\begin{tabular}{l|ll}
+\caption{Muuntokertoimia, osa 1 \cite{MAOL}, \cite{IAU-Measuring} }
+\begin{tabu} to \textwidth {l|lX}
 \hline
 pituus	& 1""	& = 1 in = tuuma = 25,40 mm \\
 		& 1'	& = 1 ft = 1 jalka = 0,3048 m \\
@@ -122,9 +124,9 @@ pituus	& 1""	& = 1 in = tuuma = 25,40 mm \\
 		& 1 Å	& = 1 ångström = $10^{-10}$ m = 0,1 nm \\
 		& 1 mpk	& = 1 M = 1 meripeninkulma = 1 852 m \\
 		% Light-year is defined using the julian year, not the gregorian one. MAOL has a wrong value. During the TUT astrophysics course (FYS-1670) of 2016, the lecturer Antti Vuorimäki recommended students to replace the wrong value from their table books with the correct one.
-		& 1 ly	& = 1 valovuosi = 9,460 730 472 5808 Pm \quad \cite{IAU-Measuring} \\
+		& 1 ly	& = 1 valovuosi = 9,460 730 472 5808 Pm\\ % \cite{IAU-Measuring}
 		& 1 pc	& = 1 parsek = 30,85678 Pm \\
-		& 1 au	& = 1 tähtitieteellinen yksikkö = 149,597 870 700 Gm \quad \cite{IAU-Measuring} \\
+		& 1 au	& = 1 tähtitieteellinen yksikkö = 149,597 870 700 Gm \\ % \cite{IAU-Measuring}
 \hline
 massa	& 1 ka	& = 1 karaatti = 200 mg \\
 		& 1 u	& = 1,660 5389 $\cdot 10^{-27}$ kg \\
@@ -151,22 +153,21 @@ tilavuus	& 1 l		& = 1 dm$^3$ \\
 			& 1 gal		& = 1 gallona (US) = 3,785 412 l \\
 			& 1 rt		& = 1 rekisteritonni = 2,831 685 m$^3$ \\
 			& 1 std		& = 1 standartti = 4,672 280 m$^3$ \\
+\end{tabu}
+\end{table}
+
+
+\begin{table}[ht!]
+\centering
+\setlength{\extrarowheight}{2pt}
+\caption{Muuntokertoimia, osa 2 \cite{MAOL}}
+\begin{tabu} to \textwidth{l|lX}
 \hline
 nopeus		& 1 solmu	& = 1 mpk/h = 1,852 km/h = 0,5144 m/s \\
 			& 1 mach	& = 1 M = 311 m/s \\
 \hline
 voima		& 1 kp		& = 9,806 65 N \\
 			& 1 dyn		& = 10 $\mu$N \\
-\hline
-\end{tabular}
-\end{table}
-
-
-\begin{table}
-\centering
-\setlength{\extrarowheight}{2pt}
-\caption{Muuntokertoimia, osa 2 \cite{MAOL}}
-\begin{tabular}{l|ll}
 \hline
 työ, energia	& 1 erg	& = 0,1 $\mu$J \\
 			& 1 eV		& = 1,602 1773$\cdot 10^{-19}$ J \\
@@ -211,7 +212,7 @@ säteilytys	& 1 R	& = 1 röntgen = 0,258 mC/kg (ilmassa) \\
 absorboitunut annos	& 1 rd	& = 1 rad = 0,01 J/kg = 0,01 gray = 10 mGy \\
 \hline
 ekvivalenttiannos	& 1 rem	& = 0,01 J/kg = 0,01 sievert = 10 mSv \\
-\end{tabular}
+\end{tabu}
 \end{table}
 
 \clearpage
@@ -475,7 +476,7 @@ Davisson-Germer ASDF		& n \lambda = D sin \phi \\
 \clearpage
 \subsection{Kvanttimekaniikka}
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Wave\%E2\%80\%93particle_duality}{Aaltohiukkasdualismi} \cite[s. 193-233]{ModernPhysics}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Wave\%E2\%80\%93particle_duality}{Aaltohiukkasdualismi} \cite[s. 193-233]{ModernPhysics}}
 De Broglie -aallonpituus	& \lambda = \frac{h}{p} \\
 							& f = \frac{E}{h} \\ \hline
 yleinen aaltoyhtälö (1D)	& \frac{d^2 y}{dx^2} = \frac{1}{v^2} \frac{d^2 y}{dt^2} \\
@@ -494,13 +495,13 @@ yleinen Schrödingerin aaltoyhtälö	& \hat{H} \Psi = E \Psi \\ \hline
 yksiulotteinen Schrödinger	& - \frac{\hbar ^2}{2m} \frac{\partial^2 \Psi (x, t)}{\partial x^2} + V(x, t) \Psi (x, t) = i \hbar \frac{\partial \Psi (x, t)}{\partial t} \\ \hline
 todennäköisyystulkinta (Kööpenhamina)	& P(x) dx = | \psi | ^2 dx \\ \hline
 normalisointiehto			& \int_{-\infty}^{\infty} \Psi^* \Psi dx = 1 \\
-\end{eqtable}
+\end{eqtable-full}
 
 \begin{table}
 \centering
 \caption{\href{https://en.wikipedia.org/wiki/Operator_(physics)}{Kvanttimekaanisia operaattoreita} \cite[s. 252]{ModernPhysics}, \cite[s. 40]{SSED}}
 \setlength{\extrarowheight}{10pt}
-\begin{tabular}{ >{$\displaystyle} l <{$} | l | >{$\displaystyle} l <{$} } \hline
+\begin{tabu} to \textwidth { D | l | Y } \hline
 \text{Symboli}	& Suure & \text{Kvanttimekaaninen operaattori} \\ \hline
 x		& paikka	& x \\
 f(x)	& mielivaltainen x:n funktio	& f(x) \\
@@ -510,7 +511,7 @@ E		& aikariippuva Hamiltonin operaattori & -\frac{\hbar}{i} \frac{\partial}{\par
 E_k		& kineettinen energia	& -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \\
 L_z		& kulmaliikemäärän z-komponentti	& -i \hbar \frac{\partial}{\partial \phi} \\
 		& odotusarvon laskeminen \cite[6-46]{ModernPhysics}	& \langle f(x) \rangle = \int_{-\infty}^\infty \psi^* f(x) \psi dx \\
-\end{tabular}
+\end{tabu}
 \end{table}
 
 \begin{eqtable}{Kvanttimekaanisia esimerkkitilanteita}
@@ -569,7 +570,7 @@ y &= r \sin \theta \sin \phi \\
 z &= r \cos \theta
 \end{align*}
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Spherical_harmonics}{Palloharmonisten funktioiden matematiikkaa} \cite[r26-27, s. 337-342]{Physics227} \cite[s. 127-129]{JohdatusTaivaanmekaniikkaan}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Spherical_harmonics}{Palloharmonisten funktioiden matematiikkaa} \cite[r26-27, s. 337-342]{Physics227} \cite[s. 127-129]{JohdatusTaivaanmekaniikkaan}}
 % \cite[r26-27, s. 336]{Physics227}
 Legendren polynomit				& P_l (x) = \frac{(-1)^l}{2^l l!} \frac{d^l}{dx^l} (1-x^2)^l \\
 % Symbols |_ and _| would be needed in the following line in the l/2 part: It should be |_l/2_|
@@ -582,9 +583,9 @@ Laguerren polynomit				& L_j (x) = e^x \frac{d^j}{d x^j} e^-x x^j \\
 assosioidut Laguerren polynomit	& L_j^k (x) = (-1)^k \frac{d^k}{dx^k} L_{j+k} (x) \\
 radiaalisen aaltoyhtälön ratkaiseminen	& y_j^k (x) = e^{-\frac{x}{2}} x^{\frac{k+1}{2}} L_j^k (x) \\
 										& R(r) = \frac{y(r)}{r} \\
-\end{eqtable}
+\end{eqtable-full}
 
-\begin{table}
+\begin{table}[!ht]
 \centering
 \caption{\href{https://en.wikipedia.org/wiki/Table_of_spherical_harmonics}{Palloharmonisia funktioita} \cite[s.282]{ModernPhysics}}
 \setlength{\extrarowheight}{15pt}

@@ -22,11 +22,13 @@
 \usepackage{multirow}	% Table cells spanning multiple rows: \multirow
 \usepackage{pslatex}	% Makes the PDF output look better
 \usepackage{tabu}		% Tables that span multiple pages and the page width: \longtabu
-\usepackage{tabularx}	% Tables that span the whole page width: \tabularx
+% \usepackage{tabularx}	% Tables that span the whole page width: \tabularx
 \usepackage{titletoc,tocloft} % For styling Table of Contents
 \usepackage{titlesec}	% For styling \part headers
 \usepackage{xifthen}	% Expanded if-else-logic for functions, \ifthenelse for example
 
+% Define margins
+\usepackage[inner=3cm, outer=2.5cm]{geometry}
 
 % Define Table of Contents style
 \setcounter{tocdepth}{2}
@@ -69,17 +71,21 @@
 
 % It's highly recommended to use these whenever possible so that the style of the whole document can be changed from here
 
+% Column types for tables
+\newcolumntype{M}{ >{$} l <{$} }
+\newcolumntype{D}{ >{$\displaystyle} l <{$} }
+\newcolumntype{Y}{ >{$\displaystyle} X <{$} }
+
 % Basic table for physical constants
 \newenvironment{consttable}[1]{
 	\begin{table}[!ht]
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{5pt}
-	\begin{tabular}{|l| >{$\displaystyle} l <{$} | l |}
+	\begin{tabu} to \textwidth {p{5cm} | M | X }
 	\hline
 }{
-	\hline
-	\end{tabular}
+	\end{tabu}
 	\end{table}
 }
 
@@ -89,11 +95,23 @@
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{10pt}
-	\begin{tabular}{| l | >{$\displaystyle} l <{$} |}
+	\begin{tabular}{ l | D }
 	\hline
 }{
-	\hline
 	\end{tabular}
+	\end{table}
+}
+
+% Basic table for label & equation, full page width
+\newenvironment{eqtable-full}[1]{
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{10pt}
+	\begin{tabu} to \textwidth { l | >{$\displaystyle} X <{$} }
+	\hline
+}{
+	\end{tabu}
 	\end{table}
 }
 
@@ -103,7 +121,7 @@
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{10pt}
-	\begin{tabular}{| l | >{$} l <{$} | l | >{$\displaystyle} l <{$} |}
+	\begin{tabular}{| l | M | l | M |}
 	\hline
 }{
 	\hline
@@ -117,11 +135,25 @@
 	\centering
 	\caption{#1}
 	\setlength{\extrarowheight}{10pt}
-	\begin{tabular}{| >{$\displaystyle} l <{$} |}
+	\begin{tabular}{| D |}
 	\hline
 }{
 	\hline
 	\end{tabular}
+	\end{table}
+}
+
+% Basic table for math without labels, full width
+\newenvironment{mathtable-full}[1]{
+	\begin{table}[!ht]
+	\centering
+	\caption{#1}
+	\setlength{\extrarowheight}{10pt}
+	\begin{tabu}{| Y |}
+	\hline
+}{
+	\hline
+	\end{tabu}
 	\end{table}
 }
 

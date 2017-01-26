@@ -98,13 +98,13 @@ Negaation ja kvanttorin vaihtosääntö \cite[s. 17]{MAT-01160}
 
 \section{Funktiot}
 
-\begin{eqtable}{Funktiot \cite[s. 25-26]{MAT-01160}}
+\begin{eqtable-full}{Funktiot \cite[s. 25-26]{MAT-01160}}
 käänteisfunktio	& y = f(x) \Leftrightarrow x = f^{-1}(y) \\
 				& f^{-1}(f(x)) = x \quad \land \quad f(f^{-1}(y)) = y \\ \hline
 kuvaaja eli graafi ($f: A \rightarrow \mathbb{R}$)
-				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \}
-				= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\
-\end{eqtable}
+				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \} \\
+				&= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\
+\end{eqtable-full}
 
 \section{Aritmetiikka ja algebra}
 
@@ -121,17 +121,17 @@ Raja-arvoja \cite[s. 20]{MAOL}
 & \lim_{x \rightarrow 0} \frac{\sin x}{x} = 1
 \end{align*}
 
-\begin{eqtable}{Aritmeettinen ja geometrinen lukujono \cite[s. 20]{MAOL} }
-aritmeettinen jono	& a_1, a_1 + d, a_1 + 2d \ldots \\
+\begin{eqtable-full}{Aritmeettinen ja geometrinen lukujono \cite[s. 20]{MAOL} }
+aritmeettinen jono	& a_1, \ a_1 + d, \ a_1 + 2d \ldots \\
 yleinen termi		& a_n = a_1 + (n-1)d \\
 aritmeettinen summa	& S_n = \sum_{i=1}^n a_i = n \frac{a_1+a_n}{2} \\
 \hline
-geometrinen jono	& a_1, a_1 q, a_1 q^2 \ldots \\
+geometrinen jono	& a_1, \ a_1 q, \ a_1 q^2 \ldots \\
 yleinen termi		& a_1 q^{n-1} \\
 geometrinen summa	& S_n = \sum_{i=1}{n} a_i = \frac{a_1 (1-q^n)}{1-q}, \text{ jos } q \neq 1 \\
 					& S_n = n a_1, \text{ jos } q = 1 \\
-suppeneva geometrinen sarja	& S = \sum_{i=1}^\infty a_i = a_1 + a_1 q + a_1 q^2 0 \ldots = \frac{a_1}{1-q}, \text{ jos } |q| \leq 1 \\
-\end{eqtable}
+suppeneva geometrinen sarja	& S = \sum_{i=1}^\infty a_i = a_1 + a_1 q + a_1 q^2 0 \ldots \newline = \frac{a_1}{1-q}, \text{ jos } |q| \leq 1 \\
+\end{eqtable-full}
 
 \clearpage
 
@@ -199,10 +199,10 @@ Summakaavoja \cite[s. 33]{MAOL}
 
 \subsection{Derivointi}
 
-\begin{eqtable}{Derivaatan määritelmä \cite[s. 41]{MAOL} }
+\begin{eqtable-full}{Derivaatan määritelmä \cite[s. 41]{MAOL} }
 derivaattafunktio			& f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h} \\
 derivaatta kohdassa $x_0$	& f'(x_0 = \lim_{h \rightarrow 0} \frac{f(x_0 + h)-f(x_0)}{h} = \lim_{x \rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0} \\
-\end{eqtable}
+\end{eqtable-full}
 
 Derivoimissääntöjä \cite[s. 41]{MAOL}
 \begin{align*}
@@ -237,12 +237,12 @@ Määritelmä \cite[(1.8)]{MAT-01360}
 \int f'(x) dx = f(x) + C
 \end{equation*}
 
-\begin{eqtable}{Integroinnin ominaisuuksia}
-integroinnin lineaarisuus \cite[(1.10)]{MAT-01360}		& \int c f(x) dx = c \int f(x) dx, \quad c \in \mathbb{R} \\
+\begin{eqtable-full}{Integroinnin ominaisuuksia \cite{MAT-01360} }
+integroinnin lineaarisuus 		& \int c f(x) dx = c \int f(x) dx, \quad c \in \mathbb{R} \\ % \cite[(1.10)]{MAT-01360}
 														& \int (f(x)+g(x))dx = \int f(x)dx + \int g(x)dx \\
-osittaisintegrointi \cite[(1.13)]{MAT-01360}			& \int f'(x)g(x)dx = f(x)g(x) - \int f(x)g'(x)dx \\
-integrointi sijoituksen avulla \cite[(1.18)]{MAT-01360}	& \int f(g(x))g'(x)dx = F(g(x)) + C \\
-\end{eqtable}
+osittaisintegrointi 			& \int f'(x)g(x)dx = f(x)g(x) - \int f(x)g'(x)dx \\ % \cite[(1.13)]{MAT-01360}
+integrointi sijoituksen avulla 	& \int f(g(x))g'(x)dx = F(g(x)) + C \\ % \cite[(1.18)]{MAT-01360}
+\end{eqtable-full}
 
 \iffalse
 Integroimiskaavoja \cite[s.42]{MAOL}
@@ -267,7 +267,7 @@ Integroimiskaavoja \cite[s.42]{MAOL}
 \centering
 \caption{Integroimiskaavoja \cite[s.130]{MAT-01360} }
 \setlength{\extrarowheight}{5pt}
-\begin{tabular}{| >{$} l <{$} | >{$} l <{$} | >{$} l <{$} | }
+\begin{tabu}{ >{$} l <{$} | >{$} l <{$} | >{$} X <{$} }
 \hline
 f(x)	& \int f(x) dx	& I \\
 \hline
@@ -291,24 +291,22 @@ a^x, \quad a>0 \land a \neq 1			& \frac{a^x}{\ln a} + C				& \mathbb{R} \\
 										& = \ln | x + \sqrt{x^2-1}|+C		& \\
 \frac{1}{1-x^2}							& \text{ar} \tanh x + C				& (-1,1) \\
 										& = \frac{1}{2} \ln \frac{x+1}{x-1} + C	& \\
-\hline
-\end{tabular}
+\end{tabu}
 \end{table}
 
-\begin{eqtable}{Määrätty integraali \cite[s. 17-23]{MAT-01360} }
+\begin{eqtable-full}{Määrätty integraali \cite[s. 17-23]{MAT-01360} }
 % \cite[s. 17]{MAT-01360}
 Riemannin summa		& R = \sum^n_{i=1} f(x_i^*) \Delta x_i \\
 % \cite[(1.33)]{MAT-01360}
 määrätty integraali	 & I = \lim_{|P| \rightarrow 0} \sum^n_{i=1} f(x_i^*) \Delta x_i = \int_a^b f(x) dx = \int_a^b f \\
 % \cite[(1.42)]{MAT-01360}
-integraalilaskennan väliarvolause 	& f: [a,b] \rightarrow \mathbb{R} \text{ on jatkuva} \Rightarrow \exists c \in [a,b] :\\
-											& \int_a^b f(x) dx = f(c)(b-a) \\
+integraalilaskennan väliarvolause 	& f: [a,b] \rightarrow \mathbb{R} \text{ on jatkuva} \Rightarrow \exists c \in [a,b] : \newline \int_a^b f(x) dx = f(c)(b-a) \\
 % \cite[(1.43)]{MAT-01360}
 integroituvan funktion keskiarvo 	& \hat{f} = \frac{1}{b-a} \int_a^b f(x)dx \\
 % cite[(1.44)]{MAT-01360}
 analyysin peruslause				& f: [a,b] \rightarrow \mathbb{R} \text{ on jatkuva} \\
-									& \Rightarrow F(x) = \int_a^x f(t) dt \text{ on derivoituva } \land F'(x) = f(x) \forall x \in [a,b] \\
-\end{eqtable}
+									& \Rightarrow F(x) = \int_a^x f(t) dt \text{ on derivoituva } \newline \land F'(x) = f(x) \forall x \in [a,b] \\
+\end{eqtable-full}
 
 Määrätyn integraalin ominaisuuksia \cite[(1.38)]{MAT-01360}
 \begin{align*}
@@ -319,11 +317,13 @@ Määrätyn integraalin ominaisuuksia \cite[(1.38)]{MAT-01360}
 (5)	\quad & \Big| \int_a^b f(x) dx \Big| \leq \int_a^b |f(x)| dx \\
 \end{align*}
 
+\clearpage
+
 \section{Vektorit ja matriisit}
 
 \subsection{Vektorit}
 
-\begin{eqtable}{Vektorien perusteet \cite[s. 2-6]{MAT-60000}}
+\begin{eqtable-full}{Vektorien perusteet \cite[s. 2-6]{MAT-60000}}
 Vektori						& \bm{x} = \begin{styledmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{styledmatrix} \\ \hline
 Luonnolliset kantavektorit	& \bm{e}_i = \begin{styledmatrix} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{styledmatrix}, \qquad i \in \mathbb{Z}^+ \\ \hline
 Nollavektori				& \bm{0} = \begin{styledmatrix} 0 \\ \vdots \\ 0 \end{styledmatrix} \\ \hline
@@ -332,7 +332,7 @@ Vektorien summa				& \bm{x} + \bm{y} = \begin{styledmatrix} x_1 \\ x_2 \\ \vdots
                             \begin{styledmatrix} x_1 + y_1 \\ x_2 + y_2 \\ \vdots \\ x_n + y_n \end{styledmatrix}
                             \\ \hline
 Vektorien erotus			& \bm{x} - \bm{y} = \bm{x} + (-\bm{y}) \\
-\end{eqtable}
+\end{eqtable-full}
 
 Vektoriavaruuksien aksioomat \cite[s. 8]{MAT-60000}
 \begin{align*}
@@ -346,7 +346,7 @@ Vektoriavaruuksien aksioomat \cite[s. 8]{MAT-60000}
 (8) \quad & 1 \bm{x} = \bm{x}
 \end{align*}
 
-\begin{eqtable}{Sisätulo ja normi \cite[s. 9-16]{MAT-60000}}
+\begin{eqtable-full}{Sisätulo ja normi \cite[s. 9-16]{MAT-60000}}
 sisätulo					& \innerp{x}{y} = \sum^n_{i=1} \overline{x_i} y_i = \bm{x}^* \bm{y} \\ \hline
 sisätulon perusominaisuudet	& (1) \quad \innerp{x}{y} \geq 0 \land (\innerp{x}{y} = 0 \rightarrow \bm{x} = \bm{0}) \\
 							& (2) \quad \langle \bm{x} + \bm{y}, \bm{z} \rangle = \innerp{x}{z} + \innerp{y}{z} \\
@@ -364,12 +364,12 @@ kolmioepäyhtälö				& (3) \quad || \bm{x} + \bm{y} || \leq || \bm{x} || + || \
 kolmioepäyhtälö alaspäin	& || \bm{x} - \bm{y} || \geq \big| || \bm{x} || - || \bm{y} || \big| \\ \hline
 Cauchy-Schwarzin epäyhtälö	& |\innerp{x}{y}| \leq || \bm{x} || \cdot || \bm{y} || \\ \hline
 vektorien välinen kulma		& \cos(\phi) = \frac{\innerp{x}{y}}{|| \bm{x} || \cdot || \bm{y} ||} \\
-\end{eqtable}
+\end{eqtable-full}
 
 
 \subsection{Matriisit}
 
-\begin{eqtable}{Matriisien perusteet \cite[s. 16-26]{MAT-60000}}
+\begin{eqtable-full}{Matriisien perusteet \cite[s. 16-26]{MAT-60000}}
 lineaarikuvaus				& L(a \bm{x} + b \bm{y}) = a L(\bm{x}) + b L({\bm{y})} \\ \hline
 matriisin indeksointi		& A=[a_{ij}]^{m\times n} = 
                 			\begin{styledmatrix} a_{11}  & a_{12}  & \dots  & a_{1n} \\ 
@@ -379,7 +379,6 @@ matriisin indeksointi		& A=[a_{ij}]^{m\times n} =
                             
 							& \text{m on korkeus (vaakarivien määrä)} \\
                            	& \text{n on leveys (pystyrivien määrä)} \\ \hline
-
 neliömatriisi				& m=n \\
 korkea matriisi				& m>n \\
 leveä matriisi				& m<n \\ \hline
@@ -396,10 +395,10 @@ matriisien laskusäännöt		& (A+B)+C = A+(B+C) \\
                             & (A+B)C = AC + BC \\
                             & A + B = B + A \\ \hline
 neliömatriisin potenssit	& A^k = AA \cdots A \\
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{Matriisityyppejä \cite[s. 18-21, 34]{MAT-60000}}
+\begin{eqtable-full}{Matriisityyppejä \cite[s. 18-21, 34]{MAT-60000}}
 identiteettimatriisi		& I = \begin{styledmatrix}
 							\bm{e}_1, \bm{e}_2, \ldots, \bm{e}_n
 							\end{styledmatrix} = 
@@ -467,10 +466,10 @@ permutaatiomatriisi			& P = \begin{styledmatrix}
 							\bm{e}^T_{r_1} \\ \bm{e}^T_{r_1} \\ \vdots \\ \bm{e}^T_{r_n}
                             \end{styledmatrix}
 							= \text{esim.} \begin{styledmatrix} 0&0&1 \\ 0&1&0 \\ 1&0&0 									\end{styledmatrix} \\
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Determinant}{Determinantti} \cite[1.4.5]{MAT-60150}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Determinant}{Determinantti} \cite[1.4.5]{MAT-60150}}
 & \text{Määritelty, kun } A=[a_{ij}] \text{ on } n \times n \text{-matriisi} \\
 \hline
 
@@ -518,7 +517,7 @@ i:nnen rivin suhteen		& \det(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} \det(A_{ij}) \\
 j:nnen sarakkeen suhteen	& \det(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} \det(A_{ij}) \\
 							& \text{joissa } A_{ij} \text{ on } A \text{, josta on poistettu rivi i ja sarake j} \\
 
-\end{eqtable}
+\end{eqtable-full}
 
 
 \begin{eqtable}{Transpoosi ja konjugaattitranspoosi \cite[s. 21, 26]{MAT-60000}}
@@ -584,7 +583,7 @@ indefiniitti					& \text{Jos ei ole mitään näistä} \\
 \end{eqtable}
 
 
-\begin{eqtable}{LU-hajotelma \cite[s. 45-56]{MAT-60000}}
+\begin{eqtable-full}{LU-hajotelma \cite[s. 45-56]{MAT-60000}}
 LU-hajotelma	& A = LU \\
 				& L_k = I - \bm{l}_k \bm{e}^T_k \\
                 & \bm{l}_k = \frac{1}{x_k} \begin{styledmatrix} 0 \\ \vdots \\ 0 \\ x_{k+1} \\ \vdots \\ x_n \end{styledmatrix}, x_k \neq 0 \\
@@ -596,10 +595,10 @@ lineaarisen yhtälöryhmän ratkaiseminen	& A \bm{x} = P^T LU \bm{x} = \bm{b} \\
 											& LU \bm{x} = P \bm{b} \\
                                             & L \bm{y} = P \bm{b} \land U \bm{x} = \bm{y} \\
                                             & x = U^{-1} \bm{y} \land \bm{y} = L^{-1} P \bm{b} \\
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Linear_subspace}{Aliavaruus} \cite[s. 59-83]{MAT-60000}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Linear_subspace}{Aliavaruus} \cite[s. 59-83]{MAT-60000}}
 aliavaruus					& \alpha \bm{x} + \beta \bm{y} \in S \quad \forall \bm{x}, \bm{y} \in \mathcal{S} \\
 arvojoukko (kuva-avaruus)	& \mathcal{R} (A) = \{y | \exists \bm{x} \in \mathbb{F}^n s.e. \bm{y} = A \bm{x} \} \in \mathbb{F}^m \\
 ydin (nolla-avaruus)		& \mathcal{N} (A) = \{ \bm{x} | A \bm{x} = \bm{0} \} \\ \hline
@@ -613,12 +612,11 @@ dimensio eli kantavektorien lukumäärä	& \dim (S) \\
 matriisin aste							& rank (A) = \dim \mathcal{R} (A) \\
 										& rank (A) + \dim \mathcal{N} (A) = n = \text{ sarakkeiden määrä} \\ \hline
 
-projektorimatriisi			& P^2 = P \\
-							& \text{Projisoi vektorit } \mathcal{R} (P) \text{:lle pitkin } \mathcal{N} (P) \text{:tä} \\
-\end{eqtable}
+projektorimatriisi			& P^2 = P \newline \text{Projisoi vektorit } \mathcal{R} (P) \text{:lle pitkin } \mathcal{N} (P) \text{:tä} \\
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors}{Ominaisarvot ja -vektorit} \cite[s. 90-100]{MAT-60000}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors}{Ominaisarvot ja -vektorit} \cite[s. 90-100]{MAT-60000}}
 ominaisarvot ja -vektorit	& A \bm{x} = \lambda \bm{x}, \bm{x} \neq \bm{0} \\
 ominaisarvot				& \det (A - \lambda I) = 0 \\
 karakteristinen polynomi	& \prod^n_{k=1} (\lambda - \lambda_k) \\
@@ -627,16 +625,33 @@ similaarisuus				& B = S^{-1} A S \text{ jossa S ei-singulaarinen}\\
 unitaarinen similaarisuus	& B = U^* AU \\
 
 Hermiten matriisille		& diag(\sigma(A)) = U^* A U \\
-							& \forall \lambda \in \mathbb{R} \land n \text{ ortonormaalia ominaisvektoria} \Rightarrow \text{Hermiten matriisi} \\ \hline
+							& \forall \lambda \in \mathbb{R} \land n \text{ ortonormaalia ominaisvektoria} \newline \Rightarrow \text{Hermiten matriisi} \newline \\ \hline
 
 Normaali matriisi			& A = UDU^* \text{ jossa D on diagonaalimatriisi} \\
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Jordan_normal_form}{Jordanin kanoninen muoto} \cite[s. 101-107]{MAT-60000}, \cite[5]{MAT-60150}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Jordan_normal_form}{Jordanin kanoninen muoto} \cite[s. 101-107]{MAT-60000}, \cite[5]{MAT-60150}}
 				& A = SJS^{-1} \\
 				& J = diag(J_1, J_2, \ldots, J_p) \\
 defektiivisyys	& \exists \lambda : geom(\lambda) < alg(\lambda) \\ \hline
+
+				& A \bm{u}_1 = \lambda_j \bm{u}_1 \\
+                & A \bm{u}_2 = \lambda_j \bm{u}_2 \bm{u}_1 \\
+                & A \bm{u}_i = \lambda_j \bm{u}_i \bm{u}_{i-1} \\
+
+Jordanin ketju	& \{ \bm{u}_1, \bm{u}_2, \ldots \bm{u}_{m_j} \} \\
+ominaisvektori	& \bm{u}_1 \\
+yleistetyt ominaisvektorit	& \bm{u}_2, \ldots \bm{u}_{m_j} \\
+
+kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
+käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldots \lambda_k \} \\
+				& \text{Valitse mielivaltainen } \lambda \\
+                & alg(\lambda) = 1 \newline \Rightarrow \bm{u}_1 = \bm{x}_1 \land J_1 = \lambda_1 \\
+                & alg(\lambda) = geom(\lambda) = l \newline \Rightarrow \text{Otetaan ominaisvektorit} \land \forall J = \lambda_1 \\
+                & alg(\lambda) > geom(\lambda) \newline \Rightarrow \text{Muodostetaan ketjut erikseen} \\
+               	& \lambda \text{ kompleksinen} \newline \Rightarrow (\bm{u}_1 = \text{Re } \bm{x}, \bm{u}_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\
+\end{eqtable-full}
 
 % Old version ---
 \iffalse
@@ -656,25 +671,8 @@ käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldot
 \fi
 %---
 
-				& A \bm{u}_1 = \lambda_j \bm{u}_1 \\
-                & A \bm{u}_2 = \lambda_j \bm{u}_2 \bm{u}_1 \\
-                & A \bm{u}_i = \lambda_j \bm{u}_i \bm{u}_{i-1} \\
 
-Jordanin ketju	& \{ \bm{u}_1, \bm{u}_2, \ldots \bm{u}_{m_j} \} \\
-ominaisvektori	& \bm{u}_1 \\
-yleistetyt ominaisvektorit	& \bm{u}_2, \ldots \bm{u}_{m_j} \\
-
-kompleksiselle ominaisarvolle	& J_i = \begin{styledmatrix} \alpha & \beta \\ - \beta & \alpha \end{styledmatrix} \in \mathbb{R}^{2 \times 2} \\ \hline
-käyttöohje		& \text{Etsi spektri } \sigma (A) = \{ \lambda_1, \lambda_2, \ldots \lambda_k \} \\
-				& \text{Valitse mielivaltainen } \lambda \\
-                & alg(\lambda) = 1 \Rightarrow \bm{u}_1 = \bm{x}_1 \land J_1 = \lambda_1 \\
-                & alg(\lambda) = geom(\lambda) = l \Rightarrow \text{Otetaan ominaisvektorit} \land \forall J = \lambda_1 \\
-                & alg(\lambda) > geom(\lambda) \Rightarrow \text{Muodostetaan ketjut erikseen} \\
-               	& \lambda \text{ kompleksinen} \Rightarrow (\bm{u}_1 = \text{Re } \bm{x}, \bm{u}_2 = \text{Im } \bm{x}) \land (\overline{\lambda} \in \sigma(A)) \\
-\end{eqtable}
-
-
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Singular_value_decomposition}{Singulaariarvohajotelma} \cite[s. 117-128]{MAT-60000}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Singular_value_decomposition}{Singulaariarvohajotelma} \cite[s. 117-128]{MAT-60000}}
 singulaariarvohajotelma		& U^*AV = \Lambda \\
 							& A = U \Lambda V^* \\
 							& \Lambda = diag(\sigma_1, \sigma_2, \ldots , \sigma_r, 0, \ldots, 0) \\
@@ -699,7 +697,7 @@ pseudoinverssi				& A^\dagger = V \Lambda^\dagger U^*\\
                             & A^\dagger A A^\dagger = A^\dagger \\
 lin. yhtälöryhmän 			& A\bm{x} = \bm{b} \\
 yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\
-\end{eqtable}
+\end{eqtable-full}
 
 
 
@@ -707,7 +705,7 @@ yleinen ratkaisu			& \bm{x} = A^\dagger \bm{b} \\
 
 \section{Differentiaaliyhtälöt}
 
-\begin{eqtable}{Differentiaaliyhtälöiden termejä ja kaavoja \cite{MAT-60150}}
+\begin{eqtable-full}{Differentiaaliyhtälöiden termejä ja kaavoja \cite{MAT-60150}}
 % \cite[s. 34]{MAT-60150}
 homogeeninen alkuarvo-ongelma 	& \bm{x}' = A\bm{x}, \quad \bm{x}(0) = \bm{c} \\
 
@@ -739,14 +737,14 @@ nilpotentti matriisi			& \exists m \in \mathbb{N}: N^m = O \\
 
 % \cite[2.3.7]{MAT-60150}
 nilpotentin matriisin käyttö 	& A = S + N \land N \text{ on nilpotentti} \Rightarrow e^A = e^S e^N \\
-\end{eqtable}
+\end{eqtable-full}
 
 
 \begin{table}
 \centering
 \caption{Reaalisen derivoinnin ja integroinnin laskusääntöjä \cite[1.4.3, 1.4.4, 1.4.5]{MAT-60150}}
 \setlength{\extrarowheight}{10pt}
-\begin{tabular}{| >{$} l <{$} |}
+\begin{tabu} to \textwidth {| >{$} X <{$} |}
 \hline
 A'=O \Leftrightarrow A \text{ on vakio} \\
 (AB)' = A'B + AB' (\text{tulon derivointisääntö}) \\
@@ -757,11 +755,11 @@ t \in (a,b) \Rightarrow \frac{d}{dt} \int_a^t A(s)ds = A(t) \quad (\text{integra
 \int_a^b A'(t)dt = A(b) - A(a) \quad (\text{analyysin peruslause}) \\
 \int_a^b A'(t)B(t)dt = A(b)B(b) - A(a)B(a) - \int_a^b A(t)B'(t)dt \quad (\text{osittaisintegrointikaava}) \\
 \hline
-\end{tabular}
+\end{tabu}
 \end{table}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Matrix_norm}{Matriisinormi} \cite[2.1]{MAT-60150}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Matrix_norm}{Matriisinormi} \cite[2.1]{MAT-60150}}
 oletukset				& A, B \in \mathbb{R}^{n \times n}, \quad \alpha \in \mathbb{R}, \quad \bm{x} \in \mathbb{R}^n \\ \hline
 matriisinormi			& ||A|| = \max_{|\bm{x}| \leq 1} | A \bm{x} | \\
 suljettu yksikköpallo	& \overline{B}^n = \{\bm{x} \in \mathbb{R}^n: |\bm{x}| \leq 1 \} \\
@@ -772,14 +770,14 @@ ominaisuuksia			& ||A|| \geq 0 \land (||A|| = 0 \Leftrightarrow A=O) \\
 						& ||AB|| \leq ||A|| ||B|| \\
 						& k \in \mathbb{N}: ||A^k|| \leq ||A||^k \\
 						& \text{Jos } \sigma^2 \text{ on matriisin } A^T A \text{ suurin ominaisarvo, niin } ||A||=|\sigma | \\
-\end{eqtable}
+\end{eqtable-full}
 
 
 \begin{table}
 \centering
-\caption{Eksponenttimatriiseja}
+\caption{ \href{https://en.wikipedia.org/wiki/Matrix_exponential}{Eksponenttimatriiseja} \cite{MAT-60150} }
 \setlength{\extrarowheight}{10pt}
-\begin{tabular}{| >{$} l <{$} | >{$} l <{$} | l |}
+\begin{tabu}{ >{$} l <{$} | >{$} X <{$}}
 \hline
 
 A = \begin{styledmatrix}
@@ -795,8 +793,8 @@ e^{\lambda_1} \\
 && \ddots \\
 &&& e^{\lambda_n}
 \end{styledmatrix}
-&
-\cite[2.3.2]{MAT-60150} \\
+% & \cite[2.3.2]{MAT-60150}
+\\
 
 T_\mu =
 \begin{styledmatrix}
@@ -809,8 +807,7 @@ e^{tT_\mu} = e^{t\alpha}
 \cos \beta	& \sin \beta \\
 -\sin \beta	& \cos \beta
 \end{styledmatrix}
-&
-\cite[2.3.5]{MAT-60150}
+% & \cite[2.3.5]{MAT-60150}
 % Proposition 2.3.4 is merely a special case where \alpha = 0
 \\
 
@@ -823,14 +820,14 @@ e^A = e^\alpha \begin{styledmatrix}
 1	& \gamma \\
 0	& 1
 \end{styledmatrix}
-&
-\cite[2.3.8]{MAT-60150} \\
+% & \cite[2.3.8]{MAT-60150}
+\\
 
 A = PJP^{-1} (\text{Jordanin kanoninen muoto})
 &
 e^{tA} = Pe^{tJ} P^{-1}
-&
-\cite[3.1.4]{MAT-60150} \\
+% & \cite[3.1.4]{MAT-60150}
+\\
 
 J_\lambda =
 \begin{styledmatrix}
@@ -849,8 +846,8 @@ e^{tJ_\lambda} = e^{t\lambda}
 		& 			&				& 1			& t \\
 		& 			&				&			& 1
 \end{styledmatrix}
-&
-\cite[5.5.1]{MAT-60150} \\
+% & \cite[5.5.1]{MAT-60150}
+\\
 
 T_\mu =
 \begin{styledmatrix}
@@ -869,14 +866,14 @@ e^{tD_\mu}	& te^{tD_\mu}	& \frac{t^2}{2!} e^{tD_\mu}	& \cdots		& \frac{t^{k-1}}{
 			&				&							& e^{tD_\mu}	& te^{tD_\mu} \\
 			&				&							&				& e^{tD_\mu}
 \end{styledmatrix}
-& \cite[5.5.2]{MAT-60150} \\
+% & \cite[5.5.2]{MAT-60150}
+\\
 
-\hline
-\end{tabular}
+\end{tabu}
 \end{table}
 
 
-\begin{eqtable}{Ominaisavaruudet \cite[5]{MAT-60150}}
+\begin{eqtable}{ \href{https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors\#Eigenspaces.2C_geometric_multiplicity.2C_and_the_eigenbasis}{Ominaisavaruudet} \cite[5]{MAT-60150}}
 ominaisavaruus				& E_\lambda = \{ \bm{x}: A \bm{x} = \lambda \bm{x} \} \\ % This is not from the pruju(source)
 realisoitu ominaisavaruus	& F_\mu = \text{Re}(E_\mu) \cup \text{Im}(E_\mu) = \text{span}_\mathbb{R} \{ \text{Re}(\bm{v}), \text{Im}(\bm{v}) \} \\ % Would it be more logical to use \lambda instead of \mu ?
 yleistetty ominaisavaruus	& K_\lambda = \{ \bm{x} \in \mathbb{C}^n: \bm{x} \text{ on yleistetty ominaisvektori} \} \\
@@ -885,7 +882,7 @@ yleistetty ominaisavaruus	& K_\lambda = \{ \bm{x} \in \mathbb{C}^n: \bm{x} \text
 							& K_\lambda = N \big( (A- \lambda I_n)^{alg(\lambda)} \big) \\
 \end{eqtable}
 
-\begin{eqtable}{Jordanin kanoninen muoto yleisessä tilanteessa \cite[5.4.1]{MAT-60150}}
+\begin{eqtable-full}{Jordanin kanoninen muoto yleisessä tilanteessa \cite[5.4.1]{MAT-60150}}
 spektri			& \sigma(A) = \{ \lambda_1, \ldots, \lambda_k, \mu_1, \overline{\mu}_1, \ldots, \mu_q, \overline{\mu}_q \} \\
 $\lambda_j$:tä vastaava Jordanin ketju	& j^(\lambda_j) = \{ \bm{v}^{(\lambda_j)}_1, \ldots, \bm{v}^{(\lambda_j)}_{m_j} \} \\
 $\mu_r$:ää vastaava Jordanin ketju		& \{ \bm{u}^{(\mu_r)}_1, \ldots, \bm{u}^{(\mu_r)}_{n_r} \} \\
@@ -931,10 +928,10 @@ D_{\mu_r} & I_2 \\
 \text{, kun } \mu_r = \alpha_r + i \beta_r
 \\
 
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{Usean värähtelijän systeemi \cite[6.1]{MAT-60150}}
+\begin{eqtable-full}{Usean värähtelijän systeemi \cite[6.1]{MAT-60150}}
 usean värähtelijän systeemi	& M \bm{x}'' + C \bm{x}' + K \bm{x} = \bm{f}, \quad \bm{x}(0)=\bm{c}_1, \quad \bm{x}'(0)=\bm{c}_2 \\
 ratkaistavassa muodossa	& \bm{z}' =
 \begin{styledmatrix}
@@ -955,17 +952,17 @@ M^{-1} \bm{f}
 \end{styledmatrix}
 \\
 
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{Stabiilius \cite[6.2]{MAT-60150}}
+\begin{eqtable-full}{Stabiilius \cite[6.2]{MAT-60150}}
 matriisifunktio on stabiili, kun	& \lim_{t \rightarrow \infty} ||e^{tA} || = 0 \\
 jos $t \mapsto e^{tA}$ on stabiili, niin	& \lim_{t \rightarrow \infty} |e^{tA} \bm{c} = 0 \quad \forall \bm{c} \in \mathbb{R}^n \\
-Lyapunovin lause	& \text{matriisifunktio } t \mapsto e^{tA} (A \in \mathbb{R}^{n \times n}) \text{ on stabiili}  \Leftrightarrow \forall \lambda: \text{Re} \lambda < 0 \\
-\end{eqtable}
+Lyapunovin lause	& \text{matriisifunktio } t \mapsto e^{tA} (A \in \mathbb{R}^{n \times n}) \text{ on stabiili} \newline \Leftrightarrow \forall \lambda: \text{Re} \lambda < 0 \\
+\end{eqtable-full}
 
 
-\begin{eqtable}{Lineaariset järjestelmät \cite[6.3]{MAT-60150}}
+\begin{eqtable-full}{Lineaariset järjestelmät \cite[6.3]{MAT-60150}}
 Lineaarinen järjestelmä
 &
 \begin{eqgroup}
@@ -975,7 +972,7 @@ Lineaarinen järjestelmä
 \\
 
 oletukset	& \bm{x}: [0, \infty) \rightarrow \mathbb{R}^n,
-	\quad \bm{y}: [0, \infty) \rightarrow \mathbb{R}^m,
+	\quad \bm{y}: [0, \infty) \rightarrow \mathbb{R}^m, \newline
 	\quad \bm{u}: [0, \infty) \rightarrow \mathbb{R}^k,
 	\quad \bm{x}(0) = \bm{c} \\
 
@@ -985,10 +982,10 @@ vakionvariointikaavasta & \bm{x}(t) = e^{tA} \bm{c} + \int_0^t e^{(t-s)A} B\bm{u
 tavoite				& \lim_{t \rightarrow \infty} | \bm{y}(t) - \bm{y}_r(t)| = 0 \\
 systeemin ohjaus	& \bm{u} = K \bm{x} + L \\
 					& \Rightarrow \bm{x}' = (A+BK)\bm{x} + BL \\
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Laplace_transform}{Laplace-muunnos} \cite[6.4]{MAT-60150}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Laplace_transform}{Laplace-muunnos} \cite[6.4]{MAT-60150}}
 \multicolumn{2}{|l|}{Matriisifunktio $A: [0,\infty) \rightarrow \mathbb{R}^{n \times m}$ on eksponentiaalista kertalukua vakiolla $k$, jos} \\
 \multicolumn{2}{|l|}{ $\exists M>0, K \in \mathbb{R}$ s.e. $\forall i,j: \big| [A]_{ij}| \leq Me^{kt}, $ kun $ t \geq 0$} \\
 \hline
@@ -1020,10 +1017,10 @@ konvoluutio		& (\text{oletukset: } A: [0, \infty) \rightarrow \mathbb{R}^{n \tim
 Neumannin sarja	& \text{Olkoon } B \in \mathbb{R}^{n \times n} \text{ matriisi, jolle } ||B||<1 \Rightarrow I_n-B \text{ on kääntyvä } \land \\
 				& (I_n - B)^{-1} = \sum_{k=0}^\infty B^k = I_n + B + B^2 + B^3 + \ldots \\
 
-\end{eqtable}
+\end{eqtable-full}
 
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Vector_field}{Vektorikentät} \cite[7.1]{MAT-60150}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Vector_field}{Vektorikentät} \cite[7.1]{MAT-60150}}
 vektorikenttä	& \vec{V}: \Omega \rightarrow \mathbb{R}^n; \bm{x} \mapsto \vec{V}(\bm{x}) \\
 käyrä			& \gamma: I \rightarrow \mathbb{R}^n \\
 tangenttivektorikenttä	& \vec{V}(\gamma(t)) := \gamma'(t) \\
@@ -1036,47 +1033,50 @@ lineaarinen vektorikenttä	& \vec{V}(\bm{x}) = A\bm{x} \\
 integraalikäyrä lin. vektorikentässä	& \bm{x}(t) = e^{tA} \bm{c} \\
 virtaus	& \phi: I \times \Omega \rightarrow \mathbb{R}^n \\
 virtaukselle	& \text{Määrittelyjoukko } I \text{ on laajin mahdollinen} \\
-				& \phi(t, \bm{c}) \text{ on pisteen } \bm{c} \in \Omega \text{ kautta kulkeva} \\
-				& \text{vektorikentän } \vec{V} \text{ integraalikäyrä} \\
+				& \phi(t, \bm{c}) \text{ on pisteen } \bm{c} \in \Omega \text{ kautta kulkeva} \newline
+					\text{vektorikentän } \vec{V} \text{ integraalikäyrä} \\
 				& \Big( (t, \bm{c}) \in I \times \Omega \quad \land \quad (s, \phi(t, \bm{c})) \in I \times \Omega \Big) \\
-				& \Rightarrow \Big( (t+s, \bm{c} \in I \times \Omega \quad \land \quad \phi(t+s, \bm{c}) = \phi(s, \phi(t, \bm{c})) \Big) \\
+				& \Rightarrow \Big( (t+s, \bm{c} \in I \times \Omega \quad \land \newline
+					\phi(t+s, \bm{c}) = \phi(s, \phi(t, \bm{c})) \Big) \\
 lineaarisen vektorikentän virtaus	& \phi: \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{R} \\
 									& \phi(t, \bm{c}) = e^{tA} \bm{c} \\
 tasapainopiste	& \vec{V}(\overline{\bm{x}}) = \bm{0} \\
 tpp.:n integraalikäyrä				& \gamma_{\bm{x}}: I \rightarrow \mathbb{R}^n \\
-stabiili tasapainopiste	& \forall \epsilon > 0 \exists \delta > 0: \Big( | \gamma_{\bm{x}} (t)-\overline{\bm{x}}| < \epsilon \quad \forall t \in I, \text{ kun } | \bm{x} - \overline{\bm{x}} | < \delta \Big) \\
-\end{eqtable}
+stabiili tasapainopiste	& \forall \epsilon > 0 \exists \delta > 0: \newline \Big( | \gamma_{\bm{x}} (t)-\overline{\bm{x}}| < \epsilon \quad \forall t \in I, \text{ kun } | \bm{x} - \overline{\bm{x}} | < \delta \Big) \\
+\end{eqtable-full}
 
-\begin{eqtable}{Nielut, lähteet ja hyperboliset virtaukset \cite[7.2, 7.3]{MAT-60150}}
-origo nieluna	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) < 0 \\
-				& \Rightarrow \text{kontraktio} \\
-origo lähteenä	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) > 0 \\
-				& \Rightarrow \text{ekspansio} \\
+
+\begin{eqtable-full}{Nielut, lähteet ja hyperboliset virtaukset \cite[7.2, 7.3]{MAT-60150}}
+origo nieluna	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) < 0 \newline
+					\Rightarrow \text{kontraktio} \\
+origo lähteenä	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) > 0 \newline
+					\Rightarrow \text{ekspansio} \\
 \hline
 jos origo on nielu	& \exists K, b > 0: \quad |e^{tA} \bm{c} | \leq Ke^{-tb} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
 jos origo on lähde	& \exists L, c > 0: \quad |e^{tA} \bm{c} | \geq Le^{tc} |\bm{c}| \quad \forall t \geq 0, \bm{c} \in \mathbb{R}^n \\
 \hline
 hyperbolinen virtaus	& \forall \lambda \in \sigma(A): \text{Re}(\lambda) \neq 0 \\
 						& \forall A \in \mathbb{R}^{n \times n} \text{, jolle } \phi_t=e^{tA} \text{on hyperbolinen}: \\
+						
+						& \exists \text{ yksikäsitteiset aliavaruudet} \newline E^s, E^u \subset \mathbb{R}^n: \mathbb{R}^n = E^s \oplus E^u \newline
+						\text{ja näitä vastaava similaarimuunnnos} \newline P^{-1}AP= \begin{styledmatrix} A_k \\ & A_e \end{styledmatrix}, \newline
+							\text{jossa virtaus } e^{tA_k} \text{ on kontraktio ja } e^{tA_c} \text{ ekspansio} \\
 						\hline
-						& \exists \text{ yksikäsitteiset aliavaruudet } E^s, E^u \subset \mathbb{R}^n: \mathbb{R}^n = E^s \oplus E^u \\
-						& \text{ja näitä vastaava similaarimuunnnos } P^{-1}AP= \begin{styledmatrix} A_k \\ & A_e \end{styledmatrix},\\
-						& \text{jossa virtaus } e^{tA_k} \text{ on kontraktio ja } e^{tA_c} \text{ ekspansio} \\
-						\hline
-$E^s$, $E^u$ ovat A ja $e^{tA}$-invariantteja	& AE^s \subset E^s, AE^u \subset E^u, \quad e^{tA}E^s \subset E^s, e^{tA}E^u \subset E^u, \quad t \in \mathbb{R} \\
-\end{eqtable}
+$E^s$, $E^u$ ovat A ja $e^{tA}$-invariantteja	& AE^s \subset E^s, AE^u \subset E^u \newline e^{tA}E^s \subset E^s, e^{tA}E^u \subset E^u \newline t \in \mathbb{R} \\
+\end{eqtable-full}
 
-\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Generic_property}{Geneeriset ominaisuudet} \cite[7.4]{MAT-60150}}
+
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Generic_property}{Geneeriset ominaisuudet} \cite[7.4]{MAT-60150}}
 (oletukset)		& X \subset \mathbb{R}^{n \times n}, \quad A \in \mathbb{R}^{n \times n},\quad  U \in \mathbb{R}^{n \times n}, \quad X \in \mathbb{R}^{n \times n} \\
 \hline
 tiheä joukko	& \forall \epsilon > 0 \land A \in \mathbb{R}^{n \times n} \exists B \in X: ||A-B|| \leq \epsilon \\
 A-keskipisteinen r-säteinen pallo	& B_r(A) = \{ C \in \mathbb{R}^{n \times n}: ||A-C|| \leq r \} \\
 avoin joukkko	& U: \Big( \forall A \in U \exists r > 0: B_r (A) \subset U \Big) \\
 \hline
-				& \forall X_i \text{ avoimia ja tiheitä } \Rightarrow X=X_1 \cap \cdots \cap X_m \text{ on avoin ja tiheä} \\
+				& \forall X_i \text{ avoimia ja tiheitä } \newline \Rightarrow X=X_1 \cap \cdots \cap X_m \text{ on avoin ja tiheä} \\
 				\hline
 geneerinen ominaisuus	& \exists \text{tiheä ja avoin osajoukko, jossa se on voimassa} \\
-\end{eqtable}
+\end{eqtable-full}
 
 \clearpage
 
