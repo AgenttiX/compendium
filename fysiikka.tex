@@ -68,44 +68,59 @@ kandela (cd)	& Kandela on sellaisen säteilijän valovoima, joka lähettää tie
 
 \section{Vakioita}
 
-\begin{consttable}{Universaalit luonnonvakiot \cite[s. 70-71]{MAOL} }
-valon nopeus tyhjiössä		& c, c_0		& 2,9979 2458 $\cdot 10^8$ m/s \\
-gravitaatiovakio			& \gamma, G		& 6,674 28 $\cdot 10^{-11}$ Nm$^2$/kg$^2$ \\
-Planckin vakio				& h				& 6,626 0693 $\cdot 10^{-34}$ Js \newline
-							 					4,135 6654 $\cdot 10^{-15}$ eVs \\
-redusoitu Planckin vakio \newline (Diracin vakio)	& \hbar = \frac{h}{2 \pi}	& 1,054 5717 $\cdot 10^{-34}$ Js \newline
-														6,582 1159 $\cdot 10^{-16}$ eVs \\ % calculated h (eVs) / 2 \pi
+\begin{consttable}{ \href{http://physics.nist.gov/cgi-bin/cuu/Category?view=pdf&Universal.x=95&Universal.y=7}{Universaalit luonnonvakiot} \cite{NIST-Constants} }
+valon nopeus tyhjiössä		& c, c_0		& 2,9979 2458 \cdot 10^8	& m/s \\
+tyhjiön permeabiliteetti \newline (magneettivakio)	& \mu_0	& 4 \pi \cdot 10^{-7} \newline 12,566 \ 370 \ 614 \ldots \cdot 10^{-7}	& N/A$^2$ \\
+tyhjiön permittiivisyys	\newline (sähkövakio)	& \epsilon_0 = \frac{1}{\mu_0 c^2}	& 8,854 \ 187 \ 817 \ldots \cdot 10^{-12}	& F/m \\
+% tyhjiön karakteristinen impedanssi \\
+Newt. gravitaatiovakio	& G	& 6,674 \ 08 \cdot 10^{-11}	& N m$^2$/kg$^2$ \\
+Planckin vakio	& h		& 6,626 \ 070 \ 040 \cdot 10^{-34}	\newline 4,135 \ 667 \ 662 \cdot 10^{-15} & J s \newline eV s \\
+Diracin vakio	& \hbar	= \frac{h}{2 \pi} & 1,054 \ 571 \ 800 \cdot 10^{-34} \newline 6,582 \ 119 \ 514 \cdot 10^{-16}	& J s \newline eV s \\
+\hline
+Planckin massa & m_P = \sqrt{\frac{\hbar c}{G}}	& 2,176 \ 470 \cdot 10^{-8}	& kg \\
+Planckin massanergia	& m_P c^2	& 1,220 \ 910 \cdot 10^{19}	& GeV \\
+Planckin lämpötila		& T_P = \frac{1}{k} \sqrt{\frac{\hbar c^5}{G}}	& 1,416 \ 808 \cdot 10^{32}	& K \\
+Planckin pituus			& l_P = \frac{\hbar}{m_P c} = \sqrt{\frac{\hbar G}{c^3}}	& 1,616 \ 229 \cdot 10^{-35}	& m \\
+Planckin aika			& t_P = \frac{l_P}{c} = \sqrt{\frac{\hbar G}{c^5}}	& 5,391 \ 16 \cdot 10^{-44}	& s \\
 \end{consttable}
 
-\begin{consttable}{Sähkömagneettisia vakioita \cite[s. 70-71]{MAOL} }
-tyhjiön permeabiliteetti \newline (magneettivakio)	& \mu_0	& $4 \pi \cdot 10^{-7} \frac{\text{Vs}}{\text{Am}}$ \newline
-											 			1,256 637 061 $\cdot 10^{-6}$ H/m \\
-tyhjiön permittiivisyys \newline (sähkövakio)		& \epsilon_0 = \frac{1}{\mu_0 c^2}	& 8,854 187 818 $\cdot 10^{-12}$ F/m \\
-Coulombin lain vakio						& k_e = \frac{1}{4 \pi \epsilon_0}	& 8,987 551 787 $\cdot 10^9$ Nm$^2$/C$^2$ \\
-alkeisvaraus								& e		& 1,602 176 487 $\cdot 10^{-19}$ C \\
+\begin{consttable}{ \href{http://physics.nist.gov/cgi-bin/cuu/Category?view=pdf&Electromagnetic.x=76&Electromagnetic.y=17}{Sähkömagneettisia vakioita} \cite{NIST-Constants} , \cite[s. 70]{MAOL} }
+alkeisvaraus	& e	& 1,602 \ 176 \ 6208 \cdot 10^{-19}	& C \\
+				& \frac{e}{h}	& 2,417 \ 989 \ 262 \cdot 10^{14}	& A/J \\
+Coulombin lain vakio	& k = \frac{1}{4 \pi \epsilon_0}	& 8,987 \ 551 \ 484 \cdot 10^9	& Nm$^2$ / C$^2$ \\ % \cite[s. 70]{MAOL}
+Bohrin magnetoni	& \mu_B = \frac{e \hbar}{2m_e}	& 927,400 \ 9994 \cdot 10^{-26}	& J/T \\
 \end{consttable}
 
-\begin{consttable}{Atomi- ja ydinfysiikan vakioita \cite[s. 70-71]{MAOL} }
-elektronin lepomassa	& m_e	& 9,109 3822 $\cdot 10^{-31}$ kg \newline
-									5,485 7991 $\cdot 10^{-4}$ u \\
-protonin lepomassa		& m_p	& 1,672 6216 $\cdot 10^{-27}$ kg \newline
-									1,007 2765 u \\
-neutronin lepomassa		& m_n	& 1,674 9273 $\cdot 10^{-27}$ kg \newline
-									1,008 6650 u \\
-deuteronin lepomassa	& m_d	& 3,343 5835 $\cdot 10^{-27}$ kg \newline
-									2,013 5532 u \\
-alfahiukkasen lepomassa	& m_\alpha	& 6,644 656 $\cdot 10^{-27}$ kg \newline
-									4,001 5062 u \\
-Rydbergin vakio	\cite[s. 171]{ModernPhysics}		& R_\infty	& 1,097 3732 $\cdot 10^7$ 1/m \\
+\begin{consttable}{ \href{http://physics.nist.gov/cgi-bin/cuu/Category?view=pdf&Atomic+and+nuclear.x=47&Atomic+and+nuclear.y=15}{Atomi- ja ydinfysiikan vakioita} \cite{NIST-Constants} }
+hienorakennevakio	& \alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c}	& 7,297 \ 352 \ 5664 \cdot 10^{-3} & \\
+					& \alpha^{-1}	& 137,035 \ 999 \ 139 & \\
+Rydbergin vakio		& R_\infty = \frac{\alpha^2 m_e c}{2h}	& 1,097 \ 373 \ 156 \ 8508 \cdot 10^7	& 1/m \\
+					& R_\infty c	& 3,289 \ 841 \ 960 \ 355 \cdot 10^{15}	& Hz \\
+					& R_\infty hc	& 2,179 \ 872 \ 325 \cdot 10^{-18} \newline 13,605 \ 693 \ 009	& J \newline eV \\
+Bohrin säde		& a_0 = \frac{\alpha}{4 \pi R_\infty} = \frac{4 \pi \epsilon_0 \hbar^2}{m_e e^2} & 0,529 \ 177 \ 210 \ 67 \cdot 10^{-10}	& m \\
 \end{consttable}
 
-\begin{consttable}{Sekalaisia vakioita \cite[s. 70-71]{MAOL} }
-Faradayn vakio				& F			& 96 485,338 C/mol \\
-Stefanin-Boltzmannin vakio	& \sigma	& 5,670 400 $\cdot 10^{-8} \frac{\text{W}}{\text{m}^2 \text{K}^4} $ \\
-Wienin siirtymislain vakio	& b			& 2,897 768 $\cdot 10^{-3}$ m$\cdot$K \\
-Boltzmannin vakio			& k_b		& 1,380 6505 $\cdot 10^{-23}$ J/K \\
-moolinen kaasuvakio			& R			& 8,314 510 $\frac{\text{Pa} \cdot \text{m}^3}{\text{mol} \cdot \text{K}} $ \\
-							&			& 0,083 145 10 $\frac{\text{bar} \cdot \text{dm}^3}{\text{mol} \cdot \text{K}} $ \\
+\begin{consttable}{ \href{http://physics.nist.gov/cgi-bin/cuu/Category?view=pdf&Atomic+and+nuclear.x=47&Atomic+and+nuclear.y=15}{Hiukkasten lepomassoja ja massaenergioita} \cite{NIST-Constants} }
+elektronin lepomassa	& m_e	& 9,109 \ 383 56 \cdot 10^{-31}	\newline 5,485 \ 799 \ 090 \ 70 \cdot 10^{-4} & kg \newline u \\
+					& m_e c^2	& 8,187 \ 105 \ 65 \cdot 10^{-14} \newline 0,510 \ 998 \ 9461 & J \newline MeV \\
+protonin lepomassa	& m_p	& 1,672 \ 621 \ 898 \cdot 10^{-27} \newline 1,007 276 466 879	& kg \newline u \\
+					& m_p c^2	& 1,503 \ 277 \ 593 \cdot 10^{-10} \newline 938,272 \ 0813	& J \newline MeV \\
+neutronin lepomassa	& m_n	& 1,674 \ 927 \ 471 \cdot 10^{-27} \newline 1,008 \ 664 \ 915 \ 88	& kg \newline u \\
+					& m_n c^2	& 1,505 \ 349 \ 739 \cdot 10^{-10} \newline 939,565 \ 4133	& J \newline MeV \\
+deuteronin lepomassa	& m_d	& 3,343 \ 583 \ 719 \cdot 10^{-27} \newline 2,013 \ 553 \ 212 \ 745	& kg \newline u \\
+						& m_d c^2	& 3,005 \ 063 \ 183 \cdot 10^{-10} \newline 1875,612 \ 928	& J \newline MeV \\
+alfahiukkasen lepomassa	& m_\alpha	& 6,655 \ 657 \ 230 \cdot 10^{-27} \newline 4,001 \ 506 \ 179 \ 127	& kg \newline u \\
+						& m_\alpha c^2	& 5,971 \ 920 \ 097 \cdot 10^{-10} \newline 3727,379 \ 378	& J \newline MeV \\
+\end{consttable}
+
+\begin{consttable}{ \href{http://physics.nist.gov/cgi-bin/cuu/Category?view=pdf&Physico-chemical.x=69&Physico-chemical.y=14}{Fysiokemialliset vakiot} \cite{NIST-Constants} }
+Avogadron luku	& N_A, L	& 6,022 \ 140 \ 857 \cdot 10^{23}	& 1/mol \\
+Faradayn vakio	& F = N_A e	& 96 \ 485,332 89	& C/mol \\
+moolinen Planckin vakio	& N_A h	& 3,990 312 7110 \cdot 10^{-10}	& J s mol$^{-1}$ \\
+moolinen kaasuvakio		& R	& 8,314 \ 4598	& J mol$^{-1}$ K$^{-1}$ \\
+Boltzmannin vakio	& k_B = \frac{R}{N_A}	& 1,380 \ 648 \ 52 \cdot 10^{-23}	& J/K \\
+Stefanin-Boltzmannin vakio	& \sigma = \frac{\pi^2 k_B^4}{60 \hbar^3 c^2}	& 5,670 367 \cdot 10^{-8}	& W m$^{-2}$ K$^{-4}$ \\
+Wienin siirtymälain vakio	& b = \lambda_{max} T	& 2,897 \ 7729 \cdot 10^{-3}	& m K \\
 \end{consttable}
 
 \clearpage
