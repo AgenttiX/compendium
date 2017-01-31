@@ -1078,6 +1078,74 @@ avoin joukkko	& U: \Big( \forall A \in U \exists r > 0: B_r (A) \subset U \Big) 
 geneerinen ominaisuus	& \exists \text{tiheä ja avoin osajoukko, jossa se on voimassa} \\
 \end{eqtable-full}
 
+
+
+
+
+\clearpage
+
+\section{Fourier'n menetelmät}
+
+
+\begin{eqtable-full}{Peruskäsitteitä \cite[1.1]{MAT-02450} }
+jaksollinen	funktio & \exists T \neq 0: \forall t \in \mathbb{R} f(t + T) = f(t) \\
+parillinen funktio	& \forall t: f(-t) = f(t) \\
+pariton funktio		& \forall t: f(-t) = -f(t) \\
+Heavisiden askelfunktio	& H(t) = \begin{eqgroup} 0, \quad t<0 \\ 1, \quad t>0 \end{eqgroup} \\
+tasapulssifunktio		& \text{rect}_T (t) = \begin{eqgroup} 1, \quad |t|<T \\ 0, \quad |t|>T \end{eqgroup} = H(t+T)-H(t-T) \\
+\end{eqtable-full}
+
+
+\begin{table}[!ht]
+\centering
+\caption{Parillisuus/parittomuussäännöt \cite[1.1.1]{MAT-02450} }
+\begin{tabular}{llll}
+\hline
+parillinen 	&$\cdot$	&parillinen	&= parillinen \\
+pariton 	&$\cdot$	&pariton	&= pariton \\
+pariton		&$\cdot$	&parillinen	&= pariton \\
+parillinen	&+ 			&parillinen	&= parillinen \\
+pariton		&+			&pariton	&= pariton \\
+\end{tabular}
+\end{table}
+
+
+\begin{eqtable-full}{Diracin deltafunktio \cite[1.1.3]{MAT-02450} }
+ominaisuudet	& \forall t \neq a: \delta (t-a) = 0 \\
+				& \int_\infty^\infty \delta(t-a) dt = 1 \\
+				& \delta (at) = \frac{1}{|a|} \delta(t) \\
+seulontaominaisuus	& \text{Jos funktio f on jatkuva kohdassa } t=a \newline \int_{-\infty}^\infty f(t) \delta(t-a)dt = f(a) \\
+johdettavia ominaisuuksia	& \int_{-\infty}^t \delta(u) du = H(t) \quad \land \quad \frac{d}{dt} H(t) = \delta (t) \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Fourier'n teoreema \cite[2]{MAT-02450} }
+Fourier'n sarja				& \hat{f}(t) = A_0 + \sum_{n=1}^\infty A_n \sin (n \omega t + \phi_n ) \newline
+= \frac{a_0}{2} + \sum_{n=1}^\infty \Big( a_n \cos(n \omega t) + b_n \sin(n \omega t) \Big) \\
+n:s harmoninen komponentti	& A_n \sin (n \omega t + \phi_n) \\
+amplitudien yhteys			& A_n = \sqrt{a_n^2 + b_n^2 } \\
+Fourier'n sarjan eksponenttimuoto	& \hat{f}(t) = c_0 + \sum_{n=1}^\infty \Big( c_n e^{jn \omega t} + c_{-n} e^{-jn \omega t} \Big) \newline
+= \sum_{n=-\infty}^\infty c_n e^{jn \omega t} \\
+kerrointen yhteys	& c_0 = \frac{a_0}{2} \newline c_n = \frac{a_n - j b_n}{2}, \quad n \in \mathbb{Z}^+ \newline c_{-n} = \frac{a_n + jb_n}{2} = c_n^*, \quad n \in \mathbb{Z}^+ \\
+
+kerrointen määrittely	& a_n = \frac{2}{T} \int_d^{d+T} f(t) \cos (n \omega t) dt, \quad n \in \mathbb{Z} \newline
+b_n = \frac{2}{T} \int_d^{d+T} f(t) \sin (n \omega t) dt, \quad n \in \mathbb{Z}^+ \newline
+c_n = \frac{1}{T} \int_d^{d+T} f(t) e^{-jn \omega t} dt, \quad n \in \mathbb{Z} \\
+
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Kroneckerin delta \cite[2.3]{MAT-02450} }
+Kroneckerin delta	& \delta_{k-j} = \begin{eqgroup} 1, \quad k=j \\ 0, \quad k \neq j \end{eqgroup}, \quad k, j \in \mathbb{Z} \\
+Kroneckerin deltan ominaisuuksia	& \int_d^{d+T} \cos(n \omega t) dt = T \delta_n \newline
+\int_d^{d+T} \sin(n \omega t) dt = 0 \newline
+\int_d^{d+T} \cos(n \omega t) \cos (m \omega t) dt = \frac{1}{2} T \delta_{n-m} \newline
+\int_d^{d+T} \sin(n \omega t) \sin(m \omega t) dt = \frac{1}{2} T \delta_{n-m} \newline
+\int_d^{d+T} \sin(n \omega t) \cos (m \omega t) dt = 0 \newline
+\int_d^{d+T} e^{jm \omega t} dt = T \delta_m, \quad m \in \mathbb{Z} \\
+
+\end{eqtable-full}
+
 \clearpage
 
 \section{Numeerisia taulukoita}
