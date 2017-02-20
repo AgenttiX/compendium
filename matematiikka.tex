@@ -1087,12 +1087,13 @@ geneerinen ominaisuus	& \exists \text{tiheä ja avoin osajoukko, jossa se on voi
 \section{Fourier'n menetelmät}
 
 
-\begin{eqtable-full}{Peruskäsitteitä \cite[1.1]{MAT-02450} }
+\begin{eqtable-full}{Peruskäsitteitä \cite[1.1, 4.4]{MAT-02450} }
 jaksollinen	funktio & \exists T \neq 0: \forall t \in \mathbb{R} f(t + T) = f(t) \\
 parillinen funktio	& \forall t: f(-t) = f(t) \\
 pariton funktio		& \forall t: f(-t) = -f(t) \\
 Heavisiden askelfunktio	& H(t) = \begin{eqgroup} 0, \quad t<0 \\ 1, \quad t>0 \end{eqgroup} \\
 tasapulssifunktio		& \text{rect}_T (t) = \begin{eqgroup} 1, \quad |t|<T \\ 0, \quad |t|>T \end{eqgroup} = H(t+T)-H(t-T) \\
+konvoluutio		& (f*g)(t) = \int_{-\infty}^\infty f(t-x)g(x)dx = \int_{-\infty}^\infty f(x)g(t-x)dx \\
 \end{eqtable-full}
 
 
@@ -1145,6 +1146,61 @@ Kroneckerin deltan ominaisuuksia	& \int_d^{d+T} \cos(n \omega t) dt = T \delta_n
 \int_d^{d+T} e^{jm \omega t} dt = T \delta_m, \quad m \in \mathbb{Z} \\
 
 \end{eqtable-full}
+
+
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Fourier_transform\#Tables_of_important_Fourier_transforms}{Fourier-muunnoksia ja Fourier-muunnoksen ominaisuuksia} \cite{MAT-02450} }
+lineaarisuus	& \mathscr{F} \Big\{ af(t) + bg(t) \Big\} (\omega) = aF(\omega) + bG(\omega) \\
+skaalausominaisuus	& \mathscr{F} \Big\{ f(at) \Big\} (\omega) = \frac{1}{|a|} F \Big( \frac{\omega}{a} \Big), \quad a \neq 0 \newline
+	\mathscr{F} \Big\{ f(-t) \Big\} (\omega) = F(-\omega) \\
+
+derivointi ajan suhteen	& \mathscr{F} \Big\{ f'(t) \Big\} (\omega) = j \omega F (\omega) \newline
+	\mathscr{F} \Big\{ \frac{d^n}{dt^n} f(t) \Big\} (\omega) = (j \omega)^n F(\omega) \\
+
+aikasiirto	& \mathscr{F} \Big\{ f(t-a) \Big\} (\omega) = e^{-ja \omega} F(\omega) \\
+taajuussiirto	& \mathscr{F} \Big\{ e^{jbt} f(t) \Big\} (\omega) = F (\omega - b) \\
+
+trigonometriset funktiot	& \mathscr{F} \Big\{ f(t) \cos (\alpha t) \Big\} (\omega) = \frac{1}{2} F(\omega - \alpha) + \frac{1}{2} F(\omega + \alpha) \newline
+	\mathscr{F} \Big\{ f(t) \sin (\alpha t) \Big\} (\omega) = TODO \\
+
+konvoluutio-ominaisuus	& \mathscr{F} \Big\{ (f * g)(t) \Big\} (\omega) = F(\omega)G(\omega) \newline
+	\mathscr{F} \big\{ f(t)g(t) \Big\} (\omega) = \frac{1}{2\pi} (F*G)(\omega) \\
+
+symmetriaominaisuus	& \mathscr{F} \Big\{ \mathscr{F} \{ f \} (t) \Big\} (\omega) = \mathscr{F} \Big\{ F(t) \Big\} (\omega) = 2 \pi f (-\omega) \\
+
+\end{eqtable-full}
+
+
+\begin{table}[!ht]
+\centering
+\caption{\href{https://en.wikipedia.org/wiki/Fourier_transform\#Tables_of_important_Fourier_transforms}{Fourier-muunnoskaavoja} \cite[s. 91]{MAT-02450} }
+\setlength{\extrarowheight}{10pt}
+\begin{tabu}{ D | D }
+\hline
+f(t)	& F(\omega) \\ \hline
+
+H(t) e^{-at}	& \frac{1}{a+ j\omega} \\
+H(t) te^{-at}	& \frac{1}{(a+j\omega)^2} \\
+e^{-a|t|}		& \frac{2a}{a^2 + \omega^2} \\
+A \text{rect}_T (t)	& 2AT \text{sinc}(T\omega) \\
+\text{sinc}(t)	& \pi \text{rect}_1 (\omega) \\
+1				& 2 \pi \delta (\omega) \\
+\delta (t)		& 1 \\
+\text{signum} (t)	& \frac{2}{j \omega} \\
+H (t)			& \frac{1}{j \omega} + \pi \delta (\omega) \\
+\frac{1}{t}		& -j \ \pi \ \text{signum} (\omega) \\
+\cos (at)		& \pi \big( \delta (\omega + a) + \delta (\omega - a) \big) \\
+\sin (at)		& \pi j \big( \delta (\omega + a) - \delta (\omega - a) \big) \\
+\end{tabu}
+\end{table}
+
+\begin{eqtable}{\href{https://en.wikipedia.org/wiki/Parseval\%27s_theorem}{Parsevalin yhtälö} \cite[4.6]{MAT-02450} }
+Parsevalin yhtälö	& \int_{-\infty}^\infty f^2 (u) du = \frac{1}{2 \pi} \int_{-\infty}^\infty |F(\omega)|^2 d \omega \\
+energia	& E = \int_{-\infty}^\infty f^2 (u) du = \frac{1}{2 \pi} \int_{-\infty}^\infty |F(\omega)|^2 d \omega \\
+\end{eqtable}
+
+
+
+
 
 \clearpage
 
