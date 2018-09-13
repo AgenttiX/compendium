@@ -4,6 +4,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[finnish]{babel}
 
+% Citations
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{lahdeluettelo.bib}
+\usepackage{csquotes}
+
 % LaTeX Packages
 % Sorted by name
 \usepackage{amsmath}	% Equations
@@ -11,7 +16,7 @@
 \usepackage{amssymb}	% Mathematical symbols, \mathbb{}
 \usepackage{array}		% Arrays
 \usepackage{bm}			% Bold vector symbols
-\usepackage{cite}		% Source citations
+% \usepackage{cite}		% Source citations
 \usepackage{emptypage} 	% Clears unwanted artifacts from empty pages
 \usepackage{esint}		% Symbols for integrals over closed lines (kiertointegraali) \oint \oiint
 \usepackage{fancyhdr} 	% For custom header style
@@ -274,8 +279,10 @@ Daniel \textit{Ohems} Saarimäki \\
 \fancyhead{}							% Clear header
 \setcounter{secnumdepth}{-1}			% Don't add numbers to chapters
 \addcontentsline{toc}{part}{Viitteet}
-\bibliography{lahdeluettelo}			% Citation source
-\bibliographystyle{IEEEtran}			% Citation style
+% \bibliography{lahdeluettelo}			% Citation source
+% \bibliographystyle{IEEEtran}			% Citation style
 
+\printbibliography
+\markboth{\bibname}{\bibname} % Set page header
 
 \end{document}
