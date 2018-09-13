@@ -133,6 +133,47 @@ geometrinen summa	& S_n = \sum_{i=1}{n} a_i = \frac{a_1 (1-q^n)}{1-q}, \text{ jo
 suppeneva geometrinen sarja	& S = \sum_{i=1}^\infty a_i = a_1 + a_1 q + a_1 q^2 0 \ldots \newline = \frac{a_1}{1-q}, \text{ jos } |q| \leq 1 \\
 \end{eqtable-full}
 
+\subsection{Abstrakti algebra}
+
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Group_(mathematics)}{Ryhmä} \cite{YHTTAY-60050}}
+karteesinen tulo		& X \times Y = {(x, y) | x \in X, y \in Y} \\
+laskutoimitus \newline = binäärioperaatio		& \text{funktio} \ A \times A \rightarrow A \\
+vaihdannaisuus	& x \circ y = y \circ x \\
+liitännäisyys	& x \circ (y \circ z) = (x \circ y) \circ z \\
+neutraalialkio	& e \circ a = a \land a \circ e = a \ \forall a \in A \\
+käänteisalkio	& b = a^{-1} \Leftrightarrow a \circ b = e \land b \circ a = e \newline
+				  b = a^{-1} \Leftrightarrow a = b^{-1} \\
+ryhmä $(G, \circ)$	& \circ \ \text{on liitännäinen} \newline
+					\exists \ \text{neutraalialkio} \ e \in G \newline
+					\forall a \in G: \ \exists a^{-1} \in G \\
+Abelin ryhmä	 $(G, \circ)$	& \circ \ \text{on vaihdannainen} \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Äärellisiä ryhmiä \cite{YHTTAY-60050}}
+moduloyhteenlasku	& a +_n b = (a+b)\mod n \newline
+						(a+b)\mod n = (a\mod n) +_n (b\mod n) \\
+modulokertolasku		& a *_n b = (ab)\mod n \newline
+						(ab)\mod n = (a\mod n) *_n (b\mod n) \\
+permutaatio			& S_n = \{ [ x_1, x_2, ..., x_n ] | \{x_1, x_2, ..., x_n \} = \{ 1, 2, ..., n \} \} \\
+laskusääntöjä \newline $(a \in G, n, k \in \mathbb{R})$
+						& a^{n+k} = a^n \circ a^k \newline
+						a^{nk} = (a^n)^k \newline
+						(a^n)^{-1} = (a^{-1})^n \newline
+						a^{n-k} = a^n \circ (a^{-1})^k \newline
+						(a \circ b)^{-1} = b^{-1} \circ a^{-1} \\
+laskusääntöjä Abelin ryhmälle	& (a \circ b)^n = a^n \circ b^n \\
+supistussääntö	& a \circ x = a \circ y \Leftrightarrow x = y \newline
+					x \circ a = y \circ a \Leftrightarrow x = y \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Aliryhmät \cite{YHTTAY-60050}}
+aliryhmä	 \newline $(G, \circ) \ \text{ryhmä} \ \land H \subseteq G.)$
+				& \text{Jos} \ (H, \circ) \ \text{on ryhmä} \ \rightarrow \ \text{se on ryhmän} \ G \ \text{aliryhmä} \\
+aliryhmätesti	& \forall a, b \in H: \ a \circ b \in H \newline
+					e \in H \newline
+					\forall a \in H: a^{-1} \in H \\
+\end{eqtable-full}
+
 \clearpage
 
 \section{Trigonometria}
