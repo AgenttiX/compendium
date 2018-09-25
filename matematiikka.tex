@@ -104,7 +104,14 @@ käänteisfunktio	& y = f(x) \Leftrightarrow x = f^{-1}(y) \\
 kuvaaja eli graafi ($f: A \rightarrow \mathbb{R}$)
 				& G_f = \{(x, f(x)) \in \mathbb{R}^2 : x \in A \} \\
 				&= \{(x,y) \in \mathbb{R}^2 : x \in A, y = f(x) \} \\
+\href{https://en.wikipedia.org/wiki/Injective_function}{injektio}
+    & \forall a, b \in X: \ a \neq b \ \Rightarrow \ f(a) \neq f(b) \\
+\href{https://en.wikipedia.org/wiki/Surjective_function}{surjektio}
+    & \forall y \in Y \ \exists x \in X: \ f(x) = y \\
+\href{https://en.wikipedia.org/wiki/Bijection}{bijektio}
+    & \text{injektio ja surjektio} \\
 \end{eqtable-full}
+% TODO: add sources for injection, bijection and surjection (other than Wikipedia)
 
 \section{Aritmetiikka ja algebra}
 
@@ -133,6 +140,10 @@ geometrinen summa	& S_n = \sum_{i=1}{n} a_i = \frac{a_1 (1-q^n)}{1-q}, \text{ jo
 suppeneva geometrinen sarja	& S = \sum_{i=1}^\infty a_i = a_1 + a_1 q + a_1 q^2 0 \ldots \newline = \frac{a_1}{1-q}, \text{ jos } |q| \leq 1 \\
 \end{eqtable-full}
 
+\clearpage
+
+
+
 \subsection{Abstrakti algebra}
 
 \begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Group_(mathematics)}{Ryhmä} \cite{YHTTAY-60050}}
@@ -149,7 +160,7 @@ ryhmä $(G, \circ)$	& \circ \ \text{on liitännäinen} \newline
 Abelin ryhmä	 $(G, \circ)$	& \circ \ \text{on vaihdannainen} \\
 \end{eqtable-full}
 
-\begin{eqtable-full}{Äärellisiä ryhmiä \cite{YHTTAY-60050}}
+\begin{eqtable-full}{\href{https://en.wikipedia.org/wiki/Finite_group}{Äärellisiä ryhmiä} \cite{YHTTAY-60050}}
 moduloyhteenlasku	& a +_n b = (a+b)\mod n \newline
 						(a+b)\mod n = (a\mod n) +_n (b\mod n) \\
 modulokertolasku		& a *_n b = (ab)\mod n \newline
@@ -172,9 +183,50 @@ aliryhmä	 \newline $(G, \circ) \ \text{ryhmä} \ \land H \subseteq G.)$
 aliryhmätesti	& \forall a, b \in H: \ a \circ b \in H \newline
 					e \in H \newline
 					\forall a \in H: a^{-1} \in H \\
+aliryhmätesti 2 & a \circ b^{-1} \in H \forall a, b \in H \land H \neq \emptyset \\
+alkion kertaluku    & \text{pienin} \ n: g^n = e \\
+alkion virittämä aliryhmä   & \langle g \rangle = \{ g^i \ | \ g \in \mathbb{Z} \} \\
+ääretön kertaluku   & \text{jos} \ g^i \neq e \forall i \in \mathbb{N}, \text{niin} \forall n \neq m, m \in \mathbb{Z}: g^n \neq g^m \\
+kertaluvulle k  & \text{alkiot} \langle g \rangle = \{e, g, g^2, g^3, ..., g^{k-1} \} \text{erillisiä} \\
+potenssisääntö  & g^n g^m = g^{(n+m) \mod k} \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Ryhmien välisiä kuvauksia \cite{YHTTAY-60050}}
+kuvajoukko  & f(H) := \{y \in B | f(x) = y \ \text{jollekin} \ x \in H \} \\
+alkukuva joukolle U   & f^{-1}(U) = \{x \in A | f(x) \in U \} \\
+\href{https://en.wikipedia.org/wiki/Homomorphism}{homomorfismi}
+    & f: G \rightarrow G': f(a \circ b) = f(a) * f(b) \ \forall a, b \in G \\
+homomorfismin ominaisuuksia & f(e) = e' \newline
+                                f(a^{-1}) = f(a)^{-1} \\
+\href{https://en.wikipedia.org/wiki/Kernel_(algebra)}{ydin (kernel)}   & \ker f := f^{-1}(\{e'\}) = \{ x \in G | f(x) = e' \} \newline
+                    \text{homomorfismin ydin on aliryhmä} \\
+\href{https://en.wikipedia.org/wiki/Isomorphism}{isomorfismi}
+    & \text{homomorfismi ja bijektio} \newline 
+                    \text{merkitään} \ G \approx G' \\
+vasemmanpuoleinen sivuluokka    & H \circ a := \{h \circ a | h \in H \} \\
+oikeanpuoleinen sivuluokka    & a \circ H := \{a \circ h | h \in H \} \\
+sivuluokkalemma  & a \in Ha \newline
+    Ha = H \Leftrightarrow a \in H \newline
+    Ha = Hb \Leftrightarrow ba^{-1} \in H \newline
+    Ha = Hb \lor Ha \cap Hb = \emptyset \newline
+    G = \bigcup_{a \in G} Ha \newline
+    b \in Ha \rightarrow Ha = Hb \newline
+    \text{sivuluokan } Ha \text{ kertaluku } = \text{ aliryhmän } \text{kertaluku} \\
+Lagrangen lause & \text{Olkoon G äärellinen ryhmä ja H ryhmän G aliryhmä.} \newline \text{Silloin aliryhmän H kertaluku jakaa ryhmän G} \newline \text{kertaluvun.} \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Normaali aliryhmä ja tekijäryhmä \cite{YHTTAY-60050}}
+\href{https://en.wikipedia.org/wiki/Normal_subgroup}{normaali aliryhmä}
+    & Ng = gN \ \forall g \in G \\
+    & \Leftrightarrow ghg^{-1} \in H \ \forall g \in G, h \in H \\
+sivuluokkien $L$ ja $M$ tulo   & LM := \{ x \circ y \ | \ x \in L, \ y \in M \} \\
+kaikki oikeanpuoleiset sivuluokat   & G / H = \{ Ha \ | \ a \in G \} \\
+ryhmän $G$ normaalille aliryhmälle $N$  & (Ng)(Nh) = N(gh) \ \forall g, h \in G \\
 \end{eqtable-full}
 
 \clearpage
+
+
 
 \section{Trigonometria}
 
