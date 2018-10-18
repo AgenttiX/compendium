@@ -224,6 +224,132 @@ kaikki oikeanpuoleiset sivuluokat   & G / H = \{ Ha \ | \ a \in G \} \\
 ryhmän $G$ normaalille aliryhmälle $N$  & (Ng)(Nh) = N(gh) \ \forall g, h \in G \\
 \end{eqtable-full}
 
+
+\begin{eqtable-full}{Renkaat \cite{YHTTAY-60050}}
+\href{https://en.wikipedia.org/wiki/Ring_(mathematics)}{rengas $(R, +, \cdot)$}
+	& (R, +) \text{ on Abelin ryhmä } \newline
+	\cdot \text{ on liitännäinen} \newline
+	\text{joukossa } R \text{ on neutraalialkio/ykkösalkio } 1 \in R \text{ kertolaskun } \cdot \text{suhteen} \newline
+	\text{osittelulait ovat voimassa, eli } \forall a, b, c \in R: \newline
+	a \cdot (b + c) = a \cdot b + a \cdot c \newline
+	(a + b) \cdot c = a \cdot c + b \cdot c \\
+\href{https://en.wikipedia.org/wiki/Commutative_ring}{vaihdannainen rengas}
+	& \cdot \text{ on vaihdannainen} \\
+laskusääntöjä renkaissa
+	& 0 \cdot a = a \cdot 0 = 0 \newline
+	a(-b) = (-a)b = -ab \ \land \ (-a)(-b) = ab \newline
+	a(b-c) = ab - ac \ \land \ (a-b)c = ac-bc \\
+	& na = (n \cdot 1)a = a(n \cdot 1) \ \forall n \in \mathbb{Z} \newline
+	n(ab) = (na)b = a(nb) \ \forall n \in \mathbb{Z} \newline
+	(ma)(nb) = (mn)(ab) \ \forall m, n \in \mathbb{Z} \\
+yleiset osittelulait
+	& a(b_1 + \ldots + b_n) = ab_1 + \ldots + ab_n \newline
+	(b_1 + \ldots + b_n)a = b_1 a + \ldots b_n a \\
+alirengas
+	& \text{Renkaan} (R, +, \cdot ) \text{ osajoukko } S \subseteq R \text{ jos} \newline
+	S \text{ on rengas operaatioiden } + \text{ ja } \cdot \text{ suhteen} \newline
+	1_S = 1_R \\
+alirengastesti
+	& 1_R \in S \newline
+	a - b \in S \ \forall a, b \in S \newline
+	ab \in S \ \forall a, b \in S \\
+\href{https://en.wikipedia.org/wiki/Ideal_(ring_theory)}{ideaali}
+	& (I,+) \text{ on ryhmän } (R,+) \text{ aliryhmä} \newline
+	ra \in I \ \land ar \in I \ \forall r \in R, a \in I \\
+ideaalikriteeri
+	& I \neq \emptyset \newline
+	a-b \in I \ \forall a, b \in I \newline
+	ra \in I \ \land \ ar \in I \ \forall r \in R, \ a \in I \\
+ideaaleja
+	& I \cup J \newline
+	I + J = \{a+b | a \in I, \ b \in J \} \\
+alkioiden virittämä ideaali
+	& \langle a_1, \ldots, a_k \rangle = \{ r_1 a_1 + \ldots + r_k a_k | r_i \in R \} \\
+pääideaali
+	& I = \langle a \rangle \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Kokonaisalue ja karakteristika}
+kokonaisalue	
+	& \text{Rengas } (R,+, \cdot ) \text{, jolle} \newline
+	1_R \neq 0_R \newline
+	a \cdot b = 0_R \Rightarrow a = 0_R \lor b = 0_R \quad \forall a,b \in R \quad \text{(eli ei nollatekijöitä)} \\
+supistussäännöt
+	& \text{Vaihdannainen rengas } (R,+,\cdot ) \text{ jossa } 1_R \neq 0_R \newline
+	\text{on kokonaisalue jos ja vain jos} \newline
+	ax = ay \ \Rightarrow \ x=y \newline
+	xa = ya \ \Rightarrow \ x=y \newline
+	\forall x, y \in R, \ a \in R \setminus \{0_R\} \\
+\href{https://en.wikipedia.org/wiki/Characteristic_(algebra)}{karakteristika}
+	& \text{Kokonaisalueen } D \text{ karakteristika char}(D) \text{ on pienin } n \in \mathbb{Z}_+: n1_D = 0 \newline
+	\text{Jos tällaista lukua ei ole, char}(D) = 0 \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Kunta}
+kunta
+	& \text{Vaihdannainen rengas, jossa} \newline
+	1) \ \text{on vähintään kaksi alkiota} \newline
+	2) \ \forall a \in R \setminus \{0_R\} \ \exists \text{ käänteisalkiot kertolaskun suhteen} \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Rengashomomorfismit}
+rengashomomorfismi $f: R \rightarrow R'$
+	& f(x+y) = f(x) + f(y) \quad \forall x,y \in R \newline
+	f(x \cdot y) = f(x) \cdot f(y) \newline
+	f(1_R) = 1_{R'} \\
+rengasisomorfismi $R \cong R'$
+	& f \text{ on bijektio} \\
+kuvajoukko
+	& Im(f) = f(R) = \{y \in R' | y=f(x), x \in R \} \subseteq R' \newline
+	\text{on renkaan } R' \text{ alirengas} \\
+ydin
+	& \ker (f) = \{ x \in R | f(x) = 0' \} \subseteq R \newline
+	\text{(on renkaan } R \text{ ideaali)} \\
+\end{eqtable-full}
+
+\begin{eqtable-full}{Tekijärenkaat}
+tekijärengas $(R \setminus I, \oplus, \odot )$
+	& (I + a) \oplus (I + b) := I + (a+b) \newline
+	(I + a) \odot (I + b) := I + ab \\
+sivuluokkalemma ideaaleille
+	& a \in I + a \newline
+	I = i + a \Leftrightarrow a \in I \newline
+	I + a = I + b \Leftrightarrow b-a \in I \newline
+	I + a = I + b \lor (I + a) \cap (I + b) = \emptyset \newline
+	R = \bigcup_{a \in R} (I + a) \\
+alkuideaali
+	& ab \in I \Rightarrow a \in I \lor b \in I \\
+renkaiden isomorfialause
+	& \text{Ol. } f: R \mapsto R' \text{ (rengas)homomorfismi. Tällöin} \newline
+	\text{homomorfismin ytimen } \ker f \text{ määräämä tekijärengas } \newline
+	R/ \ker f \text{ on isomorfinen renkaan } Im(f) = f(R) \subseteq R' \newline
+	\text{kanssa.} \newline
+	\text{Toisin sanoen } \exists \text{ isomorfismi } F: R/ \ker f \rightarrow Im(f). \\
+\end{eqtable-full}
+
+
+\begin{eqtable-full}{Polynomirenkaat}
+\href{https://en.wikipedia.org/wiki/Polynomial_ring}{polynomirengas}
+	& ASDF \\
+polynomien yhtäsuuruus
+	& \text{Joukon } R[x] \text{ polynomeille}\newline
+	f(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n, \newline
+	g(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_m x^m, \newline
+	n \geq m: \newline
+	f(x) = g(x) \Leftrightarrow n=m \ \land \ a_k = b_k \ \forall k = 0, \ldots, n \\
+yhteenlasku
+	& f(x) + g(x) = \sum_{k=0}^n (a_k + b_k)x^k + \sum_{k=n+1}^m b_k x^k \\
+kertolasku
+	& f(x)g(x) = \sum_{k=0}^{n+m} \Big( \sum_{i+j=k} a_i b_j \Big) x^k \\
+polynomin aste
+	& \text{deg } f = n \text { polynomille } \newline
+	f(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n, a_n \neq 0 \\
+johtava kerroin
+	& a_n \ (\neq 0) \\
+pääpolynomi
+	& \text{johtava kerroin on renkaan ykkösalkio} \\
+\end{eqtable-full}
+
 \clearpage
 
 
