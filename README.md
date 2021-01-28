@@ -1,11 +1,13 @@
-# Linnunradan käsikirja teekkareille
+# Linnunradan käsikirja teekkareille - Hitchhiker's guide to the sciences
 
 [![pipeline status](https://gitlab.com/AgenttiX/compendium/badges/master/pipeline.svg)](https://gitlab.com/AgenttiX/compendium/commits/master)
 
-[PDF GitLabissa](https://gitlab.com/AgenttiX/compendium)
+[PDF available on GitLab](https://gitlab.com/AgenttiX/compendium)
 
-Tästä on tarkoitus muodostaa teekkareille soveltuva vapaa taulukkokirja.
+The purpose of this project is to create a free table book for students of science and technology
 
-Käytettävien kuvien olisi hyvä olla LaTeX-yhteensopivaa vektorigrafiikkaa, mieluiten .tex-tiedostoja. Myös .eps-tiedostomuoto on osoittautunut toimivaksi. Inkscapella voi tuottaa molempia ja Matlabilla .eps-tiedostoja.
+The images used should be LaTeX compatible vector graphics, preferably .tex files.
+Also the .eps file format has proven out to be suitable.
+With Inkscape one can produce both file formats.
 
 CC-BY-SA 4.0
